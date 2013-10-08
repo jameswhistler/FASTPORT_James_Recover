@@ -1,0 +1,2171 @@
+﻿/**********************************************************************
+ * BaseStyles.LeftToRight.css                                         *
+ *                                                                    *
+ * This file contains the styles for Left to Right languages.         *
+ * This file will be copied to BaseStyles.css if you select a LTR     *
+ * language as the primary language of your application.              *
+ *                                                                    *
+ * Do not modify this file.  To override any of the styles, please    *
+ * modify the Styles.css file.                                        *
+ *                                                                    *
+ **********************************************************************/
+
+HTML { /* language direction flow of content on page */
+	direction: ltr;
+	}
+
+
+/**********************************************************************
+ * Page Background Styles                                             *
+ **********************************************************************/
+.pageBackground, .pBack { /* body */
+	background-color: #f6f6f6;
+	margin: 0px;
+	width: 100%;
+	}
+
+.pWrapper { /* page content container */
+	margin: 0px;
+	width: 100%;
+	}
+
+
+/**********************************************************************
+ * Page Container Styles                                              *
+ **********************************************************************/
+.pageTL { /* page container top left edge */
+	display: none;
+	}
+
+.pageTLSpace { /* page container top left edge buttress */
+	display: none;
+	}
+
+.pageT { /* page container top center edge */
+	display: none;
+	}
+
+.pageTSpace { /* page container top center edge buttress */
+	display: none;
+	}
+
+.pageTR { /* page container top right edge */
+	display: none;
+	}
+
+.pageTRSpace { /* page container top right edge buttress */
+	display: none;
+	}	
+	
+.pageL { /* page container left middle edge */
+	display: none;
+	}
+
+.pageLSpace { /* page container left middle edge buttress */
+	display: none;
+	}
+
+.pageC { /* page container center (contents of page container) */
+	/*
+	-moz-border-radius: 5px;
+	-moz-box-shadow: 0px 0px 5px #888888;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 5px #888888;
+	background-color: #ffffff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	box-shadow: 0px 0px 5px #888888;
+	*/
+	vertical-align: top;
+	width: 100%;
+	}
+
+.pageR { /* page container right middle edge */
+	display: none;
+	}
+
+.pageRSpace { /* page container right middle edge buttress */
+	display: none;
+	}
+
+.pageBL { /* page container bottom left edge */
+	display: none;
+	}
+
+.pageBLSpace { /* page container bottom left edge buttress */
+	display: none;
+	}
+
+.pageB { /* page container bottom center edge (footer container) */
+	display: none;
+	}
+
+.pageBSpace { /* page container bottom center edge buttress */
+	display: none;
+	}
+
+.pageBR { /* page container bottom right edge */
+	display: none;
+	}
+
+.pageBRSpace { /* page container bottom right edge buttress */
+	display: none;
+	}
+
+.pContent {
+	width: 100%;
+	}
+
+
+/**********************************************************************
+ * Page Margin Styles                                                 *
+ **********************************************************************/
+.marginTL { /* page centering top left margin */
+	background-color: #222222;
+	width: 50%;
+	}
+
+.marginTR { /* page centering top right margin */
+	background-color: #222222;
+	width: 50%;
+	}
+
+.marginmL { /* page centering left margin (horizontal menu row) */
+	background-color: #222222;
+	}
+
+.marginmR { /* page centering right margin (horizontal menu row) */
+	background-color: #222222;
+	}
+
+.marginL { /* page centering left margin */
+	}
+
+.marginR { /* page centering right margin */
+	}
+
+.marginBL { /* page centering bottom left margin */
+	background-color: #222222;
+	}
+
+.marginBR { /* page centering bottom right margin */
+	background-color: #222222;
+	}
+
+
+/**********************************************************************
+ * Page Center Styles                                                 *
+ **********************************************************************/
+.pcT { /* page container top center edge (header container) */
+	background-color: #222222;
+	height: 60px;
+	padding-right: 4px;
+	}
+
+.pcmL { /* page container left middle edge (horizontal menu row) */
+	background-color: #222222;
+	}
+
+.pcmC { /* page container center (horizontal menu container) */
+	background-color: #222222;
+	}
+
+.pcL { /* page container left middle edge (vertical menu container) */
+	padding-top: 10px;
+	vertical-align: top;
+	}
+
+.pcC { /* page container center (contents of page container) */
+	height: 678px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	text-align: center;
+	vertical-align: top;
+	}
+
+.pcBL { /* page container bottom left edge */
+	display: none;
+	}
+
+.pcB { /* page container bottom center edge (footer container) */
+	background-color: #222222;
+	height: 30px;
+	padding-left: 13px;
+	padding-right: 13px;
+	padding: 16px;
+	vertical-align: top;
+	}
+
+
+/**********************************************************************
+ * Button/Link Styles                                                 *
+ **********************************************************************/
+a:link, a:visited {
+	color: #5e829b;
+	}
+
+a:hover {
+	color: #5e829b;
+	text-decoration: none;
+	}
+
+a.button_link,
+.bC a.button_link,
+.buttonPadding a.button_link,
+.dBody a.button_link,
+.galleryttc a.button_link,
+.popupTableCellValue a.button_link,
+.tableCellValue a.button_link,
+.thc a.button_link,
+.tic a.button_link,
+.ttc a.button_link { /* link text of buttons */ 
+	color: #5e829b;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 100%;
+	}
+
+.themeButton {
+	-moz-border-radius: 3px;
+	-moz-box-shadow: inset 0px -1px 0px 0px #ffffff;
+	-webkit-border-radius: 3px;
+	-webkit-box-shadow: inset 0px -1px 0px 0px #ffffff;
+	background: -moz-linear-gradient( center top, #fbfbfb 5%, #ececec 100% );
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fbfbfb), color-stop(1, #ececec) );
+	box-shadow: inset 0px -1px 0px #ffffff;
+	border: 1px solid #d1d1d1;
+	border-radius: 3px;
+	display: inline-block;
+    	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#fbfbfb', endColorStr='#ececec');
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 3px 7px 3px 7px;
+	text-decoration: none;
+	text-shadow: 1px 1px 0px #ffffff;
+	white-space: nowrap;
+	}
+
+.prbggo a.button_link { /* link text of buttons within pagination row */
+	border: 0px;
+	color: #666666;
+	font-size: 11px;
+	font-weight: normal;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-transform: uppercase;
+	white-space: nowrap;
+	}
+
+a.button_link:hover,
+.bC a.button_link:hover,
+.buttonPadding a.button_link:hover,
+.dBody a.button_link:hover,
+.galleryttc a.button_link:hover,
+.popupTableCellValue a.button_link:hover,
+.tableCellValue a.button_link:hover,
+.thc a.button_link:hover,
+.tic a.button_link:hover,
+.ttc a.button_link:hover { /* link text of buttons hover state */
+	color: #5e829b;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-decoration: none;
+	}
+
+.themeButton:hover {
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ececec), color-stop(1, #fbfbfb) );
+	background: -moz-linear-gradient( center top, #ececec 5%, #fbfbfb 100% );
+	background-color: #ececec;
+	color: #5e829b;
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ececec', endColorStr='#fbfbfb');
+	white-space: nowrap;
+	}
+
+.dfv a,
+.dialog_field_value a,
+.galleryttc a,
+.popupTableCellValue a,
+.tableCellValue a,
+.ttc a,
+.ttch a,
+.ttcs a { /* data grid data link text */
+	color: #5e829b;
+	cursor: pointer !important;
+	text-decoration: none;
+	}
+
+.dfv a:hover,
+.dialog_field_value a:hover,
+.galleryttc a:hover,
+.popupTableCellValue a:hover,
+.tableCellValue a:hover,
+.ttc a:hover,
+.ttch a:hover,
+.ttcs a:hover { /* data grid data link text hover state */
+	color: #5e829b;
+	text-decoration: underline;
+	}
+
+a.truncatedText {
+	color: #555555;
+	text-decoration: none;
+	}
+
+a.truncatedText:hover {
+	color: #5e829b;
+	text-decoration: underline;
+	}
+
+a.skipNavigationLinks {
+	color: #ffffff;
+	text-decoration: none;
+	}
+
+a.skipNavigationLinks:hover {
+	text-decoration: underline;
+	}
+
+
+/**********************************************************************
+ * Multi-level Menu Styles                                            *
+ **********************************************************************/
+.MLMmenuAlign { /* horizontal menu container alignment */
+	padding-top: 6px;
+	}
+
+.MLMmenu { /* horizontal menu container */	
+	}
+
+.MLMmC { /* horizontal menu item container */
+	border-left: 1px solid #222222;
+	border-right: 1px solid #222222;
+	border-top: 1px solid #222222;
+	font-size: 11px;
+	padding: 8px;
+	}
+
+.MLMmC a { /* horizontal menu item link text */
+	color: #dddddd;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-weight: normal;
+	text-decoration: none;
+	text-transform: uppercase;
+	}
+
+.MLMmoC { /* horizontal menu item hover state */
+	background-color: #ffffff;
+	border-left: 1px solid #bbbbbb;
+	border-right: 1px solid #bbbbbb;
+	border-top: 1px solid #bbbbbb;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	}
+
+.MLMmoC a { /* horizontal menu item hover state link text */
+	color: #5dafe8;
+	}
+
+.MLMmenusub { /* horizontal submenu container (menu leaves) */
+	border-bottom: 1px solid #bbbbbb;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	border-left: 1px solid #bbbbbb;
+	border-right: 1px solid #bbbbbb;
+	z-index: 100;
+	}
+
+.MLMsubmC { /* horizontal submenu item container */
+	background-color: #f2f5f7;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-top: 1px dotted #dddddd;
+	font-size: 11px;
+	padding: 8px;
+	width: 100%;
+	}
+
+.MLMsubmC a { /* horizontal submenu item link text */	
+	color: #555555;
+	cursor: pointer !important;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	text-transform: none;
+	}
+
+.MLMsubmoC { /* horizontal submenu item hover state */
+	background-color: #ffffff;
+	}
+
+.MLMsubmoC a { /* horizontal submenu item hover state link text */
+	color: #5dafe8;
+	}
+
+.MLMmbbg { /* horizontal menu bottom trim */
+	display: none;
+	}
+
+.MLMmenuVAlign { /* vertical menu container alignment */
+	}
+
+.MLMmenuV { /* vertical menu container */
+	position: relative;
+	}
+
+.MLMmvC { /* vertical menu item container */
+	border-bottom: 1px solid #f6f6f6;
+	border-left: 1px solid #f6f6f6;
+	border-top: 1px solid #f6f6f6;
+	font-size: 11px;
+	padding: 8px;
+	}
+
+.MLMmvC a { /* vertical menu item link text */
+	color: #5e829b;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-weight: normal;
+	text-decoration: none;
+	text-transform: uppercase;
+	}
+
+.MLMmvoC { /* vertical menu item hover state */
+	background-color: #ffffff;
+	border-bottom: 1px solid #bbbbbb;
+	border-left: 1px solid #bbbbbb;
+	border-top: 1px solid #bbbbbb;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	}
+
+.MLMmvoC a { /* vertical menu item hover state link text */
+	color: #5dafe8;
+	}
+
+.MLMmenuVsub { /* vertical submenu container (menu leaves) */
+	border-bottom: 1px solid #bbbbbb;
+	border-bottom-right-radius: 6px;
+	border-left: 1px solid #bbbbbb;
+	border-right: 1px solid #bbbbbb;
+	border-top: 1px solid #bbbbbb;
+	border-top-right-radius: 6px;
+	z-index: 100;
+	}
+
+.MLMsubmvC { /* vertical submenu item container */
+	background-color: #f2f5f7;
+	border-bottom-right-radius: 3px;
+	border-top: 1px dotted #dddddd;
+	border-top-right-radius: 3px;
+	font-size: 11px;
+	padding: 8px;
+	width: 100%;
+	}
+
+.MLMsubmvC a { /* vertical submenu item link text */	
+	color: #555555;
+	cursor: pointer !important;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	text-transform: none;
+	}
+
+.MLMsubmvoC { /* vertical submenu item hover state */
+	background-color: #ffffff;
+	}
+
+.MLMsubmvoC a { /* vertical submenu item hover state link text */
+	color: #5dafe8;
+	}
+
+.MLMmveTL { /* vertical menu top left edge */
+	display: none;
+	}
+
+.MLMmveT { /* vertical menu top center edge */
+	display: none;
+	}
+
+.MLMmveTR { /* vertical menu top right edge */
+	display: none;
+	}
+
+.MLMmveBL { /* vertical menu bottom left edge */
+	display: none;
+	}
+
+.MLMmveB { /* vertical menu bottom center edge */
+	display: none;
+	}
+
+.MLMmveBR { /* vertical menu bottom right edge */
+	display: none;
+	}
+
+
+/**********************************************************************
+ * Footer Styles                                            	      *
+ **********************************************************************/
+.footer { /* footer content */
+	color: #dddddd;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 11px;
+	padding-top: 6px;	
+	text-transform: uppercase;
+	width: 100%;
+	}
+
+
+/**********************************************************************
+ * Panel Container Styles                                             *
+ **********************************************************************/
+.panelTL { /* panel container top left edge */
+	}
+
+.panelTLSpace { /* panel container top left edge buttress */
+	display: none;
+	}
+
+.panelT { /* panel container top edge */
+	}
+
+.panelTSpace { /* panel container top edge buttress */
+	display: none;
+	}
+
+
+.panelTR { /* panel container top right edge */
+	}
+
+.panelTRSpace { /* panel container top right edge buttress */
+	display: none;
+	}
+
+.panelHeaderL { /* panel container header left edge */
+	}
+
+.panelHeaderLSpace { /* panel container header left edge buttress */
+	display: none;
+	}
+
+.panelHeaderR { /* panel container header right edge */
+	}
+
+.panelHeaderRSpace { /* panel container header right edge buttress */
+	display: none;
+	}
+
+.panelL { /* panel container left edge */
+	}
+
+.panelLSpace { /* panel container left edge buttress */
+	display: none;
+	}
+
+.dialog_view, .dv, .panelC { /* panel container (includes panel header) */
+	-moz-border-radius: 4px;
+	-moz-box-shadow: 0px 0px 3px #bbbbbb;
+	-webkit-border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 3px #bbbbbb;
+	background-color: #fefefe;
+	border-radius: 4px;
+	box-shadow: 0px 0px 3px #bbbbbb;
+	margin-bottom: 10px;
+	padding-bottom: 2px;
+	text-align: left;
+	vertical-align: top;
+	width: 1000px;
+	}
+
+.panelR { /* panel container right edge */
+	}
+	
+.panelRSpace { /* panel container right edge buttress */
+	display: none;
+	}
+
+.panelPaginationL { /* panel container pagination left edge */
+	width: 50%;
+	}
+
+.panelPaginationC { /* panel container pagination center */
+	background-color: #fefefe;
+	height: 30px;
+	text-align: center;
+	width: 100%;
+	}
+	
+.panelPaginationR { /* panel container pagination right edge */
+	width: 50%;
+	}
+
+.panelBL { /* panel container bottom left edge */
+	}
+
+.panelBLSpace { /* panel container bottom left edge buttress */
+	display: none;
+	}
+
+.panelB { /* panel container bottom edge */
+	}
+
+.panelBSpace { /* panel container bottom edge buttress */
+	display: none;
+	}
+
+.panelBR { /* panel container bottom right edge */
+	}
+
+.panelBRSpace { /* panel container bottom right edge buttress */
+	display: none;
+	}
+
+.panelButtonSpacing {
+	width: 100%;
+	}
+
+.panelSearchBox {
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 8px;
+	box-shadow: inset 0px 1px 2px #dddddd;
+	height: 25px;
+	padding: 0px;	
+	padding-left: 8px;
+	width: 286px;
+	}
+
+.Search_Input, .si { /* search textbox */
+	border: none;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	padding: 0px;
+	width: 246px;
+	} 
+
+.Search_InputHint { /* "search for..." text inside search textbox */
+	border: none;
+	color: #999999;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	padding: 0px;
+	width: 246px;
+	} 
+
+.Search_Input_Classic { /* classic style needed for LLS search textboxes */
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	box-shadow: inset 0px 1px 2px #dddddd;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 11px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 2px;
+	width: 246px;
+	} 
+
+.Search_Input2, .si2 { /* search textbox (classic style needed for workflow page type) */
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	box-shadow: inset 0px 1px 2px #dddddd;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 2px;
+	} 
+
+.recordPanelButtonsAlignment, .rpbAlign { /* page buttons alignment */
+	padding-bottom: 5px;
+	padding-top: 5px;
+	}
+    
+.buttonPadding { /* page buttons padding */
+	margin-right: 6px;
+	}
+
+
+/**********************************************************************
+ * Panel Body Styles                                                  *
+ **********************************************************************/
+.dialogHeaderEdgeL, .dhel { /* panel header left edge */
+	display: none;
+	}
+
+.dialogHeaderEdgeR, .dher { /* panel header right edge */
+	display: none;
+	}
+
+.dialog_header, .dh { /* panel header container */
+	background-color: #eeeeee;
+	background: -moz-linear-gradient( center top, #fbfbfb 40%, #eeeeee 100% );
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.4, #fbfbfb), color-stop(1, #eeeeee) );
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	vertical-align: top;
+	}
+
+.dialogHeaderBackground, .dhb { /* panel header */
+	padding-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 10px;
+	padding-top: 4px;
+	}
+
+.dialog_header_text, .dht { /* panel header title text */
+	color: #5e829b;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	padding-left: 10px;
+	white-space: nowrap;
+	}
+
+.dheci { /* padding around panel expand/collapse icon */
+	padding-left: 10px;
+	}
+
+.dhir { /* padding between panel header title text and edit icon */
+	padding-left: 6px;
+	}
+
+.dialog_body, .dBody { /* panel content container (excludes panel header) */ 
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 10px;
+	text-align: left;	
+	}
+	
+.field_label, .fl { /* field label on top */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 0px;
+	padding-left: 4px;
+	text-align: left;
+	text-transform: none;
+	vertical-align: middle;
+	white-space: nowrap;	
+	}
+
+.field_label_on_side, .fls { /* field label on side */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal; 
+	padding-bottom: 8px;
+	padding-left: 4px;
+	padding-right: 2px;
+	padding-top: 4px;
+	text-align: right;
+	text-transform: none;
+	vertical-align: top;
+	white-space: nowrap;	
+	}
+
+.field_value, .fv { /* field value */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 0px;
+	}
+
+.field_input, .fi { /* input textbox */
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	box-shadow: inset 0px 1px 2px #dddddd;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-left: 4px;
+	padding-top: 2px;
+	vertical-align: top;
+	}
+
+.dialog_field_value, .dfv { /* panel field value text */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 8px;
+	padding-left: 4px;
+	text-align: left;
+	vertical-align: top;
+	}
+
+.Filter_Input, .fili { /* filter drop-down list */
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	box-shadow: inset 0px 1px 2px #dddddd;
+	color: #666666;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	margin-bottom: 4px;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-top: 2px;
+	}
+
+.filter_area, .fila { /* filter label */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 4px 7px 4px 7px;
+	text-align: right;
+	vertical-align: middle;
+	white-space: nowrap;	
+	}
+	
+.search_area, .sa { /* search area container */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	}
+
+.search_label, .sl { /* search label */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	vertical-align: middle;
+	white-space: nowrap;	
+	}
+
+.rangeFilterText, .rft { /* range filter label */
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	padding-left: 6px;
+	padding-right: 6px;
+	text-decoration: none;
+	text-transform: none;
+	}
+
+
+/**********************************************************************
+ * Dropshadow Styles                        			      * 
+ **********************************************************************/
+.imageDropshadow { /* image thumbnail dropshadow */
+	-moz-box-shadow: 4px 4px 6px #bbbbbb;
+	-webkit-box-shadow: 4px 4px 6px #bbbbbb;
+	box-shadow: 4px 4px 6px #bbbbbb;
+	}
+
+
+/**********************************************************************
+ * Auto Type Ahead (Interactive Search) Styles                        * 
+ **********************************************************************/
+.autotypeahead_completionListElement { /* textbox value */   
+	background-color: #ffffff;
+	border-bottom: 1px solid #555555;
+	border-left: 1px solid #555555;
+	border-right: 1px solid #555555;
+	border-top: 1px solid #555555;
+	list-style-type: none;
+	margin: 0px;
+	overflow: auto;
+	padding: 0px;
+	visibility: hidden;
+	}
+
+.autotypeahead_highlightedListItem { /* highlighted list item */
+	background-color: #eeeeee;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-bottom: 1px; 
+	}
+
+.autotypeahead_listItem { /* list item */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-bottom: 1px; 
+	}
+
+
+/**********************************************************************
+ * Table Rows Styles                                                  *
+ **********************************************************************/ 
+.header_cell,
+.header_cell_scrolling,
+.thc,
+.thcs,
+.thcnb,
+.thcwb { /* column header container (above select checkbox) */
+	background-color: #fefefe;	
+	border-bottom: 1px dotted #dddddd;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	padding-bottom: 5px;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 5px;
+	text-align: left;
+	vertical-align: top;
+	}
+
+.column_header a,
+.column_header_scrolling a,
+.tch a,
+.tchs a { /* column header link text */
+	color: #555555;
+	cursor: pointer !important;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	} 
+	
+.column_header a:hover,
+.column_header_scrolling a:hover,
+.tch a:hover,
+.tchs a:hover { /* column header link text hover state */
+	color: #5e829b;
+	text-decoration: underline;
+	}
+
+.icon_cell, .alt_icon_cell, .tic, .taic { /* deprecated: data grid row button container */
+	background-color: #ffffff;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.icon_cell_highlighted, .alt_icon_cell_highlighted, .tich, .taich { /* deprecated: data grid row button container highlighted state */
+	background-color: #f2f5f7;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.icon_cell_selected, .tics { /* deprecated: data grid row button container selected state */
+	background-color: #f6f6f6;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.ticnb { /* data grid row button container */
+	background-color: #ffffff;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-left: 2px;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.tichnb { /* data grid row button container highlighted state */
+	background-color: #f2f5f7;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-left: 2px;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.ticsnb { /* data grid row button container selected state */
+	background-color: #f6f6f6;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-left: 2px;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+	
+.ticwb { /* data grid select checkbox container */
+	background-color: #ffffff;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.tichwb { /* data grid select checkbox container highlighted state */
+	background-color: #f2f5f7;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.ticswb { /* data grid select checkbox container selected state */
+	background-color: #f6f6f6;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.tichb { /* data grid right-most row button container (when no select checkbox is present) */
+	background-color: #ffffff;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.tichhb { /* data grid right-most row button container (when no select checkbox is present) highlighted state */
+	background-color: #f2f5f7;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.ticshb { /* data grid right-most row button container (when no select checkbox is present) selected state */
+	background-color: #f6f6f6;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	padding-top: 3px;
+	vertical-align: top;
+	width: 16px;
+	}
+			
+.icon_cell_empty, .tice { /* data grid row button container (when no row button is present) */
+	background-color: #ffffff;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	width: 0px;
+	}
+
+.icon_cell_highlighted_empty, .tiche { /* data grid row button container (when no row button is present) highlighted state */
+	background-color: #f2f5f7;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	width: 0px;
+	}
+
+.icon_cell_selected_empty, .ticse { /* data grid row button container (when no row button is present) selected state */
+	background-color: #f6f6f6;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	width: 0px;
+	}
+	
+.table_cell, .alt_table_cell, .ttc, .tatc { /* data grid data container */
+	background-color: #ffffff;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	vertical-align: top;
+	text-align: left;
+	}
+
+.table_cell_highlighted, .alt_table_cell_highlighted, .ttch, .tatch { /* data grid data container highlighted state */
+	background-color: #f2f5f7;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	vertical-align: top;
+	text-align: left;
+	}
+
+.table_cell_selected, .ttcs { /* data grid data container selected state */
+	background-color: #f6f6f6;
+	border-bottom: 1px dotted #dddddd;
+	border-top: 1px solid #ffffff;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	vertical-align: top;
+	text-align: left;
+	}
+
+.ttc .dv, .ttch .dv, .ttcs .dv { /* panel container nested within data grid */
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	}
+
+.ttc .ajax__tab_xp, .ttch .ajax__tab_xp, .ttcs .ajax__tab_xp { /* tab container nested within data grid */
+	margin: 0px;
+	padding: 0px;
+	}
+
+.totals_cell, .tpttc { /* data grid totals container */
+	background-color: #ffffff;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	text-align: left;
+	vertical-align: top;
+	width: 48px;
+	}
+
+.totals_cell_value, .tpttcv { /* data grid totals text */
+	background-color: #ffffff;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	text-align: right;
+	vertical-align: top;
+	}
+
+.page_total_label, .tptl { /* data grid page totals label */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-left: 20px;
+	vertical-align: middle;
+	white-space: nowrap;	
+	}
+
+.page_total_value, .tptv { /* data grid page totals text */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 3px;
+	}
+
+.grand_total_label, .tgtl { /* data grid grand total label */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-left: 20px;
+	vertical-align: middle;
+	white-space: nowrap;	
+	}
+
+.grand_total_value, .tgtv { /* data grid grand total text */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	padding: 3px;
+	}
+
+.tableCellLabel {/* table cell field label text */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-bottom: 0px;
+	padding-left: 6px;
+	padding-right: 2px;
+	padding-top: 8px;
+	text-align: right;
+	text-transform: none;
+	vertical-align: top;
+	white-space: nowrap;	
+	}
+
+.tableCellValue { /* table cell field value text */
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-bottom: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 8px;
+	text-align: left;
+	vertical-align: top;
+	}
+
+.tableRowDivider {
+	border-bottom: 1px dotted #dddddd;
+	padding-top: 6px;
+	height: 10px;
+	}
+
+.tableRowButton {
+	font-size: 4px;
+	padding-left: 2px;
+	padding-top: 8px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.tableCellSelectCheckbox {
+	padding-left: 6px;
+	padding-top: 5px;
+	vertical-align: top;
+	width: 16px;
+	}
+
+.tableRowsEdge, .tre { /* data grid container */
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	}
+
+
+/**********************************************************************
+ * Scrolling Table Styles                                             *
+ **********************************************************************/
+div.tableContainer { /* scrolling table container */
+	clear: both;
+	height: 285px;  /* defines scrolling region height */
+	overflow: auto; /* enables scroll bar */
+	}
+
+div.tableContainer table { /* data grid container of scrolling table */
+	width: 97%; /* defines data region width (provide room for scroll bar) */
+	}
+
+thead.fixedHeader tr { /* fixed column header of data grid */
+	background-color: #ffffff; /* obscures data behind headers */
+	position: relative; 	   /* fixes headers in place */
+	}
+
+.scrollContent { /* data grid (excludes fixed column header) within scrolling table */
+	display: ;
+	}
+
+thead.fixedHeader td.button-white { /* theme button container within scrolling table column header */
+	white-space: nowrap;
+	width: 0%;
+	}
+
+thead.fixedHeader table { /* deprecated */
+	width: 0%;
+	}
+
+
+/**********************************************************************
+ * Pagination Styles                                                  *
+ **********************************************************************/
+.pagination_row, .pr { /* button bar/pagination row container (classic style needed for workflow page type) */
+	background-color: #eeeeee;
+	color: #5e829b;
+	height: 30px;
+	padding-top: 4px;
+	vertical-align: middle;
+	width: 100%;
+	}
+
+.prbbc { /* button bar button container */
+	}
+
+.prbg { /* pagination row button container */
+	color: #666666;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	padding-left: 3px;
+	padding-right: 3px;
+	white-space: nowrap;
+	}
+
+.prbg input { /* pagination row input textbox */
+	padding-right: 8px;
+	padding-top: 2px;
+	}
+	
+.prbggo { /* pagination row "go" button container */
+	}
+
+.prspace { /* pagination short buttons and navigation sections spacing */
+	padding-bottom: 3px;
+	vertical-align: bottom;
+	width: 100%;
+	}
+
+.Pagination_Input, .pri { /* pagination row input textbox/drop-down list container */
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	box-shadow: inset 0px 1px 2px #dddddd;
+	color: #666666;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 11px;
+	padding-top: 2px;
+	text-align: center;
+	}
+	
+.menuDivider {
+	padding: 0px;
+	border-top: 1px solid #ffffff;
+	}
+
+
+/**********************************************************************
+ * Tab Control Styles                                                 *
+ **********************************************************************/
+.ajax__tab_xp { /* tab container alignment */
+	margin-bottom: 20px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 10px;
+	padding: 0px;
+	text-align: left;
+	}
+
+.pContent .ajax__tab_xp .ajax__tab_body { /* tab container */
+	margin: 0px;
+	padding: 0px;
+	}
+
+.ajax__tab_xp .dialog_view, .ajax__tab_xp .dv { /* panel container within tab container */
+	-moz-border-radius: none; 
+	-moz-box-shadow: none; 
+	-webkit-border-radius: none; 
+	-webkit-box-shadow: none; 
+	background-color: #fdfdfd;
+	border-radius: none;
+	box-shadow: none; 
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	vertical-align: top;
+	width: 930px;
+	}
+
+.ajax__tab_xp .dv table {
+	}
+
+.ajax__tab_xp .dBody { /* panel content container (excludes panel header) within tab container */ 
+	border: 0px;
+	}
+
+.ajax__tab_xp .tre { /* data grid container within tab container */
+	}
+
+
+/**********************************************************************
+ * Sign In Bar Styles                                                 *
+ **********************************************************************/
+.signInSpacing { /* application logo and sign in bar spacing */
+	width: 100%;
+	}
+
+.signInBar { /* sign in bar */
+	color: #ffffff;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 11px;
+	padding-bottom: 10px;
+	padding-left: 3px;
+	padding-right: 3px;
+	white-space: nowrap;
+	}
+	
+.signInBar a { /* sign in bar link text */
+	color: #5dafe8;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	}
+
+.signInBar a:hover { /* sign in bar link text hover state */
+	text-decoration: underline;
+	}
+
+.signInBarStatus { /* sign in bar status message text */
+	color: #ffffff;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 11px;
+	padding-left: 10px;
+	padding-right: 20px;
+	text-align: right;
+	white-space: nowrap;
+	}
+
+
+/**********************************************************************
+ * Security Forms (Sign In, Sign Out, Forgot User pages) Styles       *
+ **********************************************************************/
+.securityGraphicWrapper { /* sign in/out graphic, saluation and instruction container */
+	padding-bottom: 20px;
+	padding-top: 20px;
+	text-align: center;
+	}
+
+.securityForm {
+	height: 100px;
+	padding: 16px;
+	text-align: left;
+	vertical-align: top;
+	width: 250px;
+	}
+
+
+/**********************************************************************
+ * Filter/Language Popup Styles                                       *
+ **********************************************************************/
+.popupPosition {
+	z-index: 100;
+	}
+
+.popupWrapper { /* popup container */
+	-moz-border-radius: 4px;
+	-moz-box-shadow: 0px 0px 10px #999999;
+	-webkit-border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 10px #999999;
+	background-color: #f2f5f7;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	box-shadow: 0px 0px 10px #999999;
+	color: #555555;
+	display: inline-block;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	left: 0px;
+	padding: 10px;
+	position: absolute;
+	text-align: left;
+	top: 0px;
+	visibility: hidden;
+	z-index: 10;
+	}
+
+.popupTableCellLabel {/* popup table cell field label text */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-bottom: 4px;
+	padding-left: 6px;
+	padding-right: 2px;
+	padding-top: 4px;
+	text-align: left;
+	text-transform: none;
+	vertical-align: top;
+	white-space:nowrap;
+	}
+
+.popupTableCellValue { /* popup table cell field value text */
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 4px;
+	vertical-align: top;
+	white-space:nowrap;
+	}
+
+/**********************************************************************
+ * Detail Rollover Popup Styles                                       *
+ **********************************************************************/
+.detailRolloverPopup { /* detail rollover popup container */
+	position: absolute;
+	visibility: visible;
+	z-index: 2;
+	}
+
+.detailRolloverTitle { /* detail rollover popup title */
+	color: #5e829b;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	height: 10px;
+	padding-left: 4px;
+	vertical-align: middle;
+	width: 100%;
+	}
+
+.detailRolloverTitlePadding { /* detail rollver popup title padding (work-around classic implementation) */
+	display: none;
+	}
+
+.detailRolloverPopupCloseButtonAlignment { /* detail rollover popup close button container */
+	}
+
+.detailRolloverTL { /* detail rollover popup top left edge */
+	display: none;
+	}
+
+.detailRolloverT { /* detail rollover popup top center edge */
+	}
+
+.detailRolloverTR { /* detail rollover popup top right edge */
+	display: none;
+	}
+
+.detailRolloverL { /* detail rollover popup left middle edge */
+	display: none;
+	}
+
+.detailRolloverC { /* detail rollover popup center */
+	}
+
+.detailRolloverR { /* detail rollover popup right middle edge */
+	display: none;
+	}
+
+.detailRolloverBL { /* detail rollover popup bottom left edge */
+	display: none;
+	}
+
+.detailRolloverB { /* detail rollover popup bottom center edge */
+	background-image: none;
+	font-size: 1px;
+	}
+
+.detailRolloverBR { /* detail rollover popup bottom right edge */
+	display: none;
+	}
+
+
+/**********************************************************************
+ * AJAX Calendar Styles                                               *
+ **********************************************************************/
+.MyCalendar .ajax__calendar_container { /* AJAX calendar container */
+	background-color: #ffffff;
+	border: 1px solid #636563;
+	color: #000000;
+	z-index: 20;
+	}
+
+.MyCalendar .ajax__calendar_day { /* AJAX calendar non-current day container */ 
+	border: 1px solid #ffffff;
+	}
+
+.MyCalendar .ajax__calendar_other .ajax__calendar_day,
+.MyCalendar .ajax__calendar_other .ajax__calendar_year { /* AJAX calendar non-current month day/year container */
+	border: 1px solid #ffffff;
+	color: #636563;
+	}
+
+.MyCalendar .ajax__calendar_hover .ajax__calendar_day,
+.MyCalendar .ajax__calendar_hover .ajax__calendar_month,
+.MyCalendar .ajax__calendar_hover .ajax__calendar_year { /* AJAX calendar day/month/year hover state */
+	background-color: #effbff;
+	border: 1px solid #def3ff;
+	color: #0065ce;
+	}
+
+.MyCalendar .ajax__calendar_active .ajax__calendar_day,
+.MyCalendar .ajax__calendar_active .ajax__calendar_month,
+.MyCalendar .ajax__calendar_active .ajax__calendar_year { /* AJAX calendar current day/month/year container */
+	background-color: #effbff;
+	border: 1px solid #0065ce;
+	color: #0065ce;
+	}
+
+
+/**********************************************************************
+ * AJAX Smooth Panel Update Styles                                    *
+ **********************************************************************/
+.ajaxUpdatePanel { /* AJAX smooth panel update screen overlay */
+	background-color: #aaaaaa;
+	/* filter: alpha(opacity=10); */
+	height: 1000px;
+	opacity: 0.20;
+	padding: 20px;
+	position: absolute;
+	width: 100%;
+	}
+
+
+/**********************************************************************
+ * AJAX Modal Popup Control Styles                                    *
+ **********************************************************************/
+.modalPopup {
+	background-color: #eeeeee;
+	border: 1px solid #000000;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	height: 35px;
+	padding: 10px; 
+	position: absolute;
+	text-align: center;
+	top: -1000px;
+	vertical-align: middle;
+	width: 200px;
+	}
+
+
+/**********************************************************************
+ * Web Accordion Styles                                               * 
+ **********************************************************************/
+.accordionHeader { /* accordion header area */ 
+	background-color: #222222;
+	border: 1px dotted #dddddd;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	vertical-align: middle;
+	}
+
+.accordionHeaderTitle { /* accordion header area title */
+	color: #dddddd;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	text-transform: none;
+   	vertical-align: middle;
+	width: 100%;
+	}
+
+
+/**********************************************************************
+ * Gallery Styles                                                     * 
+ **********************************************************************/
+.galleryttc { /* gallery data grid data container */
+	background-color: #ffffff;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 20px;
+	padding-left: 0px;
+	text-align: center;
+	vertical-align: top;
+	}
+
+.gallerytic { /* gallery data grid icon cell */
+	background-color: #ffffff;
+	padding: 0px;
+	padding-left: 8px;
+	padding-top: 24px; 
+	vertical-align: top;    
+	width: 16px;       
+	}
+
+.galleryttl { /* gallery data grid page/grand totals cell */
+	background-color: #ffffff;
+	border-bottom: 1px dotted #dddddd;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 5px;
+	text-align: left;
+	vertical-align: top;
+	}
+
+
+/**********************************************************************
+ * Configuration/Error Page Styles                                    *
+ **********************************************************************/
+.configureErrorPagesText { /* configure/error page body text */
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	}
+	
+
+/**********************************************************************
+ * Section 508 Compliance Styles                                      *
+ **********************************************************************/
+.skipNavigationLinks { /* skip navigation links container*/
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	color: #dddddd;
+	font-size: 12px;
+	}
+	
+
+/**********************************************************************
+ * Mobile Web Page Styles                                             * 
+ **********************************************************************/
+.mobileBase { /* mobile page default settings */
+	background-color: #ffffff;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 3.0em;
+	width: 100%;
+	}
+
+.mobileHeader { /* mobile header area */
+	background-color: #222222;
+	padding-left: 3%;
+	padding-right: 3%;
+	width: 100%;
+	}
+
+.mobileHeaderPagination { /* mobile header area */
+	background-color: #eeeeee;
+	padding-left: 3%;
+	padding-right: 3%;
+	width: 100%;
+	}
+
+.mobileBody { /* mobile main content area */ 
+	padding-bottom: 4%;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-top: 2%;
+	width: 100%;
+	}
+
+.mobileBodyNoPadding { /* mobile main content area (with padding removed) */
+	padding: 0px;
+	width: 100%;
+	}
+
+.mobileBodyText { /* mobile main content area default text styles */
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.73em;
+	}
+
+.mobileHeaderLeft { /* mobile header area left button container */
+	text-align: left;
+	width: 10%;
+	}
+
+.mobileHeaderTitle { /* mobile header title area */
+	color: #dddddd;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.9em;
+	padding-bottom: 4%;
+	padding-top: 4%;
+	text-align: center;
+	}
+
+.mobileFontAdjust90 { /* mobile font downscale to 90% original size (used in <span> tag around text to be adjusted) */
+	font-size: 0.9em;
+	}
+
+.mobileFontAdjust80 { /* mobile font downscale to 80% original size (used in <span> tag around text to be adjusted) */
+	font-size: 0.8em;
+	}
+
+.mobileFontAdjust70 { /* mobile font downscale to 70% original size (used in <span> tag around text to be adjusted) */ 
+	font-size: 0.7em;
+	}
+
+.mobileFontAdjust60 { /* mobile font downscale to 60% original size (used in <span> tag around text to be adjusted) */
+	font-size: 0.6em;
+	}
+
+.mobileHeaderOption { /* mobile header area icon button container */
+	width: 16%
+	}
+
+.mobileHeaderRight { /* mobile header area right button container */
+	text-align: right;
+	width: 10%;
+	}
+
+.mobileSignInStatus {
+	color: #ffffff;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.8em;
+	text-align: right;
+	}
+
+.mobileFilterArea { /* mobile header filter area */
+	background-color: #f2f5f7;
+	}
+
+.mobileFooter { /* mobile footer area */
+	background-color: #222222;
+	border-top: 2px solid #cccccc;
+	color: #dddddd;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.5em;
+	padding-bottom: 2%;
+	padding-left: 3%;
+	padding-top: 1%;
+	text-transform: uppercase;
+	width: 100%;
+	}
+
+.mobileMenu { /* mobile vertical menu item */
+	background-color: #f6f6f6;
+	border-top: 2px dotted #ffffff;
+	border-bottom: 2px dotted #dddddd;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	color: #5e829b;
+	cursor: pointer !important;
+	font-size: 1.2em;
+	font-weight: normal;
+	padding-bottom: 3%;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-top: 3%;
+	text-transform: uppercase;
+	width: 100%;
+	}
+
+.mobileSubmenuContainer { /* submenu container (menu leaves) */
+	border: 1px solid #bbbbbb;
+	z-index: 100;
+	}
+
+.mobileSubmenu { /* mobile menu item submenu */
+	background-color: #f2f5f7;
+	color: #555555;
+	cursor: pointer !important;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 1.0em;
+	padding: 1%;
+	text-transform: none;
+	}
+
+.mobileMenuHorizontal { /* mobile horizontal menu item */
+	background-color: #222222;
+	border-bottom: 2px solid #dddddd;
+	border-right: 2px solid #dddddd;
+	border-top: 2px solid #ffffff;
+	color: #5e829b;
+	cursor: pointer !important;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 1.2em;
+	font-weight: normal;
+	padding-bottom: 2%;
+	padding-top: 2%;
+	text-transform: none;
+	}
+
+a.mobileButtonLink:link, a.mobileButtonLink:visited, .mobileButtonLink { /* mobile theme button link text */
+	color: #5e829b;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.87em;
+	text-decoration: none;
+	text-transform: uppercase;
+	}
+
+a.mobileLink:link, a.mobileLink:visited, .mobileLink { /* mobile link text */
+	color: #5e829b;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 1.0em;
+	text-decoration: none;
+	}
+
+.mobileThemeButton {
+	-moz-border-radius: 10px;
+	-moz-box-shadow: inset 0px -2px 0px 0px #ffffff;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: inset 0px -2px 0px 0px #ffffff;
+	background: -moz-linear-gradient( center top, #ffffff 20%, #d7d7d7 100% );
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.20, #ffffff), color-stop(1, #d7d7d7) );
+	box-shadow: 0px -2px 0px #ffffff inset;
+	border: 2px solid #8f8f8f;
+	border-radius: 10px;
+	display: inline-block;
+    	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', endColorStr='#d7d7d7');
+	padding: 22px 10px 22px 10px;
+	text-decoration: none;
+	text-shadow: 0px -2px 0px #ffffff;
+	white-space: nowrap;
+	}
+
+.mobileTableCellTitle { /* mobile show table cell title */
+	font-size: 1.2em;
+	font-weight: bold;
+	}
+
+.mobileTableCell { /* mobile show table cell */
+	border-bottom: 2px dotted #dddddd;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.9em;
+	padding: 2%;
+	}
+
+.mobileTableImageCell { /* mobile show table cell (to keep image cell narrow) */
+	border-bottom: 2px dotted #dddddd;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.9em;
+	padding: 2%;
+	width: 1%;
+	}
+
+.mobileChildTableContainer { /* mobile child table container */
+	border: 2px dotted #dddddd;
+	margin-bottom: 2%;
+	}
+
+.mobileAccordionHeader { /* mobile accordion header area */ 
+	background-color: #222222;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	padding-bottom: 2%;
+	padding-left: 2%;
+	padding-top: 2%;
+	vertical-align: middle;
+	}
+
+.mobileAccordionHeaderTitle { /* mobile accordion header area title */
+	color: #dddddd;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 1.0em;
+	font-weight: normal;
+	padding-left: 1%;
+	padding-right: 1%;
+	text-decoration: none;
+	width: 100%;
+	}
+
+.mobileChildTableCellTitle { /* mobile show child table title */
+	font-size: 1.2em;
+	font-weight: bold;
+	}
+
+.mobileChildTableCell { /* mobile show child table cell */
+	background-color: #efefef;
+	border-bottom: 2px dotted #dddddd;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.9em;
+	padding: 2%;	
+	}
+
+.mobileRecordPanel { /* mobile record panel area */
+	padding-bottom: 10%;
+	}
+
+.mobileFieldLabelOnTop { /* mobile record field label (above field value) */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.87em;
+	padding-bottom: 1%;
+	padding-top: 3%;
+	}
+
+.mobileFieldLabelOnRight { /* mobile record field label (to right of checkbox) */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.67em;
+	padding-bottom: 2%;
+	width: 100%;
+	}
+
+.mobileFieldLabelOnLeft { /* mobile record field label (checkbox) */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 0.67em;
+	padding-bottom: 2%;
+	}
+
+.mobileFieldValueOnBottom { /* mobile record field value (below field label) */
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 1.0em;
+	padding-bottom: 2%;
+	}
+
+.mobileFieldInput { /* mobile input textbox */
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 1.0em;
+	}
+
+textarea.mobileFieldInput { /* explicitly define width of mobile textarea (work-around for compressed textarea in Live Preview) */
+	width: 86%;
+	}
+
+.mobileFilterInput { /* mobile drop-down list */
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 1.0em;
+	width: 86%;
+	}
+
+.mobilePaginationArea { /* mobile pagination area */
+	}
+
+.mobilePaginationAreaFirst { /* mobile pagination first button container */
+	text-align: left;
+	}
+
+.mobilePaginationAreaPrevious { /* mobile pagination previous button container */
+	text-align: right;
+	}
+
+.mobilePaginationAreaCurrentPage { /* mobile pagination current page text */
+	color: #666666;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 1.0em;
+	text-align: center;
+	white-space: nowrap;
+	width: 30%;
+	}
+
+.mobilePaginationAreaNext { /* mobile pagination next button container */
+	text-align: left;
+	}
+
+.mobilePaginationAreaLast { /* mobile pagination last button container */
+	text-align: right;
+	}
+
+.mobilePaginationAreaSize { /* mobile pagination page size container */
+	}
+
+.mobileCheckbox input, input.mobileCheckbox { /* mobile checkbox (accounts for <span> container around checkbox) */
+	height: 50px;
+	width: 50px;
+	}
+
+.mobileRadioButton input, input.mobileRadioButton { /* mobile radio button (accounts for <span> container around checkbox) */
+	height: 50px;
+	width: 50px;
+	}
+
+.MyCalendarMobile .ajax__calendar_container { /* mobile ajax calendar container */
+	background-color: #ffffff;
+	border: 1px solid #666666;
+	color: #666666;
+	height: 780px;
+	width: 720px;
+	z-index: 20;
+	}
+
+.MyCalendarMobile .ajax__calendar_body, .MyCalendarMobile .ajax__calendar_body table { /* mobile ajax calendar container inner table */
+	background-color: #ffffff;
+	height: 600px;
+	width: 720px;
+	}
+
+.MyCalendarMobile .ajax__calendar_header { /* mobile ajax calendar header */
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 4.0em;
+	padding-bottom: 40px;
+	}
+
+.MyCalendarMobile .ajax__calendar_title { /* mobile ajax calendar title */
+	color: #bbbbbb;
+	font-size: 1.2em;
+	padding-top: 30px;
+	}
+
+.MyCalendarMobile .ajax__calendar_footer { /* mobile ajax calendar footer (today's date) */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 3.0em;
+	padding-top: 20px;
+	}
+
+.MyCalendarMobile .ajax__calendar_prev {
+	background-image: url(../../Images/MobileButtonPrevious.ltr.png);
+	background-repeat: no-repeat;
+	height: 120px;
+	width: 100px; 
+	}
+
+.MyCalendarMobile .ajax__calendar_next {
+	background-image: url(../../Images/MobileButtonNext.ltr.png);
+	background-repeat: no-repeat;
+	height: 120px;
+	width: 100px; 
+	}
+
+.MyCalendarMobile .ajax__calendar_dayname { /* mobile ajax calendar days of week title */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 4.0em;
+	}
+
+.MyCalendarMobile .ajax__calendar_day { /* mobile ajax calendar all days */ 
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 4.0em;
+	}
+
+.MyCalendarMobile .ajax__calendar_month, .MyCalendarMobile .ajax__calendar_year { /* mobile ajax calendar all months, years */ 
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 2.0em;
+	}
+
+.MyCalendarMobile .ajax__calendar_months, .MyCalendarMobile .ajax__calendar_years {
+	}
+
+.MyCalendarMobile .ajax__calendar_other .ajax__calendar_day,
+.MyCalendarMobile .ajax__calendar_other .ajax__calendar_month,
+.MyCalendarMobile .ajax__calendar_other .ajax__calendar_year { /* mobile ajax calendar non-current days */
+	color: #bbbbbb;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 4.0em;
+	}
+
+.MyCalendarMobile .ajax__calendar_hover .ajax__calendar_day,
+.MyCalendarMobile .ajax__calendar_hover .ajax__calendar_month,
+.MyCalendarMobile .ajax__calendar_hover .ajax__calendar_year { /* mobile ajax calendar today/selected day hover */
+	color: #bbbbbb;
+	}
+
+.MyCalendarMobile .ajax__calendar_active .ajax__calendar_day,
+.MyCalendarMobile .ajax__calendar_active .ajax__calendar_month,
+.MyCalendarMobile .ajax__calendar_active .ajax__calendar_year { /* mobile ajax calendar current day */
+	color: #bbbbbb;
+	}
+
+.mobileRecaptchaImage img { 
+	height: 300px; 
+	width: 640px; 
+	margin: 0px; 
+	padding: 0px; 
+	}
+
+.mobileRecaptchaContainer { 
+	height: 300px;
+	width: 640px;
+	margin: 0px; 
+	padding: 0px; 
+	}
+
+
+/**********************************************************************
+ * .NET Trace Log                                                     *
+ **********************************************************************/
+span.tracecontent table { /* .NET trace log background color */
+	background-color: #ffffff;
+	}
+
+
+/**********************************************************************
+ * Import Wizard Styles                                               * 
+ **********************************************************************/
+.importWizardpBack { /* import wizard body */
+	}
+
+.importWizardmarginTL { /* import wizard page centering top left margin */
+	}
+
+.importWizardmarginTR { /* import wizard page centering top right margin */
+	}
+
+.importWizardmarginL { /* import wizard page centering left margin */
+	}
+
+.importWizardmarginR { /* import wizard page centering right margin */
+	}
+
+.importWizardmarginBL { /* import wizard page centering bottom left margin */
+	}
+
+.importWizardmarginBR { /* import wizard page centering bottom right margin */
+	}
+
+.importWizardpcT { /* import wizard page container top center edge (header container) */
+	}
+
+.importWizardpcC { /* import wizard page container center (contents of page container) */
+	}
+
+.importWizardpcB { /* import wizard page container bottom center edge (footer container) */
+	}
+
+.importWizarddv { /* panel container (includes panel header) */
+	background-color: #ffffff;
+	border-radius: 4px;
+	box-shadow: 0px 0px 3px #bbbbbb;
+	margin-bottom: 10px;
+	padding-bottom: 16px;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 6px;
+	text-align: left;
+	vertical-align: top;
+	}
+
+.importWizarddBody { /* panel content container (excludes panel header) */ 
+	}
+

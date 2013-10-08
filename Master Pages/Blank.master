@@ -1,0 +1,24 @@
+﻿<%@ Master Language="vb" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Tagprefix="Selectors" Namespace="FASTPORT" Assembly="FASTPORT" %>
+
+<%@ Register Tagprefix="BaseClasses" Namespace="BaseClasses.Web.UI.WebControls" Assembly="BaseClasses" %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="FASTPORT" />
+    </head>
+    <body id="Body1" runat="server" class="pBack">
+        <form id="Form1" method="post" runat="server">
+            <BaseClasses:ScrollCoordinates id="ScrollCoordinates1" runat="server"></BaseClasses:ScrollCoordinates>
+            <BaseClasses:BasePageSettings id="PageSettings" runat="server"></BaseClasses:BasePageSettings>
+            <script language="JavaScript" type="text/javascript">clearRTL()</script>
+            <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+                <Scripts>
+                    <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+                    <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+                    <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
+                </Scripts>
+            </telerik:RadScriptManager><table><tr><td><asp:ContentPlaceHolder id="PageContent" Runat="server" /></td></tr></table></form>
+    </body>
+</html>

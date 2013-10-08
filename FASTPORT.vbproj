@@ -1,0 +1,1648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABF05C9C-80BF-4420-B50B-1DAC522F530F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>FASTPORT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Aspose.BarCode, Version=5.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Aspose.BarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.BarCodeRecognition, Version=5.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Aspose.BarCodeRecognition.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Pdf, Version=7.9.0.0, Culture=neutral, PublicKeyToken=47b2d0fcacdd3eb6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=13.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="BaseClasses, Version=7.0.2.1000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CarlosAg.ExcelXmlWriter, Version=1.0.0.6, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.3.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=5.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Recaptcha, Version=1.0.5.0, Culture=neutral, PublicKeyToken=9afc4d65b28c38c2, processorArchitecture=MSIL" />
+    <Reference Include="Report, Version=3.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ciloci.Flee, Version=0.9.26.0, Culture=neutral, PublicKeyToken=c8526a021ef298ed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SuperSignature, Version=1.5.0.0, Culture=neutral, PublicKeyToken=6fef500d0eeb8668, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\SuperSignature.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\System.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2013.2.717.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\RCAJAX\2013.2.717.40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2013.2.717.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\RCAJAX\2013.2.717.40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="YTP.Web.UI, Version=1.0.3762.27520, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\YTP.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgreementExecution\PDFFull.aspx.designer.vb">
+      <DependentUpon>PDFFull.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgreementExecution\PDFFull.aspx.vb">
+      <DependentUpon>PDFFull.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgreementExecution\SignDocument.aspx.designer.vb">
+      <DependentUpon>SignDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgreementExecution\SignDocument.aspx.vb">
+      <DependentUpon>SignDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgreementExecution\UploadSignedDoc.aspx.vb">
+      <DependentUpon>UploadSignedDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CarrierAd\EditCarrierAd.aspx.designer.vb">
+      <DependentUpon>EditCarrierAd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CarrierAd\EditCarrierAd.aspx.vb">
+      <DependentUpon>EditCarrierAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrier\AddCarrier.aspx.designer.vb">
+      <DependentUpon>AddCarrier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrier\AddCarrier.aspx.vb">
+      <DependentUpon>AddCarrier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrier\CarrierSnapshot.aspx.designer.vb">
+      <DependentUpon>CarrierSnapshot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrier\CarrierSnapshot.aspx.vb">
+      <DependentUpon>CarrierSnapshot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrier\Truckers.aspx.designer.vb">
+      <DependentUpon>Truckers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrier\Truckers.aspx.vb">
+      <DependentUpon>Truckers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboards\Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogues\Complete.aspx.vb">
+      <DependentUpon>Complete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogues\Instructions.aspx.vb">
+      <DependentUpon>Instructions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogues\InstructionsSecured.aspx.vb">
+      <DependentUpon>InstructionsSecured.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogues\MapImage.aspx.designer.vb">
+      <DependentUpon>MapImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\MapImage.aspx.vb">
+      <DependentUpon>MapImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialogues\YesNoDialogue.aspx.vb">
+      <DependentUpon>YesNoDialogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocTree\PageEdit.aspx.designer.vb">
+      <DependentUpon>PageEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocTree\PageEdit.aspx.vb">
+      <DependentUpon>PageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocTree\UploadDoc.aspx.designer.vb">
+      <DependentUpon>UploadDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocTree\UploadDoc.aspx.vb">
+      <DependentUpon>UploadDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver\AddDriverAdmin.aspx.vb">
+      <DependentUpon>AddDriverAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver\FastportConfig.aspx.designer.vb">
+      <DependentUpon>FastportConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\FastportConfig.aspx.vb">
+      <DependentUpon>FastportConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Sandbox\DocListDemo.aspx.designer.vb">
+      <DependentUpon>DocListDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\DocListDemo.aspx.vb">
+      <DependentUpon>DocListDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\DocSandbox.aspx.designer.vb">
+      <DependentUpon>DocSandbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\DocSandbox.aspx.vb">
+      <DependentUpon>DocSandbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\ManageAds.aspx.designer.vb">
+      <DependentUpon>ManageAds.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox\ManageAds.aspx.vb">
+      <DependentUpon>ManageAds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\ForgotUserFP.aspx.vb">
+      <DependentUpon>ForgotUserFP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\SendUserInfoFP.aspx.vb">
+      <DependentUpon>SendUserInfoFP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\SignInFP.aspx.vb">
+      <DependentUpon>SignInFP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\SignOutFP.aspx.vb">
+      <DependentUpon>SignOutFP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\SignUpFP.aspx.designer.vb">
+      <DependentUpon>SignUpFP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\SignUpFP.aspx.vb">
+      <DependentUpon>SignUpFP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\AccessParser.vb" />
+    <Compile Include="Shared\BaseApplicationMenuControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\BaseApplicationPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\BaseApplicationRecordControl.vb" />
+    <Compile Include="Shared\BaseApplicationTableControl.vb" />
+    <Compile Include="Shared\BaseApplicationUserControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\CalendarExtendarClass.vb" />
+    <Compile Include="Shared\CustGenClass.vb" />
+    <Compile Include="Shared\FlowBasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\FormulaEvaluator.vb" />
+    <Compile Include="Shared\FormulaUtils.vb" />
+    <Compile Include="Shared\CsvParser.vb" />
+    <Compile Include="Shared\CustomEditor.vb" />
+    <Compile Include="Shared\HTMLEditor.vb" />
+    <Compile Include="Shared\Data.vb" />
+    <Compile Include="Shared\ExcelParser.vb" />
+    <Compile Include="Shared\ExportData.vb" />
+    <Compile Include="Shared\ExportFieldValue.aspx.vb">
+      <DependentUpon>ExportFieldValue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Forbidden.aspx.vb">
+      <DependentUpon>Forbidden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ForbiddenMobile.aspx.vb">
+      <DependentUpon>ForbiddenMobile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\FvLlsHyperLink.vb" />
+    <Compile Include="Shared\ImportData.aspx.vb">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ImportDataItems.vb" />
+    <Compile Include="Shared\LargeListSelector.aspx.vb">
+      <DependentUpon>LargeListSelector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\LargeListSelector.Controls.vb" />
+    <Compile Include="Shared\MenuXmlSiteMapProvider.vb" />
+    <Compile Include="Shared\Parser.vb" />
+    <Compile Include="Shared\SelectFileToImport.aspx.vb">
+      <DependentUpon>SelectFileToImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Show_Error.aspx.vb">
+      <DependentUpon>Show_Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\SignInState.vb" />
+    <Compile Include="Header and Footer\EmailFooter.ascx.vb">
+      <DependentUpon>EmailFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\IEmailFooter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\EmailHeader.ascx.vb">
+      <DependentUpon>EmailHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\IEmailHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\Footer.ascx.vb">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\IFooter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\Header.ascx.vb">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\IHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Menu Panels\Menu.ascx.vb">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu Panels\IMenu.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Role\AddRole.aspx.vb">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\AddRole.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Role\EditRole.aspx.vb">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\EditRole.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Role\GroupByRoleTable.aspx.vb">
+      <DependentUpon>GroupByRoleTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\GroupByRoleTable.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Role\ShowRole.aspx.vb">
+      <DependentUpon>ShowRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\ShowRole.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\DatePagination.ascx.vb">
+      <DependentUpon>DatePagination.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IDatePagination.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IncludeComponent.ascx.vb">
+      <DependentUpon>IncludeComponent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IIncludeComponent.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\Menu_Item.ascx.vb">
+      <DependentUpon>Menu_Item.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IMenu_Item.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\Menu_ItemVertical.ascx.vb">
+      <DependentUpon>Menu_ItemVertical.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IMenu_ItemVertical.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\Menu_Item_Highlighted.ascx.vb">
+      <DependentUpon>Menu_Item_Highlighted.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IMenu_Item_Highlighted.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\Menu_Item_HighlightedVertical.ascx.vb">
+      <DependentUpon>Menu_Item_HighlightedVertical.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IMenu_Item_HighlightedVertical.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\Pagination.ascx.vb">
+      <DependentUpon>Pagination.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IPagination.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\PaginationMedium.ascx.vb">
+      <DependentUpon>PaginationMedium.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IPaginationMedium.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\PaginationModern.ascx.vb">
+      <DependentUpon>PaginationModern.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IPaginationModern.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\PaginationShort.ascx.vb">
+      <DependentUpon>PaginationShort.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IPaginationShort.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\ThemeButton.ascx.vb">
+      <DependentUpon>ThemeButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IThemeButton.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\ThemeButtonWithArrow.ascx.vb">
+      <DependentUpon>ThemeButtonWithArrow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IThemeButtonWithArrow.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Driver\EditIncident.aspx.vb">
+      <DependentUpon>EditIncident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver\EditIncident.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadInstance\ThreadAdd.aspx.vb">
+      <DependentUpon>ThreadAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThreadInstance\ThreadAdd.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Carrier\AddCarrierAddr.aspx.vb">
+      <DependentUpon>AddCarrierAddr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrier\AddCarrierAddr.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Carrier\EditCarrier.aspx.vb">
+      <DependentUpon>EditCarrier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrier\EditCarrierAddr.aspx.vb">
+      <DependentUpon>EditCarrierAddr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrier\EditCarrierAddr.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTree\AddDocTree.aspx.vb">
+      <DependentUpon>AddDocTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocTree\AddDocTree.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTree\DocConfig.aspx.vb">
+      <DependentUpon>DocConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocTree\EditDocTree.aspx.vb">
+      <DependentUpon>EditDocTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocTree\EditDocTree.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTree\EditDocTree_Folder.aspx.vb">
+      <DependentUpon>EditDocTree_Folder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocTree\EditDocTree_Folder.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTree\ShowDocTree.aspx.vb">
+      <DependentUpon>ShowDocTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocTree\ShowDocTree.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Agreement\AddAgreement.aspx.vb">
+      <DependentUpon>AddAgreement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agreement\AddAgreement.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Agreement\EditAgreement.aspx.vb">
+      <DependentUpon>EditAgreement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agreement\EditAgreement.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Agreement\ShowAgreement.aspx.vb">
+      <DependentUpon>ShowAgreement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agreement\ShowAgreement.Controls.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tree\AddTree.aspx.vb">
+      <DependentUpon>AddTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tree\AddTree.Controls.vb" />
+    <Compile Include="Tree\EditTree.aspx.vb">
+      <DependentUpon>EditTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tree\EditTree.Controls.vb" />
+    <Compile Include="Tree\EditTreeImage.aspx.vb">
+      <DependentUpon>EditTreeImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tree\EditTreeImage.Controls.vb" />
+    <Compile Include="Tree\ShowTreeTable.aspx.vb">
+      <DependentUpon>ShowTreeTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu Panels\MarketingMenu.ascx.vb">
+      <DependentUpon>MarketingMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu Panels\IMarketingMenu.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="User\UserConfig.aspx.vb" >
+      <DependentUpon>UserConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserConfig.Controls.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AgreementExecution\PDFFull.aspx" />
+    <Content Include="AgreementExecution\SignDocument.aspx" />
+    <Content Include="AgreementExecution\UploadSignedDoc.aspx" />
+    <Content Include="App_Data\RadCaptcha\0.wav" />
+    <Content Include="App_Data\RadCaptcha\1.wav" />
+    <Content Include="App_Data\RadCaptcha\2.wav" />
+    <Content Include="App_Data\RadCaptcha\3.wav" />
+    <Content Include="App_Data\RadCaptcha\4.wav" />
+    <Content Include="App_Data\RadCaptcha\5.wav" />
+    <Content Include="App_Data\RadCaptcha\6.wav" />
+    <Content Include="App_Data\RadCaptcha\7.wav" />
+    <Content Include="App_Data\RadCaptcha\8.wav" />
+    <Content Include="App_Data\RadCaptcha\9.wav" />
+    <Content Include="App_Data\RadCaptcha\A.wav" />
+    <Content Include="App_Data\RadCaptcha\B.wav" />
+    <Content Include="App_Data\RadCaptcha\C.wav" />
+    <Content Include="App_Data\RadCaptcha\D.wav" />
+    <Content Include="App_Data\RadCaptcha\E.wav" />
+    <Content Include="App_Data\RadCaptcha\F.wav" />
+    <Content Include="App_Data\RadCaptcha\G.wav" />
+    <Content Include="App_Data\RadCaptcha\H.wav" />
+    <Content Include="App_Data\RadCaptcha\I.wav" />
+    <Content Include="App_Data\RadCaptcha\J.wav" />
+    <Content Include="App_Data\RadCaptcha\K.wav" />
+    <Content Include="App_Data\RadCaptcha\L.wav" />
+    <Content Include="App_Data\RadCaptcha\M.wav" />
+    <Content Include="App_Data\RadCaptcha\N.wav" />
+    <Content Include="App_Data\RadCaptcha\O.wav" />
+    <Content Include="App_Data\RadCaptcha\P.wav" />
+    <Content Include="App_Data\RadCaptcha\Q.wav" />
+    <Content Include="App_Data\RadCaptcha\R.wav" />
+    <Content Include="App_Data\RadCaptcha\S.wav" />
+    <Content Include="App_Data\RadCaptcha\T.wav" />
+    <Content Include="App_Data\RadCaptcha\U.wav" />
+    <Content Include="App_Data\RadCaptcha\V.wav" />
+    <Content Include="App_Data\RadCaptcha\W.wav" />
+    <Content Include="App_Data\RadCaptcha\X.wav" />
+    <Content Include="App_Data\RadCaptcha\Y.wav" />
+    <Content Include="App_Data\RadCaptcha\Z.wav" />
+    <Content Include="App_Data\TelerikVSX.mdf" />
+    <Content Include="App_Data\TelerikVSX_log.ldf">
+      <DependentUpon>TelerikVSX.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\Zinfandel\BaseStyles.css" />
+    <Content Include="App_Themes\Zinfandel\mapbox.css" />
+    <Content Include="App_Themes\Zinfandel\Styles.css" />
+    <Content Include="BaseClasses\Readme.txt" />
+    <Content Include="CarrierAd\EditCarrierAd.aspx" />
+    <Content Include="Carrier\AddCarrier.aspx" />
+    <Content Include="Carrier\CarrierSnapshot.aspx" />
+    <Content Include="Carrier\Truckers.aspx" />
+    <Content Include="Dashboards\Home.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Dialogues\Complete.aspx" />
+    <Content Include="Dialogues\Instructions.aspx" />
+    <Content Include="Dialogues\InstructionsSecured.aspx" />
+    <Content Include="Dialogues\MapImage.aspx" />
+    <Content Include="Dialogues\YesNoDialogue.aspx" />
+    <Content Include="DocTree\PageEdit.aspx" />
+    <Content Include="DocTree\UploadDoc.aspx" />
+    <Content Include="Driver\AddDriverAdmin.aspx" />
+    <Content Include="Driver\FastportConfig.aspx" />
+    <Content Include="leaflet-pip.js" />
+    <Content Include="Sandbox\DocListDemo.aspx" />
+    <Content Include="Sandbox\DocSandbox.aspx" />
+    <Content Include="Sandbox\ManageAds.aspx" />
+    <Content Include="Security\ForgotUserFP.aspx" />
+    <Content Include="Security\SendUserInfoFP.aspx" />
+    <Content Include="Security\SignInFP.aspx" />
+    <Content Include="Security\SignOutFP.aspx" />
+    <Content Include="Security\SignUpFP.aspx" />
+    <Content Include="ThreadInstance\ThreadAdd.aspx" />
+    <Content Include="Tree\AddTree.aspx" />
+    <Content Include="Tree\EditTree.aspx" />
+    <Content Include="Tree\EditTreeImage.aspx" />
+    <Content Include="Tree\ShowTreeTable.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Header and Footer\EmailHeader.ascx" />
+    <Content Include="Header and Footer\Footer.ascx" />
+    <Content Include="Header and Footer\Header.ascx" />
+    <Content Include="Menu Panels\Menu.ascx" />
+    <Content Include="AppInfo.xml" />
+    <Content Include="ApplicationWebForm.js" />
+    <Content Include="ApplicationWebUIValidation.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Master Pages\Blank.master" />
+    <Content Include="Master Pages\Email.master" />
+    <Content Include="Master Pages\HorizontalMenu.master" />
+    <Content Include="Master Pages\VerticalMenu.master" />
+    <Content Include="Menu Panels\Menu.sitemap" />
+    <Content Include="SetFocus.js" />
+    <Content Include="Shared\ConfigureAddRecord.aspx" />
+    <Content Include="Shared\ConfigureCollapseExpandRowBtn.aspx" />
+    <Content Include="Shared\ConfigureEditRecord.aspx" />
+    <Content Include="Shared\ConfigureSpecialEditRecord.aspx" />
+    <Content Include="Shared\ConfigureSpecialViewRecord.aspx" />
+    <Content Include="Shared\ConfigureViewRecord.aspx" />
+    <Content Include="Shared\Default.aspx" />
+    <Content Include="Shared\ExportFieldValue.aspx" />
+    <Content Include="Shared\Forbidden.aspx" />
+    <Content Include="Shared\ForbiddenMobile.aspx" />
+    <Content Include="Shared\ImportData.aspx" />
+    <Content Include="Shared\IncludeComponent.ascx" />
+    <Content Include="Shared\Internal_Server_Error.html" />
+    <Content Include="Shared\LargeListSelector.aspx" />
+    <Content Include="Shared\Menu_Item.ascx" />
+    <Content Include="Shared\Menu_ItemVertical.ascx" />
+    <Content Include="Shared\Menu_Item_Highlighted.ascx" />
+    <Content Include="Shared\Menu_Item_HighlightedVertical.ascx" />
+    <Content Include="Shared\Menu_Item_HighlightedVertical.xml" />
+    <Content Include="Shared\Pagination.ascx" />
+    <Content Include="Shared\PaginationShort.ascx" />
+    <Content Include="Shared\PaginationMedium.ascx" />
+    <Content Include="Shared\PreviewPage.html" />
+    <Content Include="Shared\SelectFileToImport.aspx" />
+    <Content Include="Shared\Show_Error.aspx" />
+    <Content Include="Shared\ThemeButton.ascx" />
+    <Content Include="Troubleshooting\default.aspx" />
+    <Content Include="Troubleshooting\default.htm" />
+    <Content Include="Troubleshooting\default.html" />
+    <Content Include="Troubleshooting\OnlineHelp.js" />
+    <Content Include="Troubleshooting\Readme.txt" />
+    <Content Include="Troubleshooting\Test0.html" />
+    <Content Include="Troubleshooting\Test0Do.aspx" />
+    <Content Include="Troubleshooting\Test1.html" />
+    <Content Include="Troubleshooting\Test1Do.aspx" />
+    <Content Include="Troubleshooting\Test2.html" />
+    <Content Include="Troubleshooting\Test2Do.aspx" />
+    <Content Include="Troubleshooting\Test3.aspx" />
+    <Content Include="Troubleshooting\Test3Do.aspx" />
+    <Content Include="Troubleshooting\Test4.aspx" />
+    <Content Include="Troubleshooting\Test4Do.aspx" />
+    <Content Include="Troubleshooting\Test5.aspx" />
+    <Content Include="Troubleshooting\Test5Do.aspx" />
+    <Content Include="Troubleshooting\TestConfiguration.css" />
+    <Content Include="Troubleshooting\TestConfiguration.mdb">
+    </Content>
+    <Content Include="Images\ASCXControlPlaceholder.gif" />
+    <Content Include="Images\ASCXControlPlaceholderMobile.png" />
+    <Content Include="Images\Batwing.gif" />
+    <Content Include="Images\BatwingMobile.gif" />
+    <Content Include="Images\BatwingMobilePasswordRetrievalEmail.png" />
+    <Content Include="Images\ButtonBarAdd.gif" />
+    <Content Include="Images\ButtonBarAddOver.gif" />
+    <Content Include="Images\ButtonBarCopy.gif" />
+    <Content Include="Images\ButtonBarCopyOver.gif" />
+    <Content Include="Images\ButtonBarCSVExport.gif" />
+    <Content Include="Images\ButtonBarCSVExportOver.gif" />
+    <Content Include="Images\ButtonBarDecrement.gif" />
+    <Content Include="Images\ButtonBarDecrementOver.gif" />
+    <Content Include="Images\ButtonBarDelete.gif" />
+    <Content Include="Images\ButtonBarDeleteOver.gif" />
+    <Content Include="Images\ButtonBarEdit.gif" />
+    <Content Include="Images\ButtonBarEditOver.gif" />
+    <Content Include="Images\ButtonBarExcelExport.gif" />
+    <Content Include="Images\ButtonBarExcelExportOver.gif" />
+    <Content Include="Images\ButtonBarFirst.gif" />
+    <Content Include="Images\ButtonBarFirst.ltr.gif" />
+    <Content Include="Images\ButtonBarFirst.rtl.gif" />
+    <Content Include="Images\ButtonBarFirstOver.gif" />
+    <Content Include="Images\ButtonBarFirstOver.ltr.gif" />
+    <Content Include="Images\ButtonBarFirstOver.rtl.gif" />
+    <Content Include="Images\ButtonBarImport.gif" />
+    <Content Include="Images\ButtonBarImportOver.gif" />
+    <Content Include="Images\ButtonBarIncrement.gif" />
+    <Content Include="Images\ButtonBarIncrementOver.gif" />
+    <Content Include="Images\ButtonBarLast.gif" />
+    <Content Include="Images\ButtonBarLast.ltr.gif" />
+    <Content Include="Images\ButtonBarLast.rtl.gif" />
+    <Content Include="Images\ButtonBarLastOver.gif" />
+    <Content Include="Images\ButtonBarLastOver.ltr.gif" />
+    <Content Include="Images\ButtonBarLastOver.rtl.gif" />
+    <Content Include="Images\ButtonBarNew.gif" />
+    <Content Include="Images\ButtonBarNewOver.gif" />
+    <Content Include="Images\ButtonBarNext.gif" />
+    <Content Include="Images\ButtonBarNext.ltr.gif" />
+    <Content Include="Images\ButtonBarNext.rtl.gif" />
+    <Content Include="Images\ButtonBarNextOver.gif" />
+    <Content Include="Images\ButtonBarNextOver.ltr.gif" />
+    <Content Include="Images\ButtonBarNextOver.rtl.gif" />
+    <Content Include="Images\ButtonBarPDFExport.gif" />
+    <Content Include="Images\ButtonBarPDFExportOver.gif" />
+    <Content Include="Images\ButtonBarPrevious.gif" />
+    <Content Include="Images\ButtonBarPrevious.ltr.gif" />
+    <Content Include="Images\ButtonBarPrevious.rtl.gif" />
+    <Content Include="Images\ButtonBarPreviousOver.gif" />
+    <Content Include="Images\ButtonBarPreviousOver.ltr.gif" />
+    <Content Include="Images\ButtonBarPreviousOver.rtl.gif" />
+    <Content Include="Images\ButtonBarRefresh.gif" />
+    <Content Include="Images\ButtonBarRefreshOver.gif" />
+    <Content Include="Images\ButtonBarReset.gif" />
+    <Content Include="Images\ButtonBarResetOver.gif" />
+    <Content Include="Images\ButtonBarSave.gif" />
+    <Content Include="Images\ButtonBarSaveOver.gif" />
+    <Content Include="Images\ButtonBarView.gif" />
+    <Content Include="Images\ButtonBarViewOver.gif" />
+    <Content Include="Images\ButtonBarWordExport.gif" />
+    <Content Include="Images\ButtonBarWordExportOver.gif" />
+    <Content Include="Images\ButtonCheckmark.png" />
+    <Content Include="Images\ButtonDecrement.gif" />
+    <Content Include="Images\ButtonDecrementOver.gif" />
+    <Content Include="Images\ButtonExpandArrow.png" />
+    <Content Include="Images\ButtonIncrement.gif" />
+    <Content Include="Images\ButtonIncrementOver.gif" />
+    <Content Include="Images\ButtonOptions.png" />
+    <Content Include="Images\ButtonOptionsOver.png" />
+    <Content Include="Images\closeButton.gif" />
+    <Content Include="Images\DateSelector.gif" />
+    <Content Include="Images\iconEdit.gif" />
+    <Content Include="Images\iconNewFlat.gif" />
+    <Content Include="Images\icon_collapserow.gif" />
+    <Content Include="Images\icon_copy.gif" />
+    <Content Include="Images\icon_copy_over.gif" />
+    <Content Include="Images\icon_delete.gif" />
+    <Content Include="Images\icon_delete_over.gif" />
+    <Content Include="Images\icon_edit.gif" />
+    <Content Include="Images\icon_edit_over.gif" />
+    <Content Include="Images\icon_expandcollapserow.gif" />
+    <Content Include="Images\icon_expandcollapserow2.gif" />
+    <Content Include="Images\icon_new.gif" />
+    <Content Include="Images\icon_panelcollapse.gif" />
+    <Content Include="Images\icon_panelexpand.gif" />
+    <Content Include="Images\icon_updatepanels.gif" />
+    <Content Include="Images\icon_updatepanels2.gif" />
+    <Content Include="Images\icon_view.gif" />
+    <Content Include="Images\icon_view_over.gif" />
+    <Content Include="Images\LargeListSelector.gif" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\logoMobile.png" />
+    <Content Include="Images\MobileBatwing.png" />
+    <Content Include="Images\MobileButtonBack.ltr.png" />
+    <Content Include="Images\MobileButtonBack.png" />
+    <Content Include="Images\MobileButtonBack.rtl.png" />
+    <Content Include="Images\MobileButtonCancel.png" />
+    <Content Include="Images\MobileButtonDelete.png" />
+    <Content Include="Images\MobileButtonEdit.png" />
+    <Content Include="Images\MobileButtonFilters.png" />
+    <Content Include="Images\MobileButtonFiltersCollapse.png" />
+    <Content Include="Images\MobileButtonFiltersExpand.png" />
+    <Content Include="Images\MobileButtonFirst.ltr.png" />
+    <Content Include="Images\MobileButtonFirst.png" />
+    <Content Include="Images\MobileButtonFirst.rtl.png" />
+    <Content Include="Images\MobileButtonLast.ltr.png" />
+    <Content Include="Images\MobileButtonLast.png" />
+    <Content Include="Images\MobileButtonLast.rtl.png" />
+    <Content Include="Images\MobileButtonNew.png" />
+    <Content Include="Images\MobileButtonNext.ltr.png" />
+    <Content Include="Images\MobileButtonNext.png" />
+    <Content Include="Images\MobileButtonNext.rtl.png" />
+    <Content Include="Images\MobileButtonOK.png" />
+    <Content Include="Images\MobileButtonPrevious.ltr.png" />
+    <Content Include="Images\MobileButtonPrevious.png" />
+    <Content Include="Images\MobileButtonPrevious.rtl.png" />
+    <Content Include="Images\MobileButtonRefresh.png" />
+    <Content Include="Images\MobileButtonReset.png" />
+    <Content Include="Images\MobileButtonSave.png" />
+    <Content Include="Images\MobileButtonSaveAndNew.png" />
+    <Content Include="Images\MobileButtonSettings.png" />
+    <Content Include="Images\MobileButtonSettingsCollapse.png" />
+    <Content Include="Images\MobileButtonSettingsExpand.png" />
+    <Content Include="Images\MobileCalendar.png" />
+    <Content Include="Images\MobileLogo.png" />
+    <Content Include="Images\panelSearchButton.ltr.png" />
+    <Content Include="Images\panelSearchButton.png" />
+    <Content Include="Images\panelSearchButton.rtl.png" />
+    <Content Include="Images\PDFReportButton.gif" />
+    <Content Include="Images\SignInBarPrint.gif" />
+    <Content Include="Images\SignInBarPrintOver.gif" />
+    <Content Include="Images\SignInBarSetLanguage.gif" />
+    <Content Include="Images\SignInBarSetLanguageOver.gif" />
+    <Content Include="Images\SignInPageGraphic.jpg" />
+    <Content Include="Images\SignOutPageGraphic.jpg" />
+    <Content Include="Images\space.gif" />
+    <Content Include="Images\Updating.gif" />
+    <Content Include="Header and Footer\EmailFooter.ascx" />
+    <Content Include="Role\AddRole.aspx" />
+    <Content Include="Role\EditRole.aspx" />
+    <Content Include="Role\GroupByRoleTable.aspx" />
+    <Content Include="Role\ShowRole.aspx" />
+    <Content Include="Shared\DatePagination.ascx" />
+    <Content Include="Shared\PaginationModern.ascx" />
+    <Content Include="Shared\ThemeButtonWithArrow.ascx" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdContactsAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdContactsUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdContactsDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdContactsDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdContactsGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdContactsGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdContactsDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdContactsGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdContactsExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocTreeAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocTreeUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocTreeDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocTreeDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocTreeGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocTreeGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocTreeDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocTreeGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocTreeExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowCollectionAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowCollectionUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowCollectionDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowCollectionDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowCollectionGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowCollectionGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowCollectionDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowCollectionGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowCollectionExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTListAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTListUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTListDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTListDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTListGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTListGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTListDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTListGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTListExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRoleAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRoleUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRoleDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRoleDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRoleGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRoleGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRoleDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRoleGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRoleExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTTreeAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTTreeUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTTreeDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTTreeDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTTreeGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTTreeGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTTreeDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTTreeGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTTreeExport.sql" />
+    <Content Include="StoredProcedures\LoadStoredProcedures.bat" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExecutionAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExecutionUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExecutionDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExecutionDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExecutionGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExecutionGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExecutionDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExecutionGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAgreementExecutionExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAudit_CarrierAdActivityAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAudit_CarrierAdActivityUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAudit_CarrierAdActivityDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAudit_CarrierAdActivityDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAudit_CarrierAdActivityGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAudit_CarrierAdActivityGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAudit_CarrierAdActivityDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAudit_CarrierAdActivityGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTAudit_CarrierAdActivityExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCalendarAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCalendarUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCalendarDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCalendarDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCalendarGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCalendarGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCalendarDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCalendarGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCalendarExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdActivityAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdActivityUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdActivityDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdActivityDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdActivityGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdActivityGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdActivityDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdActivityGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdActivityExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdLinkAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdLinkUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdLinkDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdLinkDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdLinkGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdLinkGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdLinkDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdLinkGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdLinkExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInActivityAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInActivityUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInActivityDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInActivityDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInActivityGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInActivityGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInActivityDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInActivityGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInActivityExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInShareAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInShareUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInShareDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInShareDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInShareGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInShareGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInShareDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInShareGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCheckInShareExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocPageAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocPageUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocPageDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocPageDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocPageGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocPageGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocPageDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocPageGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTDocPageExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTEquipAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTEquipUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTEquipDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTEquipDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTEquipGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTEquipGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTEquipDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTEquipGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTEquipExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowButtonAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowButtonUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowButtonDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowButtonDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowButtonGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowButtonGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowButtonDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowButtonGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowButtonExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowConfigAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowConfigUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowConfigDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowConfigDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowConfigGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowConfigGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowConfigDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowConfigGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowConfigExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowOverviewAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowOverviewUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowOverviewDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowOverviewDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowOverviewGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowOverviewGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowOverviewDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowOverviewGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowOverviewExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowStepAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowStepUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowStepDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowStepDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowStepGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowStepGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowStepDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowStepGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTFlowStepExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTGlobalAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTGlobalUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTGlobalDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTGlobalDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTGlobalGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTGlobalGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTGlobalDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTGlobalGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTGlobalExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAddrAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAddrUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAddrDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAddrDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAddrGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAddrGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAddrDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAddrGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyAddrExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyCarrierAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyCarrierUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyCarrierDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyCarrierDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyCarrierGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyCarrierGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyCarrierDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyCarrierGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyCarrierExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDriverAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDriverUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDriverDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDriverDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDriverGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDriverGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDriverDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDriverGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyDriverExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExperienceAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExperienceUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExperienceDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExperienceDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExperienceGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExperienceGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExperienceDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExperienceGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyExperienceExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetCircleAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetCircleUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetCircleDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetCircleDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetCircleGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetCircleGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetCircleDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetCircleGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyFleetCircleExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyPaySettingsAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyPaySettingsUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyPaySettingsDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyPaySettingsDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyPaySettingsGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyPaySettingsGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyPaySettingsDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyPaySettingsGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyPaySettingsExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRepsAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRepsGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRepsGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRepsDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRepsGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRepsExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRoleAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRoleUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRoleDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRoleDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRoleGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRoleGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRoleDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRoleGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRoleExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRollupAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRollupUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRollupDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRollupDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRollupGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRollupGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRollupDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRollupGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyRollupExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyServiceAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyServiceUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyServiceDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyServiceDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyServiceGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyServiceGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyServiceDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyServiceGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyServiceExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationLogAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationLogUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationLogDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationLogDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationLogGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationLogGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationLogDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationLogGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyWorkHistoryVerificationLogExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRefAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRefUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRefDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRefDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRefGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRefGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRefDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRefGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTRefExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSprocLogAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSprocLogUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSprocLogDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSprocLogDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSprocLogGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSprocLogGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSprocLogDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSprocLogGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSprocLogExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobLogAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobLogUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobLogDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobLogDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobLogGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobLogGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobLogDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobLogGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemJobLogExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemServiceAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemServiceUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemServiceDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemServiceDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemServiceGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemServiceGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemServiceDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemServiceGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTSystemServiceExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDefaultReceiverAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDefaultReceiverUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDefaultReceiverDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDefaultReceiverDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDefaultReceiverGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDefaultReceiverGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDefaultReceiverDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDefaultReceiverGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadDefaultReceiverExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAttachmentsAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAttachmentsUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAttachmentsDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAttachmentsDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAttachmentsGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAttachmentsGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAttachmentsDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAttachmentsGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstanceMessageAttachmentsExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstancePartiesAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstancePartiesUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstancePartiesDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstancePartiesDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstancePartiesGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstancePartiesGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstancePartiesDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstancePartiesGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTThreadInstancePartiesExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AdDetailsGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AdDetailsGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AdDetailsDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AdDetailsGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AdDetailsExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AddrGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AddrGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AddrDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AddrGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AddrExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AgreementGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AgreementGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AgreementDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AgreementGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AgreementExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestChildrenGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestChildrenGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestChildrenDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestChildrenGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_AsposeTestChildrenExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierOneRowGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierOneRowGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierOneRowDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierOneRowGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierOneRowExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarriersGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarriersGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarriersDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarriersGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarriersExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierSimpleGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierSimpleGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierSimpleDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierSimpleGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CarrierSimpleExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CaseTreeAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CaseTreeUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CaseTreeDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CaseTreeDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CaseTreeGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CaseTreeGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CaseTreeDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CaseTreeGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_CaseTreeExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_DriverAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_DriverUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_DriverDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_DriverDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_DriverGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_DriverGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_DriverDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_DriverGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_DriverExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ExecutionGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ExecutionGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ExecutionDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ExecutionGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ExecutionExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCityGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCityGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCityDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCityGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCityExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCountryGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCountryGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCountryDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCountryGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_GeoCountryExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyByUserGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyByUserGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyByUserDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyByUserGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyByUserExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyOrgGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyOrgGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyOrgDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyOrgGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyOrgExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonSnapshotGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonSnapshotGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonSnapshotDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonSnapshotGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonSnapshotExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonWithPicGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonWithPicGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonWithPicDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonWithPicGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PersonWithPicExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_RolesGeneralGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_RolesGeneralGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_RolesGeneralDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_RolesGeneralGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_RolesGeneralExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityRoleGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityRoleGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityRoleDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityRoleGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityRoleExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityUserGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityUserGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityUserDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityUserGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SecurityUserExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ServicesGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ServicesGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ServicesDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ServicesGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_ServicesExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignAddrGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignAddrGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignAddrDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignAddrGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignAddrExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocsGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocsGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocsDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocsGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocsExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocs_OneRowGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocs_OneRowGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocs_OneRowDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocs_OneRowGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignDocs_OneRowExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEmployerGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEmployerGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEmployerDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEmployerGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEmployerExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEquipGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEquipGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEquipDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEquipGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignEquipExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignHistoryGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignHistoryGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignHistoryDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignHistoryGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignHistoryExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignLicGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignLicGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignLicDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignLicGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignLicExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignOwnerGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignOwnerGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignOwnerDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignOwnerGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_SignOwnerExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_TreeHTMLGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_TreeHTMLGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_TreeHTMLDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_TreeHTMLGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_TreeHTMLExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryLoadRWGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryLoadRWGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryLoadRWDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryLoadRWGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_HistoryLoadRWExport.sql" />
+    <Content Include="Driver\EditIncident.aspx" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentTicketedForAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentTicketedForUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentTicketedForDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentTicketedForDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentTicketedForGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentTicketedForGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentTicketedForDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentTicketedForGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPartyIncidentTicketedForExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGeoAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGeoUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGeoDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGeoDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGeoGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGeoGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGeoDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGeoGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTCarrierAdGeoExport.sql" />
+    <Content Include="Carrier\AddCarrierAddr.aspx" />
+    <Content Include="Carrier\EditCarrier.aspx" />
+    <Content Include="Carrier\EditCarrierAddr.aspx" />
+    <Content Include="DocTree\AddDocTree.aspx" />
+    <Content Include="DocTree\DocConfig.aspx" />
+    <Content Include="DocTree\EditDocTree.aspx" />
+    <Content Include="DocTree\EditDocTree_Folder.aspx" />
+    <Content Include="DocTree\ShowDocTree.aspx" />
+    <Content Include="Agreement\AddAgreement.aspx" />
+    <Content Include="Agreement\EditAgreement.aspx" />
+    <Content Include="Agreement\ShowAgreement.aspx" />
+    <Content Include="Master Pages\Security.master" />
+    <Content Include="Menu Panels\MarketingMenu.ascx" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyExport.sql" />
+    <Content Include="User\UserConfig.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jquery.min.map" />
+    <None Include="Reports\PDF.en-US.report" />
+    <None Include="Reports\PDF.en.report" />
+    <None Include="Reports\PDF.report" />
+    <None Include="Reports\WordReport.en-US.word" />
+    <None Include="Reports\WordReport.en.word" />
+    <None Include="Reports\WordReport.word" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Business Layer\FASTPORT.Business.vbproj">
+      <Project>{79FA1801-E996-4382-A2D3-93AB351828F1}</Project>
+      <Name>FASTPORT.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="Data Access Layer\FASTPORT.Data.vbproj">
+      <Project>{74B7AE5A-206A-4216-B3AB-CB61C0B954F1}</Project>
+      <Name>FASTPORT.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Temp\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53757</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

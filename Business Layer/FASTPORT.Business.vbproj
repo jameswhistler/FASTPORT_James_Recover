@@ -1,0 +1,1143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79FA1801-E996-4382-A2D3-93AB351828F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>FASTPORT.Business</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BaseClasses">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\BaseClasses.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ciloci.Flee">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Ciloci.Flee.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="AgreementTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAgreementTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AgreementRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAgreementRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdContactsTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdContactsTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdContactsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdContactsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTreeTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseDocTreeTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTreeRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseDocTreeRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowCollectionTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowCollectionTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowCollectionRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowCollectionRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ListTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseListTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ListRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseListRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RoleTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRoleTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RoleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRoleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseTreeTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseTreeRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AgreementExecutionTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAgreementExecutionTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AgreementExecutionRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAgreementExecutionRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Audit_CarrierAdActivityTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAudit_CarrierAdActivityTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Audit_CarrierAdActivityRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAudit_CarrierAdActivityRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CalendarTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCalendarTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CalendarRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCalendarRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdActivityTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdActivityTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdActivityRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdActivityRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdLinkTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdLinkTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdLinkRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdLinkRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckInTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCheckInTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckInRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCheckInRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckInActivityTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCheckInActivityTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckInActivityRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCheckInActivityRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckInShareTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCheckInShareTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckInShareRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCheckInShareRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseDocTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseDocRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocPageTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseDocPageTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocPageRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseDocPageRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseEquipTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseEquipRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowButtonTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowButtonTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowButtonRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowButtonRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowConfigTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowConfigTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowConfigRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowConfigRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowOverviewTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowOverviewTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowOverviewRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowOverviewRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowStepTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowStepTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlowStepRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseFlowStepRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseGlobalTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseGlobalRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyAddrTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyAddrTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyAddrRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyAddrRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyCarrierTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyCarrierTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyCarrierRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyCarrierRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyDriverTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyDriverTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyDriverRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyDriverRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyExperienceTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyExperienceTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyExperienceRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyExperienceRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyFleetTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyFleetTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyFleetRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyFleetRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyFleetCircleTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyFleetCircleTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyFleetCircleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyFleetCircleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyIncidentTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyIncidentTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyIncidentRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyIncidentRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyPaySettingsTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyPaySettingsTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyPaySettingsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyPaySettingsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyRepsTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyRepsTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyRepsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyRepsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyRoleTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyRoleTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyRoleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyRoleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyRollupTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyRollupTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyRollupRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyRollupRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyServiceTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyServiceTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyServiceRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyServiceRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyWorkHistoryTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyWorkHistoryTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyWorkHistoryRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyWorkHistoryRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyWorkHistoryVerificationTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyWorkHistoryVerificationTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyWorkHistoryVerificationRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyWorkHistoryVerificationRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyWorkHistoryVerificationLogTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyWorkHistoryVerificationLogTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyWorkHistoryVerificationLogRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyWorkHistoryVerificationLogRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRefTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRefRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SprocLogTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSprocLogTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SprocLogRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSprocLogRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemJobTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSystemJobTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemJobRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSystemJobRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemJobLogTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSystemJobLogTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemJobLogRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSystemJobLogRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemServiceTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSystemServiceTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemServiceRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSystemServiceRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadDefaultReceiverTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadDefaultReceiverTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadDefaultReceiverRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadDefaultReceiverRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadInstanceTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadInstanceTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadInstanceRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadInstanceRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadInstanceMessageTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadInstanceMessageTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadInstanceMessageRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadInstanceMessageRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadInstanceMessageAttachmentsTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadInstanceMessageAttachmentsTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadInstanceMessageAttachmentsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadInstanceMessageAttachmentsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadInstancePartiesTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadInstancePartiesTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ThreadInstancePartiesRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseThreadInstancePartiesRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AdDetailsView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AdDetailsView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AdDetailsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AdDetailsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AddrView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AddrView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AddrRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AddrRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AgreementView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AgreementView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AgreementRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AgreementRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AsposeTestView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AsposeTestView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AsposeTestRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AsposeTestRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AsposeTestChildrenView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AsposeTestChildrenView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_AsposeTestChildrenRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_AsposeTestChildrenRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CarrierOneRowView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_CarrierOneRowView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CarrierOneRowRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_CarrierOneRowRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CarriersView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_CarriersView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CarriersRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_CarriersRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CarrierSimpleView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_CarrierSimpleView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CarrierSimpleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_CarrierSimpleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_DriverView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_DriverView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_DriverRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_DriverRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_ExecutionView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_ExecutionView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_ExecutionRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_ExecutionRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_GeoCityView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_GeoCityView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_GeoCityRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_GeoCityRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_GeoCountryView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_GeoCountryView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_GeoCountryRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_GeoCountryRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_HistoryView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_HistoryView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_HistoryRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_HistoryRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyByUserView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyByUserView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyByUserRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyByUserRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyOrgView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyOrgView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyOrgRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyOrgRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PersonSnapshotView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PersonSnapshotView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PersonSnapshotRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PersonSnapshotRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PersonWithPicView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PersonWithPicView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PersonWithPicRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PersonWithPicRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_RolesGeneralView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_RolesGeneralView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_RolesGeneralRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_RolesGeneralRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SecurityRoleView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SecurityRoleView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SecurityRoleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SecurityRoleRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SecurityUserView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SecurityUserView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SecurityUserRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SecurityUserRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_ServicesView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_ServicesView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_ServicesRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_ServicesRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignAddrView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignAddrView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignAddrRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignAddrRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignDocsView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignDocsView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignDocsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignDocsRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignDocs_OneRowView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignDocs_OneRowView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignDocs_OneRowRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignDocs_OneRowRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignEmployerView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignEmployerView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignEmployerRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignEmployerRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignEquipView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignEquipView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignEquipRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignEquipRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignHistoryView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignHistoryView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignHistoryRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignHistoryRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignLicView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignLicView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignLicRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignLicRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignOwnerView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignOwnerView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SignOwnerRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_SignOwnerRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_TreeHTMLView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_TreeHTMLView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_TreeHTMLRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_TreeHTMLRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_HistoryLoadRWView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_HistoryLoadRWView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_HistoryLoadRWRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_HistoryLoadRWRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyIncidentTicketedForTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyIncidentTicketedForTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartyIncidentTicketedForRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePartyIncidentTicketedForRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdGeoTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdGeoTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CarrierAdGeoRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCarrierAdGeoRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodTable.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodTable.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodRecord.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodRecord.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodPartyTable.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodPartyTable.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodPartyRecord.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodPartyRecord.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data Access Layer\FASTPORT.Data.vbproj">
+      <Project>{74B7AE5A-206A-4216-B3AB-CB61C0B954F1}</Project>
+      <Name>FASTPORT.Data</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

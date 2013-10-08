@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<XMLDefinition Generator="Iron Speed Designer" Version="9.0" Type="VIEW">
+  <ColumnDefinition>
+    <Column InternalName="0" Priority="1" ColumnNum="0">
+      <columnName>CountryID</columnName>
+      <columnUIName Source="User">%ISD_DEFAULT%</columnUIName>
+      <columnType>Number</columnType>
+      <columnDBType>int</columnDBType>
+      <columnLengthSet>10.0</columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault Source="User">
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>
+      </columnFunction>
+      <columnDBFormat>
+      </columnDBFormat>
+      <columnPK>Y</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed Source="User">N</columnComputed>
+      <columnIdentity Source="User">N</columnIdentity>
+      <columnReadOnly Source="User">N</columnReadOnly>
+      <columnRequired>Y</columnRequired>
+      <columnNotNull>Y</columnNotNull>
+      <columnCaseSensitive Source="User">N</columnCaseSensitive>
+      <columnCollation>
+      </columnCollation>
+      <columnFullText Source="User">N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
+      <applyDefaultValue>N</applyDefaultValue>
+      <applyDFKA>N</applyDFKA>
+      <columnCodeName>
+      </columnCodeName>
+      <InternalName>0</InternalName>
+      <columnTableClassName>
+      </columnTableClassName>
+      <columnVirtualPK Source="User">Y</columnVirtualPK>
+    </Column>
+    <Column InternalName="1" Priority="2" ColumnNum="1">
+      <columnName>Country</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnType>String</columnType>
+      <columnDBType>nvarchar</columnDBType>
+      <columnLengthSet>50</columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault>
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>
+      </columnFunction>
+      <columnDBFormat>
+      </columnDBFormat>
+      <columnPK>N</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
+      <columnRequired>Y</columnRequired>
+      <columnNotNull>Y</columnNotNull>
+      <columnCaseSensitive Source="Database">N</columnCaseSensitive>
+      <columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>
+      <columnFullText>N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
+      <applyDefaultValue>N</applyDefaultValue>
+      <applyDFKA>N</applyDFKA>
+    </Column>
+    <Column InternalName="2" Priority="3" ColumnNum="2">
+      <columnName>CountryAbbr</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnType>String</columnType>
+      <columnDBType>nvarchar</columnDBType>
+      <columnLengthSet>10</columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault>
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>
+      </columnFunction>
+      <columnDBFormat>
+      </columnDBFormat>
+      <columnPK>N</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
+      <columnRequired>Y</columnRequired>
+      <columnNotNull>Y</columnNotNull>
+      <columnCaseSensitive Source="Database">N</columnCaseSensitive>
+      <columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>
+      <columnFullText>N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
+      <applyDefaultValue>N</applyDefaultValue>
+      <applyDFKA>N</applyDFKA>
+    </Column>
+  </ColumnDefinition>
+  <TableName>v_GeoCountry</TableName>
+  <Version>
+  </Version>
+  <Owner>dbo</Owner>
+  <TableCodeName>V_GeoCountry</TableCodeName>
+  <TableAliasName>V_GeoCountry_</TableAliasName>
+  <ConnectionName>DatabaseFASTPORT1</ConnectionName>
+  <canCreateRecords Source="User">N</canCreateRecords>
+  <canEditRecords Source="User">N</canEditRecords>
+  <canDeleteRecords Source="User">N</canDeleteRecords>
+  <canViewRecords Source="User">N</canViewRecords>
+  <AppShortName>FASTPORT</AppShortName>
+  <TableStoredProcPrefix>pFASTPORTV_GeoCountry</TableStoredProcPrefix>
+</XMLDefinition>

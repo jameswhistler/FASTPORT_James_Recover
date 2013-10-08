@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ComponentDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.ironspeed.com/designer">
+  <Generator>Iron Speed Designer</Generator>
+  <Version>9.2.0</Version>
+  <Self>
+    <Name>Blank</Name>
+    <Type>Master</Type>
+    <SubType>DotNet</SubType>
+    <GenerateDirectory>Master Pages</GenerateDirectory>
+    <Layout>Master Pages\Blank.html</Layout>
+    <DisplayName>Blank</DisplayName>
+    <Description>Blank Master Page.</Description>
+  </Self>
+  <ComposedOf />
+  <LayoutDefinition>&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;LayoutDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Layout Name="Master" Type="RootLayout"&gt;
+    &lt;Prolog&gt;
+      &lt;Value&gt;&amp;lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&amp;gt;
+&amp;lt;html xmlns="http://www.w3.org/1999/xhtml"&amp;gt;
+    &amp;lt;head id="Head1" runat="server"&amp;gt;
+    &amp;lt;meta http-equiv="X-UA-Compatible" content="IE=edge"/&amp;gt;
+    &amp;lt;meta name="keywords" content="FASTPORT"/&amp;gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body id="Body1" runat="server" class="pBack"&amp;gt;
+        &amp;lt;form id="Form1" method="post" runat="server"&amp;gt;
+            &amp;lt;BaseClasses:ScrollCoordinates id="ScrollCoordinates1" runat="server"&amp;gt;&amp;lt;/BaseClasses:ScrollCoordinates&amp;gt;
+            &amp;lt;BaseClasses:BasePageSettings id="PageSettings" runat="server"&amp;gt;&amp;lt;/BaseClasses:BasePageSettings&amp;gt;
+            &amp;lt;script language="JavaScript" type="text/javascript"&amp;gt;{ScriptDirectionTemplate}&amp;lt;/script&amp;gt;
+            &amp;lt;telerik:RadScriptManager ID="RadScriptManager1" runat="server"&amp;gt;
+                &amp;lt;Scripts&amp;gt;
+                    &amp;lt;asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" /&amp;gt;
+                    &amp;lt;asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" /&amp;gt;
+                    &amp;lt;asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" /&amp;gt;
+                &amp;lt;/Scripts&amp;gt;
+            &amp;lt;/telerik:RadScriptManager&amp;gt;&lt;/Value&gt;
+    &lt;/Prolog&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;asp:ContentPlaceHolder id="PageContent" Runat="server"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog&gt;
+      &lt;Value&gt;&amp;lt;/form&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/Value&gt;
+    &lt;/Epilog&gt;
+    &lt;TableAttributes /&gt;
+  &lt;/Layout&gt;
+&lt;/LayoutDefinition&gt;]]&gt;</LayoutDefinition>
+</ComponentDefinition>

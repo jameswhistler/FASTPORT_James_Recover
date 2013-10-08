@@ -1,0 +1,7 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" Codebehind="Header.ascx.vb" Inherits="FASTPORT.UI.Header" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Tagprefix="Selectors" Namespace="FASTPORT" Assembly="FASTPORT" %>
+
+<%@ Register Tagprefix="BaseClasses" Namespace="BaseClasses.Web.UI.WebControls" Assembly="BaseClasses" %><table cellpadding="0" cellspacing="0" border="0" width="100%" class="logoBG"><tr><td class="signInBar" align="Right"><asp:LinkButton runat="server" id="_SignIn" causesvalidation="False" commandname="ShowSignIn" tooltip="SignIn">		
+	</asp:LinkButton></td><td><div onclick="return ISD_ModernButtonClick(this,event);" /><asp:ImageButton runat="server" id="_HeaderSettings" alt="&lt;%# GetResourceValue(&quot;Btn:Settings&quot;, &quot;FASTPORT&quot;) %>" causesvalidation="False" commandname="Custom" imageurl="../Images/ButtonOptions.png" onclientclick="return ISD_ShowPopupPanel('languagePanel','_HeaderSettings',this);" onmouseout="this.src='../Images/ButtonOptions.png'" onmouseover="this.src='../Images/ButtonOptionsOver.png'" tooltip="&lt;%# GetResourceValue(&quot;Btn:Settings&quot;, &quot;FASTPORT&quot;) %>">		
+	</asp:ImageButton></div/></td></tr></table>

@@ -1,0 +1,275 @@
+﻿/**********************************************************************
+ * Styles.css                                                         *
+ *                                                                    *
+ * This file is initially empty and you can add any additional styles *
+ * or modify any of the styles defined in BaseStyles.css              *
+ * This file will never be overwritten.                               *
+ *                                                                    *
+ * For example, if you want to override just the top padding for a    *
+ * menu, you can simply add the following lines:                      *
+ *                                                                    *
+ * .menus {                                                           *
+ * 	padding-top: 20px;                                            *
+ * 	}                                                             *
+ *                                                                    *
+ * This will keep all the other styles of the "menus" style as-is,    *
+ * but modify the top padding to be 20px.                             *
+ *                                                                    *
+ * You can also, add a new style by just specifying it.               *
+ *                                                                    *
+ * .menus {                                                           *
+ * 	padding-top: 20px;                                            *
+ * 	text-align: center;                                           *
+ * 	}                                                             *
+ * 	                                                              *
+ * In the above case, we added the text-align style.  This style was  *
+ * not specified in the original declaration of the menus style.      *
+ *                                                                    *
+ **********************************************************************/
+
+/*.RadPanelBar_BlackMetroTouch .rpRootGroup
+        {   
+            padding-top: 0;   
+            padding-bottom: 0;   
+            height: 800px;
+        }   
+        
+.RadPanelBar_BlackMetroTouch .rpGroup .rpLink,   
+.RadPanelBar_BlackMetroTouch .rpGroup .rpTemplate   
+        {   
+            height: 100%;   
+        }   */
+
+.pcmLSecurity { /* page container left middle edge (horizontal menu row) */
+	padding-top: 1px;
+	padding-bottom: 1px;
+	width: 100%;
+	background-color: #000000;
+	height: 66px;
+	color: #ffffff;
+	}
+	
+.MLMmCSecurity { /* horizontal menu item container */
+	font-family: Verdana, Georgia, sans-serif;
+	font-size: 16px;
+	padding-left: 8px;
+	padding-right: 8px;
+	}
+	
+.fiSecurity { /* input textbox */
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	box-shadow: inset 0px 1px 2px #dddddd;
+	color: #555555;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	padding-left: 8px;
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	vertical-align: middle;
+	}
+	
+.FailedValidation { /* Security field label on top */
+	font-family: Verdana, Georgia, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 0px;
+	padding-left: 4px;
+	text-align: left;
+	text-transform: none;
+	vertical-align: middle;
+	white-space: nowrap;	
+	color: Red;
+	}
+	
+.flSecurity { /* Security field label on top */
+	font-family: Verdana, Georgia, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 0px;
+	padding-left: 4px;
+	text-align: left;
+	text-transform: none;
+	vertical-align: middle;
+	white-space: nowrap;	
+	}
+	
+.flSecurity .rbText { /* Security field label on top */
+	font-family: Verdana, Georgia, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 0px;
+	padding-left: 4px;
+	text-align: left;
+	text-transform: none;
+	vertical-align: top;
+	white-space: nowrap;	
+	}
+	
+.pcCSecurity { /* Security page container center (contents of page container) */
+	height: 1080px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-top: 0px;
+	text-align: center;
+	vertical-align: top;
+	}
+	
+.pcCSecuritySignUp { /* Security page container center (contents of page container) */
+	height: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-top: 0px;
+	text-align: center;
+	vertical-align: top;
+	}
+	
+.dvSecurity { /* Security white panel */ 
+	background-color: #ffffff;
+	font-family: Verdana, Georgia, sans-serif;
+	font-size: 32px;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: center;
+	text-decoration: none;
+	width: 40%;
+	}
+
+.pBackSecurity { /* Security pBack with image */
+	background-attachment: fixed; 
+	background-color: #f6f6f6;
+	background-image: url(../../Images/pBack.jpg); 
+	background-position: top center; 
+	background-repeat: no-repeat;
+	margin: 0px;
+	width: 100%;
+	}
+	
+	
+.pcmL { /* page container left middle edge (horizontal menu row) */
+	padding-top: 1px;
+	padding-bottom: 1px;
+	width: 100%;
+	}
+	
+	
+.signInBar { /* sign in bar */
+	color: #ffffff;
+	vertical-align: middle;
+	padding-bottom: 0px;
+	}
+	
+.MLMmC { /* horizontal menu item container */
+	font-size: 12px;
+	}
+	
+.MLMmC a { /* horizontal menu item container */
+	font-size: 12px;
+	}
+	
+.dialog_view, .dv, .panelC { /* panel container (includes panel header) */
+	width: 100%;
+	}
+	
+.header_cust { /* panel header container */
+	background-color: #eeeeee;
+	border-radius: 5px 5px 0px 0px; 
+	-moz-border-radius: 5px 5px 0px 0px; 
+	-webkit-border-radius: 5px 5px 0px 0px; 
+	border: 1px solid #dddddd;
+	background-image: -ms-linear-gradient(top, #FBFBFB 0%, #EEEEEE 100%);
+	background-image: -moz-linear-gradient(top, #FBFBFB 0%, #EEEEEE 100%);
+	background-image: -o-linear-gradient(top, #FBFBFB 0%, #EEEEEE 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FBFBFB), color-stop(1, #EEEEEE));
+	background-image: -webkit-linear-gradient(top, #FBFBFB 0%, #EEEEEE 100%);
+	background-image: linear-gradient(to bottom, #FBFBFB 0%, #EEEEEE 100%);
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	vertical-align: top;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	color: #5e829b;
+	font-family: Arial, Verdana, Georgia, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	white-space: nowrap;
+	}
+	
+.RadWindow_Background_Cust {
+	padding: 25px;
+	background: white;
+}
+
+.pageBackground, .pBack { /* body */
+    border: 3px line black;                      
+	padding: 0px !important;
+	margin: 0px !important;
+	}
+	
+.field_label_on_side, .fls { /* field label on side */
+	white-space: normal;	
+	}
+	
+.RadTabStrip .RadTabStrip_BlackMetroTouch .RadTabStripTop_BlackMetroTouch {
+       padding:0px;
+}
+
+
+.fp_button_wrapper
+{
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #800000;
+    background-color: rgb(178, 178, 178);
+    border: 2px solid rgb(77, 77, 77);
+}
+
+div.CustomRW .rwContentRow
+{
+    width: 100%;
+}
+div.CustomRW .rwWindowContent
+{
+    width: 95%;
+    padding-top: 0px;
+    margin-top: 0px;
+    position: relative;
+    background-color: White !important;
+}
+
+div.CustomRW table, .rwTable
+{
+    border-spacing: 0px;
+}
+div.CustomRW .rwCorner, .rwFooterCenter
+{
+    width: 1px;
+}
+
+body
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nested_panel_cust {
+	}

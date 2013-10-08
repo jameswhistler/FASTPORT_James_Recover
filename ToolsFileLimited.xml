@@ -1,0 +1,8 @@
+
+<root>
+  <tools name="MainToolbar" enabled="true">
+    <tool name="Bold" shortcut="CTRL+B"/>
+    <tool name="Italic" shortcut="CTRL+I"/>
+    <tool name="Underline" shortcut="CTRL+U"/>
+  </tools>
+</root>

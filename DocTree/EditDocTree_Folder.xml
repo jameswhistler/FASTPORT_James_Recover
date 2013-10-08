@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ComponentDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.ironspeed.com/designer">
+  <Generator>Iron Speed Designer</Generator>
+  <Version>9.2.0</Version>
+  <Self>
+    <Name>EditDocTree_Folder</Name>
+    <Type>Page</Type>
+    <SubType>DotNet</SubType>
+    <MasterLayout>../Master Pages/Blank.master</MasterLayout>
+    <GenerateDirectory>DocTree</GenerateDirectory>
+    <Layout>DocTree\EditDocTree_Folder.xml</Layout>
+    <DisplayName>EditDocTree_Folder</DisplayName>
+    <Description>Standard record panel.</Description>
+    <LoginRequired>&lt;PRoles&gt;20;24;25&lt;/PRoles&gt;</LoginRequired>
+    <CheckSum>1129638758-77485</CheckSum>
+  </Self>
+  <ComposedOf>
+    <ContainedComponent>
+      <Name>CancelButton</Name>
+      <Type>Button</Type>
+      <Layout>..\Shared\ThemeButton.ascx</Layout>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Button-CausesValidation</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-CommandName</Name>
+          <Value>Redirect</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Consumers</Name>
+          <Value>page</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-RedirectURL</Name>
+          <Value>Close</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Text</Name>
+          <Value>Btn:Cancel</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>Button-ToolTip</Name>
+          <Value>Btn:Cancel</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>PostBack</Name>
+          <Value>False</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>DocDescription</Name>
+      <Type>FieldValue</Type>
+      <Field>DocDescription</Field>
+      <FieldValueStyle>TextBox</FieldValueStyle>
+      <Table>DocTree</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Columns</Name>
+          <Value>60</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>field_input</Value>
+        </Attribute>
+        <Attribute>
+          <Name>DocDescriptionRequiredFieldValidator:Enabled</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>DocDescriptionRequiredFieldValidator:Text</Name>
+          <Value>*</Value>
+        </Attribute>
+        <Attribute>
+          <Name>EnableIncrementDecrementButtons</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>Parent</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RichTextEditorType</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Rows</Name>
+          <Value>5</Value>
+        </Attribute>
+        <Attribute>
+          <Name>TextMode</Name>
+          <Value>MultiLine</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Width</Name>
+          <Value>250px</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>DocTreeRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>DocDescriptionLabel</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>DocTreeRecordControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Field</Name>
+          <Value>DocDescription</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Table</Name>
+          <Value>DocTree</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>Description</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>DocTreeRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>DocName</Name>
+      <Type>FieldValue</Type>
+      <Field>DocName</Field>
+      <FieldValueStyle>TextBox</FieldValueStyle>
+      <Table>DocTree</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Columns</Name>
+          <Value>60</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>field_input</Value>
+        </Attribute>
+        <Attribute>
+          <Name>DocNameRequiredFieldValidator:Enabled</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>DocNameRequiredFieldValidator:Text</Name>
+          <Value>*</Value>
+        </Attribute>
+        <Attribute>
+          <Name>EnableIncrementDecrementButtons</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>Parent</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RichTextEditorType</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Rows</Name>
+          <Value>2</Value>
+        </Attribute>
+        <Attribute>
+          <Name>TextMode</Name>
+          <Value>SingleLine</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Width</Name>
+          <Value>250px</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>DocTreeRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>DocNameLabel</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>DocTreeRecordControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Field</Name>
+          <Value>DocName</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Table</Name>
+          <Value>DocTree</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>Folder Name</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>DocTreeRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>DocTreeRecordControl</Name>
+      <Type>Record</Type>
+      <PanelStyle>EditRec_DTB_Parent</PanelStyle>
+      <Table>DocTree</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>EnterKeyCaptureToButton</Name>
+          <Value>SaveButton,SaveAndNewButton,OKButton,EditButton,CancelButton</Value>
+        </Attribute>
+        <Attribute>
+          <Name>HideDataUntilSearched</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>URL</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value>DocTree</Value>
+        </Attribute>
+        <Attribute>
+          <Name>URL</Name>
+          <Value>DocTree</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>InstructionsStandard</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>892</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>DocTreeRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>PageTitle</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>{Title:Edit} Document Tree</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RoleID</Name>
+      <Type>FieldValue</Type>
+      <Field>RoleID</Field>
+      <FieldValueStyle>DropDownList</FieldValueStyle>
+      <Table>DocTree</Table>
+      <SpecifiedItems>
+        <Item>
+          <Name />
+          <Value>For Everyone</Value>
+        </Item>
+      </SpecifiedItems>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>Role_</TableAlias>
+          <Field>[Role_].[GeneralRoleID]</Field>
+          <Operator>=</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>URL("GeneralRole")</Value>
+          </Operand>
+          <CompareDFKA>No</CompareDFKA>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <TableAliases>
+          <Alias>
+            <AliasName>Role_</AliasName>
+            <TableName>Role</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>field_input</Value>
+        </Attribute>
+        <Attribute>
+          <Name>DataReaderSortBy</Name>
+          <Value>RoleTypeID Asc</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:GenerateSpecificItems</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:NewRecordFormula</Name>
+          <Value>URL("Role")</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:PopulateDisplayAs</Name>
+          <Value>= Role.Role</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:PopulateFrom</Name>
+          <Value>Role</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:PopulateValue</Name>
+          <Value>RoleID</Value>
+        </Attribute>
+        <Attribute>
+          <Name>MaxGeneratedItems</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>MinListItems</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onkeypress</Name>
+          <Value>dropDownListTypeAhead(this,false)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;20&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RoleIDRequiredFieldValidator:Enabled</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RoleIDRequiredFieldValidator:InitialValue</Name>
+          <Value>--PLEASE_SELECT--</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RoleIDRequiredFieldValidator:Text</Name>
+          <Value>*</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>DocTreeRecordControl</InsideControl>
+      <OrderBys>
+        <OrderBy>
+          <Position>0</Position>
+          <ColumnName>RoleTypeID</ColumnName>
+          <Direction>Asc</Direction>
+        </OrderBy>
+        <OrderBy>
+          <Position>1</Position>
+          <ColumnName>RoleRank</ColumnName>
+          <Direction>Asc</Direction>
+        </OrderBy>
+      </OrderBys>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RoleIDLabel</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>DocTreeRecordControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Field</Name>
+          <Value>RoleID</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Table</Name>
+          <Value>DocTree</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;20&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>Only For</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>DocTreeRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>SaveButton</Name>
+      <Type>Button</Type>
+      <Layout>..\Shared\ThemeButton.ascx</Layout>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Button-CausesValidation</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-CommandName</Name>
+          <Value>UpdateData</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Consumers</Name>
+          <Value>page</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-RedirectURL</Name>
+          <Value>Close</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Text</Name>
+          <Value>Btn:Save</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>Button-ToolTip</Name>
+          <Value>Btn:Save</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>PostBack</Name>
+          <Value>True</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>UpdatePanel1</Name>
+      <Type>UpdatePanel</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>SmoothPanelUpdate</Name>
+          <Value>True</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+  </ComposedOf>
+  <LayoutDefinition>&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;LayoutDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Layout Name="Page" Type="RootLayout"&gt;
+    &lt;Prolog&gt;
+      &lt;Value&gt;&amp;lt;asp:Content id="PageSection" ContentPlaceHolderID="PageContent" Runat="server"&amp;gt;
+    &amp;lt;a id="StartOfPageContent"&amp;gt;&amp;lt;/a&amp;gt;
+    &amp;lt;GEN:UPDATEPANEL NAME="UpdatePanel1"&amp;gt;
+                
+		&amp;lt;telerik:RadCodeBlock ID="RadCodeBlock1" runat="server"&amp;gt;
+        &amp;lt;script type="text/javascript"&amp;gt;
+	
+            function ChildCloseAndRedirect(args) {
+                GetRadWindow().BrowserWindow.ParentCloseAndRedirect(args);
+                GetRadWindow().close();
+            }
+
+
+            function ChildClose(args) {
+                GetRadWindow().close();
+            }			
+
+            function GetRadWindow() {
+                var oWindow = null;
+                if (window.radWindow) oWindow = window.radWindow; //Will work in Moz in all cases, including clasic dialog
+                else if (window.frameElement.radWindow) oWindow = window.frameElement.radWindow; //IE (and Moz as well)
+
+                return oWindow;
+            }
+
+        &amp;lt;/script&amp;gt;
+		&amp;lt;/telerik:RadCodeBlock&amp;gt;&lt;/Value&gt;
+    &lt;/Prolog&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                        &amp;lt;GEN:RECORD NAME="DocTreeRecordControl"&amp;gt;&amp;lt;/GEN:RECORD&amp;gt;
+            &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="PageButtons"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;recordPanelButtonsAlignment&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog&gt;
+      &lt;Value&gt;&amp;lt;/GEN:UPDATEPANEL&amp;gt;
+    &amp;lt;div id="detailPopup" class="detailRolloverPopup" onmouseout="detailRolloverPopupClose();" onmouseover="clearTimeout(gPopupTimer);"&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;asp:ValidationSummary id="ValidationSummary1" ShowMessageBox="true" ShowSummary="false" runat="server"&amp;gt;&amp;lt;/asp:ValidationSummary&amp;gt;
+&amp;lt;/asp:Content&amp;gt;&lt;/Value&gt;
+    &lt;/Epilog&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="DocTreeRecordControl" Type="RecordPanel" PanelControlName="DocTreeRecordControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="InstructionsPanel" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes&gt;
+        &lt;Attribute&gt;
+          &lt;Name&gt;id&lt;/Name&gt;
+          &lt;AttributeValue&gt;InstructionsRow&lt;/AttributeValue&gt;
+        &lt;/Attribute&gt;
+        &lt;Attribute&gt;
+          &lt;Name&gt;runat&lt;/Name&gt;
+          &lt;AttributeValue&gt;server&lt;/AttributeValue&gt;
+        &lt;/Attribute&gt;
+        &lt;Attribute&gt;
+          &lt;Name&gt;visible&lt;/Name&gt;
+          &lt;AttributeValue&gt;false&lt;/AttributeValue&gt;
+        &lt;/Attribute&gt;
+      &lt;/RowAttributes&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="DocTreePanel" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;class&lt;/Name&gt;
+        &lt;AttributeValue&gt;dv&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="InstructionsPanel" Type="BlankPanel" PanelControlName="DocTreeRecordControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL Name="InstructionsStandard" /&amp;gt;
+&amp;lt;br /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:left;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes /&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="DocTreePanel" PanelControlName="DocTreeRecordControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="DocTreeFields"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;class&lt;/Name&gt;
+        &lt;AttributeValue&gt;dBody&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;width&lt;/Name&gt;
+        &lt;AttributeValue&gt;100%&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="DocTreeFields" Type="RecordGrid" PanelControlName="DocTreeRecordControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="CurrentPanel" /&amp;gt; 
+&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="CurrentPanel" Type="BlankPanel" PanelControlName="DocTreeRecordControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="RoleIDLabel" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;vertical-align:top;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="RoleID" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;vertical-align:top;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="DocNameLabel" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;vertical-align:top;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="DocName" /&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;vertical-align:top;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="DocDescriptionLabel" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="DocDescription" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes /&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="PageButtons" Type="PageButton"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:BUTTON NAME="SaveButton"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:BUTTON NAME="CancelButton"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+&lt;/LayoutDefinition&gt;]]&gt;</LayoutDefinition>
+</ComponentDefinition>

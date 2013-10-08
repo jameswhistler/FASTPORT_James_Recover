@@ -1,0 +1,14 @@
+<root>
+    <tools name="MainToolbar" enabled="true">
+        <tool Name="Cut" />
+        <tool Name="Copy" ShortCut="CTRL+C" />
+        <tool Name="Paste" ShortCut="CTRL+V" />
+        <tool separator="true"/>
+        <tool name="Bold" shortcut="CTRL+B"/>
+        <tool name="Italic" shortcut="CTRL+I"/>
+        <tool name="Underline" shortcut="CTRL+U"/>
+        <tool separator="true"/>
+        <tool Name="InsertOrderedList" />
+        <tool Name="InsertUnorderedList" />
+    </tools>
+</root>

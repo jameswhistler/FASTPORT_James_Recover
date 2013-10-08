@@ -1,0 +1,28 @@
+﻿<%@ Master Language="vb" %>
+<%@ Register Tagprefix="FASTPORT" TagName="EmailHeader" Src="../Header and Footer/EmailHeader.ascx" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Tagprefix="Selectors" Namespace="FASTPORT" Assembly="FASTPORT" %>
+
+<%@ Register Tagprefix="FASTPORT" TagName="EmailFooter" Src="../Header and Footer/EmailFooter.ascx" %>
+
+<%@ Register Tagprefix="BaseClasses" Namespace="BaseClasses.Web.UI.WebControls" Assembly="BaseClasses" %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="FASTPORT" />
+    <title></title>
+    </head>
+    <body id="Body1" runat="server" style="margin-left: auto; margin-right: auto; width: 600px;">
+        <form id="Form1" method="post" runat="server">
+            <BaseClasses:ScrollCoordinates id="ScrollCoordinates1" runat="server"></BaseClasses:ScrollCoordinates>
+            <BaseClasses:BasePageSettings id="PageSettings" runat="server"></BaseClasses:BasePageSettings>
+            <script language="JavaScript" type="text/javascript">clearRTL()</script>
+            <asp:ScriptManager ID="scriptManager1" runat="server" EnablePartialRendering="True" EnablePageMethods="True" EnableScriptGlobalization="True" EnableScriptLocalization="True">
+			</asp:ScriptManager>
+          <table align="center"><tr><td><table border="0" cellpadding="0" cellspacing="0" style="width:100%;"><tr><td style="background-color: #222222; height: 60px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 4px;"><FASTPORT:EmailHeader runat="server" id="_PageHeader"></FASTPORT:EmailHeader></td></tr><tr><td style="background-color: #ffffff; border-bottom: 1px solid  #222222; border-left: 1px solid  #222222; border-right:1px solid  #222222; height: 300px; padding: 10px; vertical-align: top; width:600px;"><asp:ContentPlaceHolder id="PageContent" Runat="server" /></td></tr><tr><td style="color: #555555; font-family: Verdana, Arial, Georgia, sans-serif; font-size: 12px; padding-top: 10px;"><FASTPORT:EmailFooter runat="server" id="_PageFooter"></FASTPORT:EmailFooter></td></tr></table>
+</td></tr></table>
+        </form>
+    </body>
+</html>
+          
