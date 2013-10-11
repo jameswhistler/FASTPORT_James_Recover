@@ -27,29 +27,6 @@ Partial Class SignUpFP
         CarrierRPI.Visible = False
     End Sub
 
-    Protected Sub RadAjaxManager1_AjaxRequest(ByVal sender As Object, ByVal e As Telerik.Web.UI.AjaxRequestEventArgs) Handles RadAjaxManager1.AjaxRequest
-
-        Dim myArg As String = e.Argument
-        Dim myAction As String = CustGenClass.f_Split_ByComma(myArg, 1)
-        Dim my1st As String = CustGenClass.f_Split_ByComma(myArg, 2)
-        Dim my2nd As String = CustGenClass.f_Split_ByComma(myArg, 3)
-        Dim my3rd As String = CustGenClass.f_Split_ByComma(myArg, 4)
-        Dim myPartyID As String = Me.HiddenTB_PartyID.Text
-        Dim mySproc As String = Nothing
-        Dim myWarning As String = "Nothing"
-        Dim myWarningTitle As String = "Nothing"
-
-        If myAction = "rebindAddr" Then
-            '
-        ElseIf myAction = "rebindPickCarrierRG" Then
-            PickCarrierRG.Rebind()
-        End If
-
-        If myWarning <> "Nothing" Then
-            RadAjaxManager1.ResponseScripts.Add("launchRadAlert('" & myWarning & "','" & myWarningTitle & "');")
-        End If
-
-    End Sub
     Protected Sub CarrierEditRB_OnClick(sender As Object, e As EventArgs) Handles CarrierEditRB.Click
 
         Dim btn As RadButton = TryCast(sender, RadButton)
@@ -74,6 +51,28 @@ Partial Class SignUpFP
 
             'f_SaveOrAddNew(myCarrierDataStatus, myCarrierID, myMC, myDOT, myCarrierName, myCarrierAddr, myCarrierZipID, myCarrierEmail, myCarrierPhone, myCarrierFax)
 
+        End If
+
+    End Sub
+
+    Protected Sub RadAjaxManager1_AjaxRequest(ByVal sender As Object, ByVal e As Telerik.Web.UI.AjaxRequestEventArgs) Handles RadAjaxManager1.AjaxRequest
+
+        Dim myArg As String = e.Argument
+        Dim myAction As String = CustGenClass.f_Split_ByComma(myArg, 1)
+        Dim my1st As String = CustGenClass.f_Split_ByComma(myArg, 2)
+        Dim my2nd As String = CustGenClass.f_Split_ByComma(myArg, 3)
+        Dim my3rd As String = CustGenClass.f_Split_ByComma(myArg, 4)
+        Dim myPartyID As String = Me.HiddenTB_PartyID.Text
+        Dim mySproc As String = Nothing
+        Dim myWarning As String = "Nothing"
+        Dim myWarningTitle As String = "Nothing"
+
+        If myAction = "rebindPickCarrierRG" Then
+            PickCarrierRG.Rebind()
+        End If
+
+        If myWarning <> "Nothing" Then
+            RadAjaxManager1.ResponseScripts.Add("launchRadAlert('" & myWarning & "','" & myWarningTitle & "');")
         End If
 
     End Sub
@@ -145,6 +144,27 @@ Partial Class SignUpFP
 
         If UIValid() Then
             ' Create Trucker account
+
+            Try
+                DbUtils.StartTransaction()
+
+                Dim myTruckerRec As PartyRecord = New PartyRecord()
+                myTruckerRec.PartyTypeID = 7
+                myTruckerRec.Name = Me.NameRTB.Text
+                myTruckerRec.Handle = Me.HandleRTB.Text
+                myTruckerRec.Email = Me.EmailRTB.Text
+                myTruckerRec.Password = Me.PasswordRTB.Text
+                myTruckerRec.DirectDial = Me.DirectDialRTB.Text
+                myTruckerRec.Mobile = Me.MobileRTB.Text
+                myTruckerRec.Email = Me.EmailRTB.Text
+                myTruckerRec.Save()
+
+                DbUtils.CommitTransaction()
+            Catch ex As Exception
+                DbUtils.RollBackTransaction()
+            Finally
+                DbUtils.EndTransaction()
+            End Try
 
             ' Switch to Contact information RadPanel
             RadAjaxManager1.ResponseScripts.Add("ActivateContactRadPanel();")
@@ -223,17 +243,17 @@ Partial Class SignUpFP
         End If
 
         ' Check captcha matches
-        'If Not Me.Page.IsValid() Then
-        '    'Me.WrongCodeLiteral.Visible = True
-        '    'Me.WrongCodeLiteral.Text = "The verification words are incorrect."
-        '    SignUpRTT.Text = "The verification words are incorrect"
-        '    Dim CaptchaDiv As HtmlGenericControl = DirectCast(Me.FindControlRecursively("CaptchaDiv"), HtmlGenericControl)
-        '    SignUpRTT.TargetControlID = CaptchaDiv.ID
-        '    SignUpRTT.Show()
-        '    UIIsValid = False
+        If Not Me.Page.IsValid() Then
+            'Me.WrongCodeLiteral.Visible = True
+            'Me.WrongCodeLiteral.Text = "The verification words are incorrect."
+            SignUpRTT.Text = "The verification words are incorrect"
+            Dim CaptchaDiv As HtmlGenericControl = DirectCast(Me.FindControlRecursively("CaptchaDiv"), HtmlGenericControl)
+            SignUpRTT.TargetControlID = CaptchaDiv.ID
+            SignUpRTT.Show()
+            UIIsValid = False
 
-        '    Return UIIsValid
-        'End If
+            Return UIIsValid
+        End If
 
         Return UIIsValid
 

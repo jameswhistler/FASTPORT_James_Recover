@@ -603,11 +603,11 @@
     <Compile Include="Menu Panels\IMarketingMenu.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="User\UserConfig.aspx.vb" >
+    <Compile Include="User\UserConfig.aspx.vb">
       <DependentUpon>UserConfig.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\UserConfig.Controls.vb" >
+    <Compile Include="User\UserConfig.Controls.vb">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -1586,6 +1586,35 @@
     <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyGetStats.sql" />
     <Content Include="StoredProcedures\pFASTPORTPaymentMethodPartyExport.sql" />
     <Content Include="User\UserConfig.aspx" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUsersGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUsersGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUsersDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUsersGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUsersExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUserDistinctRolesGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUserDistinctRolesGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUserDistinctRolesDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUserDistinctRolesGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_FellowUserDistinctRolesExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodCarrierAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodCarrierUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodCarrierDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodCarrierDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodCarrierGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodCarrierGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodCarrierDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodCarrierGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodCarrierExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyCarriersGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyCarriersGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyCarriersDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyCarriersGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyCarriersExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesGet.sql"  />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesGetList.sql"  />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesDrillDown.sql"  />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesGetStats.sql"  />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesExport.sql"  />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">

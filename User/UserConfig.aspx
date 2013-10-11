@@ -20,160 +20,156 @@
                     <table class="dv" cellpadding="0" cellspacing="0" border="0">
                         <tr>
                             <td>
-                                <tr>
-                                    <td>
-                                        <asp:Panel ID="PartyRecordControlCollapsibleRegion" runat="server">
-                                            <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                <tr>
-                                                    <td>
-                                                        <asp:Panel ID="PartyRecordControlPanel" runat="server">
-                                                            <table cellpadding="0" cellspacing="0" border="0">
-                                                                <tr>
-                                                                    <td class="fls">
-                                                                        <asp:Literal runat="server" ID="PasswordLabel" Text="Password">	</asp:Literal>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                        <span style="white-space: nowrap;">
-                                                                            <asp:TextBox runat="server" ID="Password" Columns="40" MaxLength="50" CssClass="field_input"
-                                                                                TextMode="Password" Visible="False"></asp:TextBox>&nbsp;
-                                                                            <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="PasswordTextBoxMaxLengthValidator"
-                                                                                ControlToValidate="Password" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Password&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
-                                                                        <telerik:RadTextBox ID="PasswordRTB" runat="server" Width="167px" TabIndex="1" class="flSecurity"
-                                                                            TextMode="Password">
-                                                                        </telerik:RadTextBox>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="fls">
-                                                                        &nbsp;
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="fls">
-                                                                        <asp:Literal runat="server" ID="NameLabel" Text="Name">	</asp:Literal>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                        <span style="white-space: nowrap;">
-                                                                            <asp:TextBox runat="server" ID="Name" MaxLength="1000" Columns="120" CssClass="field_input"
-                                                                                Rows="6" TextMode="MultiLine" Visible="False"></asp:TextBox>&nbsp;
-                                                                            <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="NameTextBoxMaxLengthValidator"
-                                                                                ControlToValidate="Name" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Name&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
-                                                                        <telerik:RadTextBox ID="NameRTB" runat="server" Width="167px" TabIndex="2">
-                                                                        </telerik:RadTextBox>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="fls">
-                                                                        <asp:Literal runat="server" ID="EmailLabel" Text="Email">	</asp:Literal>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                        <span style="white-space: nowrap;">
-                                                                            <asp:TextBox runat="server" ID="Email" Columns="40" MaxLength="100" CssClass="field_input"
-                                                                                Visible="False"></asp:TextBox>&nbsp;
-                                                                            <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="EmailTextBoxMaxLengthValidator"
-                                                                                ControlToValidate="Email" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Email&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
-                                                                        <telerik:RadTextBox ID="EmailRTB" runat="server" Width="167px" TabIndex="1">
-                                                                        </telerik:RadTextBox>
-                                                                        <asp:RegularExpressionValidator ID="emailValidator" runat="server" Display="Dynamic"
-                                                                            ErrorMessage="Please enter valid e-mail." ValidationExpression="^[\w\.\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]{1,})*(\.[a-zA-Z]{2,3}){1,2}$"
-                                                                            ControlToValidate="EmailRTB">
-                                                                        </asp:RegularExpressionValidator>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="fls">
-                                                                        <asp:Literal runat="server" ID="MobileLabel" Text="Mobile">	</asp:Literal>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                        <span style="white-space: nowrap;">
-                                                                            <asp:TextBox runat="server" ID="Mobile" Columns="40" MaxLength="50" CssClass="field_input"
-                                                                                Visible="False"></asp:TextBox>&nbsp;
-                                                                            <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="MobileTextBoxMaxLengthValidator"
-                                                                                ControlToValidate="Mobile" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Mobile&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
-                                                                        <telerik:RadMaskedTextBox ID="MobileRTB" runat="server" Mask="###-###-####" Width="167px"
-                                                                            TabIndex="6">
-                                                                        </telerik:RadMaskedTextBox>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="fls">
-                                                                        <asp:Literal runat="server" ID="DirectDialLabel" Text="Direct Dial">	</asp:Literal>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                        <span style="white-space: nowrap;">
-                                                                            <asp:TextBox runat="server" ID="DirectDial" Columns="40" MaxLength="50" CssClass="field_input"
-                                                                                Visible="False"></asp:TextBox>&nbsp;
-                                                                            <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="DirectDialTextBoxMaxLengthValidator"
-                                                                                ControlToValidate="DirectDial" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Direct Dial&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
-                                                                        <telerik:RadMaskedTextBox ID="DirectDialRTB" runat="server" Mask="###-###-#### #####"
-                                                                            Width="167px" TabIndex="5">
-                                                                        </telerik:RadMaskedTextBox>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="fls">
-                                                                        <asp:Literal runat="server" ID="FaxLabel" Text="Fax">	</asp:Literal>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                        <span style="white-space: nowrap;">
-                                                                            <asp:TextBox runat="server" ID="Fax" Columns="40" MaxLength="50" CssClass="field_input"
-                                                                                Visible="False"></asp:TextBox>&nbsp;
-                                                                            <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="FaxTextBoxMaxLengthValidator"
-                                                                                ControlToValidate="Fax" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Fax&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
-                                                                        <telerik:RadMaskedTextBox ID="FaxRTB" runat="server" Mask="###-###-####" Width="167px"
-                                                                            TabIndex="8">
-                                                                        </telerik:RadMaskedTextBox>
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="fls">
-                                                                        &nbsp;
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                    <td class="dfv">
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </asp:Panel>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </asp:Panel>
-                                    </td>
-                                </tr>
+                                <asp:Panel ID="PartyRecordControlCollapsibleRegion" runat="server">
+                                    <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td>
+                                                <asp:Panel ID="PartyRecordControlPanel" runat="server">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td class="fls">
+                                                                <asp:Literal runat="server" ID="PasswordLabel" Text="Password">	</asp:Literal>
+                                                            </td>
+                                                            <td class="dfv">
+                                                                <span style="white-space: nowrap;">
+                                                                    <asp:TextBox runat="server" ID="Password" Columns="40" MaxLength="50" CssClass="field_input"
+                                                                        TextMode="Password" Visible="False"></asp:TextBox>&nbsp;
+                                                                    <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="PasswordTextBoxMaxLengthValidator"
+                                                                        ControlToValidate="Password" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Password&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
+                                                                <telerik:RadTextBox ID="PasswordRTB" runat="server" Width="167px" TabIndex="1" class="flSecurity"
+                                                                    TextMode="Password">
+                                                                </telerik:RadTextBox>
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="fls">
+                                                                &nbsp;
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="fls">
+                                                                <asp:Literal runat="server" ID="NameLabel" Text="Name">	</asp:Literal>
+                                                            </td>
+                                                            <td class="dfv">
+                                                                <span style="white-space: nowrap;">
+                                                                    <asp:TextBox runat="server" ID="Name" MaxLength="1000" Columns="120" CssClass="field_input"
+                                                                        Rows="6" TextMode="MultiLine" Visible="False"></asp:TextBox>&nbsp;
+                                                                    <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="NameTextBoxMaxLengthValidator"
+                                                                        ControlToValidate="Name" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Name&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
+                                                                <telerik:RadTextBox ID="NameRTB" runat="server" Width="167px" TabIndex="2">
+                                                                </telerik:RadTextBox>
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="fls">
+                                                                <asp:Literal runat="server" ID="EmailLabel" Text="Email">	</asp:Literal>
+                                                            </td>
+                                                            <td class="dfv">
+                                                                <span style="white-space: nowrap;">
+                                                                    <asp:TextBox runat="server" ID="Email" Columns="40" MaxLength="100" CssClass="field_input"
+                                                                        Visible="False"></asp:TextBox>&nbsp;
+                                                                    <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="EmailTextBoxMaxLengthValidator"
+                                                                        ControlToValidate="Email" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Email&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
+                                                                <telerik:RadTextBox ID="EmailRTB" runat="server" Width="167px" TabIndex="1">
+                                                                </telerik:RadTextBox>
+                                                                <asp:RegularExpressionValidator ID="emailValidator" runat="server" Display="Dynamic"
+                                                                    ErrorMessage="Please enter valid e-mail." ValidationExpression="^[\w\.\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]{1,})*(\.[a-zA-Z]{2,3}){1,2}$"
+                                                                    ControlToValidate="EmailRTB">
+                                                                </asp:RegularExpressionValidator>
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="fls">
+                                                                <asp:Literal runat="server" ID="MobileLabel" Text="Mobile">	</asp:Literal>
+                                                            </td>
+                                                            <td class="dfv">
+                                                                <span style="white-space: nowrap;">
+                                                                    <asp:TextBox runat="server" ID="Mobile" Columns="40" MaxLength="50" CssClass="field_input"
+                                                                        Visible="False"></asp:TextBox>&nbsp;
+                                                                    <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="MobileTextBoxMaxLengthValidator"
+                                                                        ControlToValidate="Mobile" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Mobile&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
+                                                                <telerik:RadMaskedTextBox ID="MobileRTB" runat="server" Mask="###-###-####" Width="167px"
+                                                                    TabIndex="6">
+                                                                </telerik:RadMaskedTextBox>
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="fls">
+                                                                <asp:Literal runat="server" ID="DirectDialLabel" Text="Direct Dial">	</asp:Literal>
+                                                            </td>
+                                                            <td class="dfv">
+                                                                <span style="white-space: nowrap;">
+                                                                    <asp:TextBox runat="server" ID="DirectDial" Columns="40" MaxLength="50" CssClass="field_input"
+                                                                        Visible="False"></asp:TextBox>&nbsp;
+                                                                    <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="DirectDialTextBoxMaxLengthValidator"
+                                                                        ControlToValidate="DirectDial" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Direct Dial&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
+                                                                <telerik:RadMaskedTextBox ID="DirectDialRTB" runat="server" Mask="###-###-#### #####"
+                                                                    Width="167px" TabIndex="5">
+                                                                </telerik:RadMaskedTextBox>
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="fls">
+                                                                <asp:Literal runat="server" ID="FaxLabel" Text="Fax">	</asp:Literal>
+                                                            </td>
+                                                            <td class="dfv">
+                                                                <span style="white-space: nowrap;">
+                                                                    <asp:TextBox runat="server" ID="Fax" Columns="40" MaxLength="50" CssClass="field_input"
+                                                                        Visible="False"></asp:TextBox>&nbsp;
+                                                                    <BaseClasses:TextBoxMaxLengthValidator runat="server" ID="FaxTextBoxMaxLengthValidator"
+                                                                        ControlToValidate="Fax" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;FASTPORT&quot;).Replace(&quot;{FieldName}&quot;, &quot;Fax&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
+                                                                <telerik:RadMaskedTextBox ID="FaxRTB" runat="server" Mask="###-###-####" Width="167px"
+                                                                    TabIndex="8">
+                                                                </telerik:RadMaskedTextBox>
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="fls">
+                                                                &nbsp;
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                            <td class="dfv">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </asp:Panel>
                             </td>
                         </tr>
                     </table>
@@ -449,18 +445,57 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="list-panel">
-                                <telerik:RadListBox ID="CarrierRLB" runat="server" CheckBoxes="true" Width="220px"
-                                    Height="300px" DataSourceID="CarrierDS" DataKeyField="PaymentMethodID" DataTextField="PaymentMethodType">
-                                </telerik:RadListBox>
-                                <asp:SqlDataSource ID="CarrierDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
-                                    SelectCommand="SELECT * FROM [v_PaymentMethod] WHERE [PartyID] = @PaymentMethodPartyID">
-                                    <SelectParameters>
-                                        <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="PaymentMethodPartyID" PropertyName="Text"
-                                            Type="Int32" />
-                                    </SelectParameters>
-                                </asp:SqlDataSource>
-                            </div>
+                            <asp:Panel ID="UserPanel" runat="server">
+                                <div class="list-panel">
+                                    <telerik:RadListBox ID="UserRLB" runat="server" CheckBoxes="true" Width="220px" Height="300px"
+                                        DataSourceID="UserDS" DataKeyField="OtherUserID" DataTextField="OtherUserName"
+                                        OnItemDataBound="UserRLB_ItemDataBound">
+                                    </telerik:RadListBox>
+                                    <asp:SqlDataSource ID="UserDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                        SelectCommand="SELECT * FROM [v_FellowUsers] WHERE [UserID] = @PartyID">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="PartyID" PropertyName="Text"
+                                                Type="Int32" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
+                                </div>
+                            </asp:Panel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Panel ID="RolePanel" runat="server">
+                                <div class="list-panel">
+                                    <telerik:RadListBox ID="RoleRLB" runat="server" CheckBoxes="true" Width="220px" Height="300px"
+                                        DataSourceID="RoleDS" DataKeyField="RoleID" DataTextField="Role" DataValueField="ParentPartyID" OnItemDataBound="RoleRLB_ItemDataBound">
+                                    </telerik:RadListBox>
+                                    <asp:SqlDataSource ID="RoleDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                        SelectCommand="SELECT * FROM [v_FellowUserDistinctRoles] WHERE [PartyID] = @PartyID">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="PartyID" PropertyName="Text"
+                                                Type="Int32" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
+                                </div>
+                            </asp:Panel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Panel ID="CarrierPanel" runat="server">
+                                <div class="list-panel">
+                                    <telerik:RadListBox ID="CarrierRLB" runat="server" CheckBoxes="true" Width="220px" Height="300px"
+                                        DataSourceID="CarrierDS" DataKeyField="CarrierID" DataTextField="CarrierFullName" OnItemDataBound="CarrierRLB_ItemDataBound">
+                                    </telerik:RadListBox>
+                                    <asp:SqlDataSource ID="CarrierDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                        SelectCommand="SELECT * FROM [v_PartyCarriers] WHERE [PartyID] = @PartyID">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="PartyID" PropertyName="Text"
+                                                Type="Int32" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
+                                </div>
+                            </asp:Panel>
                         </td>
                     </tr>
                 </table>
@@ -471,6 +506,8 @@
                 <div id="HiddenDiv" style="display: none;">
                     PartyID:
                     <asp:TextBox ID="HiddenTB_PartyID" runat="server"></asp:TextBox><br />
+                    ParentPartyID:
+                    <asp:TextBox ID="HiddenTB_ParentPartyID" runat="server"></asp:TextBox><br />
                     PaymentMethodID:
                     <asp:TextBox ID="HiddenTB_PaymentMethodID" runat="server"></asp:TextBox><br />
                 </div>

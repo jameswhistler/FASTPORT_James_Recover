@@ -47,9 +47,13 @@ Partial Public Class UserConfig
         Protected WithEvents DirectDialRTB As Global.Telerik.Web.UI.RadMaskedTextBox
         Protected WithEvents FaxRTB As Global.Telerik.Web.UI.RadMaskedTextBox
         Protected WithEvents HiddenTB_PartyID As System.Web.UI.WebControls.TextBox
+        Protected WithEvents HiddenTB_PaymentMethodID As System.Web.UI.WebControls.TextBox
         Protected WithEvents PaymentMethodRadGrid As Global.Telerik.Web.UI.RadGrid
         Protected WithEvents CreditCardPanel As System.Web.UI.WebControls.Panel
         Protected WithEvents BankAccountPanel As System.Web.UI.WebControls.Panel
+        Protected WithEvents CarrierPanel As System.Web.UI.WebControls.Panel
+        Protected WithEvents RolePanel As System.Web.UI.WebControls.Panel
+        Protected WithEvents UserPanel As System.Web.UI.WebControls.Panel
         Protected WithEvents CreditCardTypeRDDL As Global.Telerik.Web.UI.RadDropDownList
         Protected WithEvents CreditCardNumberRTB As Global.Telerik.Web.UI.RadTextBox
         Protected WithEvents CreditCardNameRTB As Global.Telerik.Web.UI.RadTextBox
@@ -66,6 +70,9 @@ Partial Public Class UserConfig
         Protected WithEvents EveryoneRB As Global.Telerik.Web.UI.RadButton
         Protected WithEvents SpecificRolesRB As Global.Telerik.Web.UI.RadButton
         Protected WithEvents SpecificPeopleRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents UserRLB As Global.Telerik.Web.UI.RadListBox
+        Protected WithEvents RoleRLB As Global.Telerik.Web.UI.RadListBox
+        Protected WithEvents CarrierRLB As Global.Telerik.Web.UI.RadListBox
 
       Public Sub SetPageFocus()
       'load scripts to all controls on page so that they will retain focus on PostBack
@@ -83,6 +90,9 @@ Partial Public Class UserConfig
             If (e.CommandName = "RowClick") Then
                 Dim myPaymentMethodID As String = (DirectCast(e.Item, Telerik.Web.UI.GridDataItem)).GetDataKeyValue("PaymentMethodID").ToString()
                 Dim myPaymentMethodType As String = (DirectCast(e.Item, Telerik.Web.UI.GridDataItem)).GetDataKeyValue("PaymentMethodType").ToString()
+
+                'Set the hidden text field for this PaymentMethod
+                Me.HiddenTB_PaymentMethodID.Text = myPaymentMethodID
 
                 Dim myPaymentMethodRec As PaymentMethodRecord = PaymentMethodTable.GetRecord(myPaymentMethodID, False)
                 If myPaymentMethodType = "CC" Then
@@ -132,30 +142,122 @@ Partial Public Class UserConfig
             Select Case myPaymentMethodRec.CarrierAvailabilityID
                 Case 2639
                     Me.AllCarriersRB.Checked = True
+                    CarrierPanel.Visible = False
                 Case 2640
                     Me.SpecificCarriersRB.Checked = True
+                    CarrierRLB.DataBind()
+                    CarrierPanel.Visible = True
                 Case Else
                     Me.AllCarriersRB.Checked = False
                     Me.SpecificCarriersRB.Checked = False
+                    CarrierPanel.Visible = False
             End Select
 
             Select Case myPaymentMethodRec.PartyAvailabilityID
                 Case 2641
                     Me.OnlyMeRB.Checked = True
+                    RolePanel.Visible = False
+                    UserPanel.Visible = False
                 Case 2642
                     Me.EveryoneRB.Checked = True
+                    RolePanel.Visible = False
+                    UserPanel.Visible = False
                 Case 2643
                     Me.SpecificRolesRB.Checked = True
+                    RoleRLB.DataBind()
+                    RolePanel.Visible = True
+                    UserPanel.Visible = False
                 Case 2644
                     Me.SpecificPeopleRB.Checked = True
+                    UserRLB.DataBind()
+                    UserPanel.Visible = True
+                    RolePanel.Visible = False
                 Case Else
                     Me.OnlyMeRB.Checked = False
                     Me.EveryoneRB.Checked = False
                     Me.SpecificRolesRB.Checked = False
                     Me.SpecificPeopleRB.Checked = False
+                    RolePanel.Visible = False
+                    UserPanel.Visible = False
             End Select
-
             
+        End Sub
+
+        Protected Sub UserRLB_ItemDataBound(ByVal sender As Object, ByVal e As Telerik.Web.UI.RadListBoxItemEventArgs)
+
+            Dim dataSourceRow As DataRowView = DirectCast(e.Item.DataItem, DataRowView)
+
+            If Me.HiddenTB_PaymentMethodID.Text <> "" Then
+
+                ' We need to check whether this user has a PaymentMethodParty row for this PaymentMethod.
+                ' If so, we check the box
+
+                Dim myPaymentMethodPartyWhereStr As String = PaymentMethodPartyTable.PaymentMethodID.UniqueName & " = " & Me.HiddenTB_PaymentMethodID.Text & " AND " & PaymentMethodPartyTable.PartyID.UniqueName & " = " & dataSourceRow("OtherUserID").ToString
+                Dim myPaymentMethodPartyRec As PaymentMethodPartyRecord = PaymentMethodPartyTable.GetRecord(myPaymentMethodPartyWhereStr)
+
+                If Not IsNothing(myPaymentMethodPartyRec) Then
+                    e.Item.Checked = True
+                Else
+                    e.Item.Checked = False
+                End If
+            End If
+
+        End Sub
+
+        Protected Sub RoleRLB_ItemDataBound(ByVal sender As Object, ByVal e As Telerik.Web.UI.RadListBoxItemEventArgs)
+
+            Dim dataSourceRow As DataRowView = DirectCast(e.Item.DataItem, DataRowView)
+
+            If Me.HiddenTB_PaymentMethodID.Text <> "" Then
+
+                ' We need to check whether all users with this role, for this ParentParty, have the ability to use this account.
+                ' If any of them don't, then we don't check the box
+
+                Dim CheckTheBox As Boolean = True
+
+                Dim myPartyUserRolesWhereStr As String = V_PartyUserRolesView.RoleID.UniqueName & " = " & dataSourceRow("RoleID").ToString & " AND " & V_PartyUserRolesView.PartyID.UniqueName & " = " & dataSourceRow("ParentPartyID").ToString
+                For Each myPartyUserRoleRec As V_PartyUserRolesRecord In V_PartyUserRolesView.GetRecords(myPartyUserRolesWhereStr)
+
+                    ' We have a user's party PK.  Read the PaymentMethodParty table to see if it exists
+
+                    Dim myPaymentMethodPartyWhereStr As String = PaymentMethodPartyTable.PaymentMethodID.UniqueName & " = " & Me.HiddenTB_PaymentMethodID.Text & " AND " & PaymentMethodPartyTable.PartyID.UniqueName & " = " & myPartyUserRoleRec.UserId0
+                    Dim myPaymentMethodPartyRec As PaymentMethodPartyRecord = PaymentMethodPartyTable.GetRecord(myPaymentMethodPartyWhereStr)
+
+                    If IsNothing(myPaymentMethodPartyRec) Then
+                        CheckTheBox = False
+                    End If
+                Next
+
+                If CheckTheBox Then
+                    e.Item.Checked = True
+                Else
+                    e.Item.Checked = False
+                End If
+
+            End If
+
+        End Sub
+
+        Protected Sub CarrierRLB_ItemDataBound(ByVal sender As Object, ByVal e As Telerik.Web.UI.RadListBoxItemEventArgs)
+
+            Dim dataSourceRow As DataRowView = DirectCast(e.Item.DataItem, DataRowView)
+
+            If Me.HiddenTB_PaymentMethodID.Text <> "" Then
+
+                ' We need to check whether this carrier has a PaymentMethodCarrier row for this PaymentMethod.
+                ' If so, we check the box
+
+                Dim myPaymentMethodCarrierWhereStr As String = PaymentMethodCarrierTable.PaymentMethodID.UniqueName & " = " & Me.HiddenTB_PaymentMethodID.Text & " AND " & PaymentMethodCarrierTable.CarrierID.UniqueName & " = " & dataSourceRow("CarrierID").ToString
+                For Each myPaymentMethodCarrierRec As PaymentMethodCarrierRecord In PaymentMethodCarrierTable.GetRecords(myPaymentMethodCarrierWhereStr)
+                    If Not IsNothing(myPaymentMethodCarrierRec) Then
+                        e.Item.Checked = True
+                    Else
+                        e.Item.Checked = False
+                    End If
+                Next
+
+            End If
+
         End Sub
 
         Public Sub s_Vis()
@@ -183,6 +285,13 @@ Partial Public Class UserConfig
 
             'Set the hidden text field used by all controls needing the FASTPORT party.
             Me.HiddenTB_PartyID.Text = myPartyID
+
+            ' Hide other panels
+            CreditCardPanel.Visible = False
+            BankAccountPanel.Visible = False
+            CarrierPanel.Visible = False
+            RolePanel.Visible = False
+            UserPanel.Visible = False
 
         End Sub
        

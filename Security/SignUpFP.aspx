@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeBehind="SignUpFP.aspx.vb" Inherits=".SignUpFP" %>
 
 <%@ Register TagPrefix="FASTPORT" TagName="MarketingMenu" Src="../Menu Panels/MarketingMenu.ascx" %>
+<%@ Register TagPrefix="asp" Namespace="Recaptcha" Assembly="Recaptcha" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -235,6 +236,21 @@
 
             }
 
+            function onCarrierSearchDataReq(sender, eventArgs) {
+
+                var searchtext = eventArgs.get_text();
+
+                if (searchtext == null || searchtext == "") {
+                    searchtext = "0"
+                }
+                var HiddenTB_SearchFree = document.getElementById("<%= HiddenTB_SearchFree.ClientID %>").value;
+
+                if (HiddenTB_SearchFree != null || HiddenTB_SearchFree != "0") {
+                    document.getElementById("<%= HiddenTB_SearchPartyID.ClientID %>").value = "0";
+                }
+                HiddenTB_SearchFree = searchtext;
+            }
+
             function onCarrierSearch(sender, eventArgs) {
 
                 var searchid = eventArgs.get_value();
@@ -253,7 +269,11 @@
 
                 sender.clear();
 
+                alert("about to rebind");
+
                 $find("<%= RadAjaxManager1.ClientID %>").ajaxRequest("rebindPickCarrierRG");
+
+                alert("rebound");
 
             }
 
@@ -547,6 +567,7 @@
                                 </asp:Image>
                             </td>
                             <td>
+                                <FASTPORT:MarketingMenu runat="server" ID="_Menu1"></FASTPORT:MarketingMenu>
                             </td>
                         </tr>
                     </table>
@@ -636,6 +657,15 @@
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
+                                                                            <td class="flSecurity">
+                                                                                <asp:Label runat="server" ID="FillRecaptchaLabel" Text="&lt;%# GetResourceValue(&quot;Txt:EnterCaptcha&quot;, &quot;FASTPORT&quot;) %>">	</asp:Label>
+                                                                                <br />
+                                                                                <br />
+                                                                                <asp:RecaptchaControl ID="recaptcha" runat="server" Theme="clean" PublicKey="6LckPegSAAAAABPJZiTW9LpLIIFtsYJyKIU4Wvor"
+                                                                                    PrivateKey="6LckPegSAAAAADtngg-CyXAC0qJoyuaSM4MLA1hN" />
+                                                                                <div id="CaptchaDiv" runat="server" width="5px;">
+                                                                                </div>
+                                                                            </td>
                                                                             <td width="500px;">
                                                                             </td>
                                                                         </tr>
@@ -757,6 +787,89 @@
                                                             <telerik:RadPanelItem Text="Carrier information" Expanded="false" Font-Size="Medium"
                                                                 runat="server" id="CarrierRPI">
                                                                 <ContentTemplate>
+                                                                    <table style="line-height: 20px; background: white; color: Black; width: 100%; padding: 20px;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="header_cust" style="width: 375px;">
+                                                                                    <table>
+                                                                                        <tbody style="width: 100%">
+                                                                                            <tr>
+                                                                                                <td style="width: 35%;">
+                                                                                                    <asp:Label ID="CarrierSearchLbl" runat="server" Text="Carrier Search"></asp:Label>
+                                                                                                </td>
+                                                                                                <td style="width: 50%; float: right">
+                                                                                                    <telerik:RadSearchBox runat="server" ID="PickCarrierRSB" DataSourceID="CarrierRSB_DS"
+                                                                                                        DataValueField="PartyID" DataTextField="CarrierFullName" EmptyMessage="Part of Name, MC, or DOT"
+                                                                                                        Width="208px" MaxResultCount="15" MinFilterLength="3" DropDownSettings-Height="240"
+                                                                                                        OnClientSearch="onCarrierSearch" OnClientDataRequesting="onCarrierSearchDataReq"
+                                                                                                        OnClientButtonCommand="onCarrierSearchButtonCommand" Skin="Metro" TabIndex="5">
+                                                                                                        <Buttons>
+                                                                                                            <telerik:SearchBoxButton ImageUrl="../Images/Custom/icon_new.png" CommandName="CarrierAdd"
+                                                                                                                CommandArgument="CarrierAdd" Position="Left" AlternateText="Add New Carrier" />
+                                                                                                            <telerik:SearchBoxButton ImageUrl="../Images/Custom/icon_globe.png" CommandName="RadiusSearch"
+                                                                                                                CommandArgument="RadiusSearch" Position="Right" AlternateText="Radius Serach" />
+                                                                                                        </Buttons>
+                                                                                                        <DropDownSettings Width="300" />
+                                                                                                    </telerik:RadSearchBox>
+                                                                                                    <asp:SqlDataSource ID="CarrierRSB_DS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                                                                                        SelectCommand="SELECT [PartyID], [CarrierFullName] FROM [v_CarrierSuperShort]">
+                                                                                                    </asp:SqlDataSource>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <telerik:RadGrid ID="PickCarrierRG" runat="server" DataSourceID="PickCarrierDS" ShowHeader="False"
+                                                                                        Width="445px" Height="275px" AutoGenerateColumns="False" CellSpacing="0" GridLines="None">
+                                                                                        <ClientSettings Selecting-AllowRowSelect="True">
+                                                                                            <Scrolling AllowScroll="true" />
+                                                                                            <ClientEvents OnRowSelected="onPickCarrierSelected" />
+                                                                                        </ClientSettings>
+                                                                                        <MasterTableView DataSourceID="PickCarrierDS" DataKeyNames="PartyID" ClientDataKeyNames="PartyID"
+                                                                                            EnableNoRecordsTemplate="true">
+                                                                                            <NoRecordsTemplate>
+                                                                                                <div style="padding: 25px;">
+                                                                                                    Please search carefully for your carrier by name, DOT, or MC. If that doesn't work,
+                                                                                                    try clicking the "filter" button for a more detailed search. If the carrier is not
+                                                                                                    in the database, please click:<br />
+                                                                                                    <br />
+                                                                                                    <center>
+                                                                                                        <telerik:RadButton ID="CarrierAddTemplateRB" runat="server" Text="Add Carrier by Hand"
+                                                                                                            ToolTip="Click here to add a carrier from scratch." AutoPostBack="false" OnClientClicked="onCarrierAddClicked"
+                                                                                                            TabIndex="6">
+                                                                                                        </telerik:RadButton>
+                                                                                                    </center>
+                                                                                                </div>
+                                                                                            </NoRecordsTemplate>
+                                                                                            <Columns>
+                                                                                                <telerik:GridBoundColumn DataField="CarrierHTML" UniqueName="CarrierHTML">
+                                                                                                </telerik:GridBoundColumn>
+                                                                                                <telerik:GridBoundColumn DataField="CarrierNos" UniqueName="CarrierNos">
+                                                                                                </telerik:GridBoundColumn>
+                                                                                            </Columns>
+                                                                                        </MasterTableView>
+                                                                                    </telerik:RadGrid>
+                                                                                    <asp:SqlDataSource ID="PickCarrierDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                                                                        SelectCommand="usp_CarrierPick" SelectCommandType="StoredProcedure">
+                                                                                        <SelectParameters>
+                                                                                            <asp:Parameter DefaultValue="253" Name="MyPartyID" />
+                                                                                            <asp:ControlParameter ControlID="HiddenTB_SearchPartyID" DefaultValue="0" Name="SearchPartyID"
+                                                                                                PropertyName="Text" Type="String" />
+                                                                                            <asp:ControlParameter ControlID="HiddenTB_SearchFree" DefaultValue="" Name="Search"
+                                                                                                PropertyName="Text" Type="String" />
+                                                                                            <asp:ControlParameter ControlID="HiddenTB_SearchCityID" DefaultValue="0" Name="CityID"
+                                                                                                PropertyName="Text" Type="String" />
+                                                                                            <asp:ControlParameter ControlID="HiddenTB_SearchRadius" DefaultValue="10" Name="Radius"
+                                                                                                PropertyName="Text" Type="String" />
+                                                                                        </SelectParameters>
+                                                                                    </asp:SqlDataSource>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
                                                                     <table style="line-height: 20px; background: white; color: Black; width: 100%; padding: 20px;">
                                                                         <tr id="EmployerRow" style="display: none;">
                                                                             <td colspan="2">
@@ -925,82 +1038,7 @@
                                                                             </td>
                                                                         </tr>
                                                                     </table>
-    <div>
-        <table style="line-height: 20px; background: white; color: Black; width: 100%; padding: 20px;">
-            <tbody>
-                <tr>
-                    <td class="header_cust" style="width: 375px;">
-                        <table>
-                            <tbody style="width: 100%">
-                                <tr>
-                                    <td style="width: 35%;">
-                                        <asp:Label ID="CarrierSearchLbl" runat="server" Text="Carrier Search"></asp:Label>
-                                    </td>
-                                    <td style="width: 50%; float: right">
-                                        <telerik:RadSearchBox runat="server" ID="PickCarrierRSB" EmptyMessage="Part of Name, MC, or DOT"
-                                            Width="208px" MaxResultCount="15" MinFilterLength="3" DropDownSettings-Height="240"
-                                            EnableAutoComplete="false" OnClientSearch="onCarrierSearch" Skin="Metro" TabIndex="5">
-                                            <DropDownSettings Width="300" />
-                                        </telerik:RadSearchBox>
-                                        <telerik:RadGrid ID="PickCarrierRG" runat="server" DataSourceID="PickCarrierDS" ShowHeader="False"
-                                            Width="445px" Height="275px" AutoGenerateColumns="False" CellSpacing="0" GridLines="None">
-                                            <ClientSettings Selecting-AllowRowSelect="True">
-                                                <Scrolling AllowScroll="true" />
-                                                <ClientEvents />
-                                            </ClientSettings>
-                                            <MasterTableView DataSourceID="PickCarrierDS" DataKeyNames="PartyID" ClientDataKeyNames="PartyID"
-                                                EnableNoRecordsTemplate="true">
-                                                <NoRecordsTemplate>
-                                                    <div style="padding: 25px;">
-                                                        Please search carefully for your carrier by name, DOT, or MC. If that doesn't work,
-                                                        try clicking the "filter" button for a more detailed search. If the carrier is not
-                                                        in the database, please click:<br />
-                                                        <br />
-                                                        <center>
-                                                        </center>
-                                                    </div>
-                                                </NoRecordsTemplate>
-                                                <Columns>
-                                                    <telerik:GridBoundColumn DataField="CarrierHTML" UniqueName="CarrierHTML">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridBoundColumn DataField="CarrierNos" UniqueName="CarrierNos">
-                                                    </telerik:GridBoundColumn>
-                                                </Columns>
-                                            </MasterTableView>
-                                        </telerik:RadGrid>
-                                        <asp:SqlDataSource ID="PickCarrierDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
-                                            SelectCommand="usp_CarrierPick" SelectCommandType="StoredProcedure">
-                                            <SelectParameters>
-                                                <asp:Parameter DefaultValue="253" Name="MyPartyID" />
-                                                <asp:ControlParameter ControlID="HiddenTB_SearchPartyID" DefaultValue="0" Name="SearchPartyID"
-                                                    PropertyName="Text" Type="String" />
-                                                <asp:ControlParameter ControlID="HiddenTB_SearchFree" DefaultValue="" Name="Search"
-                                                    PropertyName="Text" Type="String" />
-                                                <asp:ControlParameter ControlID="HiddenTB_SearchCityID" DefaultValue="0" Name="CityID"
-                                                    PropertyName="Text" Type="String" />
-                                                <asp:ControlParameter ControlID="HiddenTB_SearchRadius" DefaultValue="10" Name="Radius"
-                                                    PropertyName="Text" Type="String" />
-                                            </SelectParameters>
-                                        </asp:SqlDataSource>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        HistoryID:
-        <asp:TextBox ID="HiddenTB_HistoryID" runat="server" Text="0"></asp:TextBox><br />
-        SearchPartyID:
-        <asp:TextBox ID="HiddenTB_SearchPartyID" runat="server" Text="0"></asp:TextBox><br />
-        SearchFree:
-        <asp:TextBox ID="HiddenTB_SearchFree" runat="server" Text="0"></asp:TextBox><br />
-        SearchCity:
-        <asp:TextBox ID="HiddenTB_SearchCityID" runat="server" Text="0"></asp:TextBox><br />
-        SearchRadius:
-        <asp:TextBox ID="HiddenTB_SearchRadius" runat="server" Text="5"></asp:TextBox><br />
-    </div>
+                                                                    </table>
                                                                 </ContentTemplate>
                                                             </telerik:RadPanelItem>
                                                         </Items>
@@ -1037,6 +1075,16 @@
             </tr>
         </table>
         <div id="HiddenDiv" style="display: none;">
+            HistoryID:
+            <asp:TextBox ID="HiddenTB_HistoryID" runat="server" Text="0"></asp:TextBox><br />
+            SearchPartyID:
+            <asp:TextBox ID="HiddenTB_SearchPartyID" runat="server" Text="0"></asp:TextBox><br />
+            SearchFree:
+            <asp:TextBox ID="HiddenTB_SearchFree" runat="server" Text="0"></asp:TextBox><br />
+            SearchCity:
+            <asp:TextBox ID="HiddenTB_SearchCityID" runat="server" Text="0"></asp:TextBox><br />
+            SearchRadius:
+            <asp:TextBox ID="HiddenTB_SearchRadius" runat="server" Text="5"></asp:TextBox><br />
             PartyID:
             <asp:TextBox ID="HiddenTB_PartyID" runat="server"></asp:TextBox><br />
             MeID:

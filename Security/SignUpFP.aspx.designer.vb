@@ -212,6 +212,15 @@ Partial Public Class SignUpFP
     Protected WithEvents LogoImage1 As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
+    '''_Menu1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents _Menu1 As Global.FASTPORT.UI.MarketingMenu
+
+    '''<summary>
     '''Panel1 control.
     '''</summary>
     '''<remarks>
@@ -309,6 +318,33 @@ Partial Public Class SignUpFP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RetypePasswordRTB As Global.Telerik.Web.UI.RadTextBox
+
+    '''<summary>
+    '''FillRecaptchaLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents FillRecaptchaLabel As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''recaptcha control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents recaptcha As Global.Recaptcha.RecaptchaControl
+
+    '''<summary>
+    '''CaptchaDiv control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CaptchaDiv As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''TruckerRadButton control.
@@ -471,6 +507,51 @@ Partial Public Class SignUpFP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CarrierRPI As Global.Telerik.Web.UI.RadPanelItem
+
+    '''<summary>
+    '''CarrierSearchLbl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CarrierSearchLbl As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''PickCarrierRSB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PickCarrierRSB As Global.Telerik.Web.UI.RadSearchBox
+
+    '''<summary>
+    '''CarrierRSB_DS control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CarrierRSB_DS As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
+    '''PickCarrierRG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PickCarrierRG As Global.Telerik.Web.UI.RadGrid
+
+    '''<summary>
+    '''PickCarrierDS control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PickCarrierDS As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
     '''CarrierInfoLbl control.
@@ -669,42 +750,6 @@ Partial Public Class SignUpFP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ContactRTB As Global.Telerik.Web.UI.RadTextBox
-
-    '''<summary>
-    '''CarrierSearchLbl control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CarrierSearchLbl As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''PickCarrierRSB control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents PickCarrierRSB As Global.Telerik.Web.UI.RadSearchBox
-
-    '''<summary>
-    '''PickCarrierRG control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents PickCarrierRG As Global.Telerik.Web.UI.RadGrid
-
-    '''<summary>
-    '''PickCarrierDS control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents PickCarrierDS As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
     '''HiddenTB_HistoryID control.

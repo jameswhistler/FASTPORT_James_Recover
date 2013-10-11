@@ -847,22 +847,67 @@
     <Compile Include="BaseCarrierAdGeoSqlTable.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodDefinition.vb" >
+    <Compile Include="PaymentMethodDefinition.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodSqlTable.vb" >
+    <Compile Include="PaymentMethodSqlTable.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BasePaymentMethodSqlTable.vb" >
+    <Compile Include="BasePaymentMethodSqlTable.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodPartyDefinition.vb" >
+    <Compile Include="PaymentMethodPartyDefinition.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodPartySqlTable.vb" >
+    <Compile Include="PaymentMethodPartySqlTable.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BasePaymentMethodPartySqlTable.vb" >
+    <Compile Include="BasePaymentMethodPartySqlTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FellowUsersDefinition.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FellowUsersSqlView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_FellowUsersSqlView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FellowUserDistinctRolesDefinition.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FellowUserDistinctRolesSqlView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_FellowUserDistinctRolesSqlView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodCarrierDefinition.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodCarrierSqlTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodCarrierSqlTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyCarriersDefinition.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyCarriersSqlView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyCarriersSqlView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyUserRolesDefinition.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyUserRolesSqlView.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyUserRolesSqlView.vb" >
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

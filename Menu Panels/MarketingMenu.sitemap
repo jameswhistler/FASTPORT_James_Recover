@@ -33,9 +33,7 @@ The tags are case-sensitive and should contain the following case-sensitive attr
   <siteMapNode>
     <siteMapNode title="For Truckers" description="" url="http://fastport.com/for-truckers/" imageUrl="" roles="" order="1" />
     <siteMapNode title="For Carriers" description="" url="http://fastport.com/for-carriers/" imageUrl="" roles="" order="2" />
-    <siteMapNode title="More Info" description="" url="" imageUrl="" roles="" order="3">
-      <siteMapNode title="Contact Us" description="" url="http://fastport.com/contact/" imageUrl="" roles="" order="1" />
-    </siteMapNode>
+    <siteMapNode title="More Info" description="" url="" imageUrl="" roles="" order="3" />
     <siteMapNode title="Get Started" description="" url="" imageUrl="" roles="" order="4" />
   </siteMapNode>
 </siteMap>

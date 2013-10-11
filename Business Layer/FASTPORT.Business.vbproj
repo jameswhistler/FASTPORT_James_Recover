@@ -1100,28 +1100,88 @@
     <Compile Include="BaseCarrierAdGeoRecord.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodTable.vb" >
+    <Compile Include="PaymentMethodTable.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BasePaymentMethodTable.vb" >
+    <Compile Include="BasePaymentMethodTable.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodRecord.vb" >
+    <Compile Include="PaymentMethodRecord.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BasePaymentMethodRecord.vb" >
+    <Compile Include="BasePaymentMethodRecord.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodPartyTable.vb" >
+    <Compile Include="PaymentMethodPartyTable.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BasePaymentMethodPartyTable.vb" >
+    <Compile Include="BasePaymentMethodPartyTable.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodPartyRecord.vb" >
+    <Compile Include="PaymentMethodPartyRecord.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BasePaymentMethodPartyRecord.vb" >
+    <Compile Include="BasePaymentMethodPartyRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FellowUsersView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_FellowUsersView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FellowUsersRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_FellowUsersRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FellowUserDistinctRolesView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_FellowUserDistinctRolesView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FellowUserDistinctRolesRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_FellowUserDistinctRolesRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodCarrierTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodCarrierTable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodCarrierRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodCarrierRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyCarriersView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyCarriersView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyCarriersRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyCarriersRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyUserRolesView.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyUserRolesView.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PartyUserRolesRecord.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseV_PartyUserRolesRecord.vb" >
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
