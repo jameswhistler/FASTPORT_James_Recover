@@ -650,120 +650,6 @@
       </updatingFormula>
     </Column>
     <Column InternalName="13" Priority="14" ColumnNum="13">
-      <columnName>CarrierAvailabilityID</columnName>
-      <columnUIName>%ISD_DEFAULT%</columnUIName>
-      <columnType>Number</columnType>
-      <columnDBType>int</columnDBType>
-      <columnLengthSet>10.0</columnLengthSet>
-      <columnDefault>
-      </columnDefault>
-      <columnDBDefault>
-      </columnDBDefault>
-      <columnIndex>N</columnIndex>
-      <columnUnique>N</columnUnique>
-      <columnFunction>
-      </columnFunction>
-      <columnDBFormat>
-      </columnDBFormat>
-      <columnPK>N</columnPK>
-      <columnPermanent>N</columnPermanent>
-      <columnComputed>N</columnComputed>
-      <columnIdentity>N</columnIdentity>
-      <columnReadOnly>N</columnReadOnly>
-      <columnRequired>N</columnRequired>
-      <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive>N</columnCaseSensitive>
-      <columnCollation>
-      </columnCollation>
-      <columnFullText>N</columnFullText>
-      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
-      <columnTableAliasName>
-      </columnTableAliasName>
-      <applyLabelText>Y</applyLabelText>
-      <foreignKey>
-        <columnFKName>FK_PaymentMethod_Tree</columnFKName>
-        <columnFKTable>Tree</columnFKTable>
-        <columnFKOwner>dbo</columnFKOwner>
-        <columnFKColumn>TreeID</columnFKColumn>
-        <columnFKColumnDisplay>ItemName</columnFKColumnDisplay>
-        <foreignKeyType>Explicit</foreignKeyType>
-      </foreignKey>
-      <applyDFKA>Y</applyDFKA>
-      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
-      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
-      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
-      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
-      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
-      <applyDefaultValue>N</applyDefaultValue>
-      <insertingRecordFormula>
-      </insertingRecordFormula>
-      <readingRecordFormula>
-      </readingRecordFormula>
-      <updatingRecordFormula>
-      </updatingRecordFormula>
-      <insertingFormula>
-      </insertingFormula>
-      <updatingFormula>
-      </updatingFormula>
-    </Column>
-    <Column InternalName="14" Priority="15" ColumnNum="14">
-      <columnName>PartyAvailabilityID</columnName>
-      <columnUIName>%ISD_DEFAULT%</columnUIName>
-      <columnType>Number</columnType>
-      <columnDBType>int</columnDBType>
-      <columnLengthSet>10.0</columnLengthSet>
-      <columnDefault>
-      </columnDefault>
-      <columnDBDefault>
-      </columnDBDefault>
-      <columnIndex>N</columnIndex>
-      <columnUnique>N</columnUnique>
-      <columnFunction>
-      </columnFunction>
-      <columnDBFormat>
-      </columnDBFormat>
-      <columnPK>N</columnPK>
-      <columnPermanent>N</columnPermanent>
-      <columnComputed>N</columnComputed>
-      <columnIdentity>N</columnIdentity>
-      <columnReadOnly>N</columnReadOnly>
-      <columnRequired>N</columnRequired>
-      <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive>N</columnCaseSensitive>
-      <columnCollation>
-      </columnCollation>
-      <columnFullText>N</columnFullText>
-      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
-      <columnTableAliasName>
-      </columnTableAliasName>
-      <applyLabelText>Y</applyLabelText>
-      <foreignKey>
-        <columnFKName>FK_PaymentMethod_Tree1</columnFKName>
-        <columnFKTable>Tree</columnFKTable>
-        <columnFKOwner>dbo</columnFKOwner>
-        <columnFKColumn>TreeID</columnFKColumn>
-        <columnFKColumnDisplay>ItemName</columnFKColumnDisplay>
-        <foreignKeyType>Explicit</foreignKeyType>
-      </foreignKey>
-      <applyDFKA>Y</applyDFKA>
-      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
-      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
-      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
-      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
-      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
-      <applyDefaultValue>N</applyDefaultValue>
-      <insertingRecordFormula>
-      </insertingRecordFormula>
-      <readingRecordFormula>
-      </readingRecordFormula>
-      <updatingRecordFormula>
-      </updatingRecordFormula>
-      <insertingFormula>
-      </insertingFormula>
-      <updatingFormula>
-      </updatingFormula>
-    </Column>
-    <Column InternalName="15" Priority="16" ColumnNum="15">
       <columnName>CreatedByID</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -812,7 +698,7 @@
       <updatingFormula>
       </updatingFormula>
     </Column>
-    <Column InternalName="16" Priority="17" ColumnNum="16">
+    <Column InternalName="14" Priority="15" ColumnNum="14">
       <columnName>CreatedAt</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -862,7 +748,7 @@
       <updatingFormula>
       </updatingFormula>
     </Column>
-    <Column InternalName="17" Priority="18" ColumnNum="17">
+    <Column InternalName="15" Priority="16" ColumnNum="15">
       <columnName>UpdatedByID</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -911,7 +797,7 @@
       <updatingFormula>
       </updatingFormula>
     </Column>
-    <Column InternalName="18" Priority="19" ColumnNum="18">
+    <Column InternalName="16" Priority="17" ColumnNum="16">
       <columnName>UpdatedAt</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -963,7 +849,7 @@
     </Column>
   </ColumnDefinition>
   <TableName>PaymentMethod</TableName>
-  <Version>1</Version>
+  <Version>2</Version>
   <Owner>dbo</Owner>
   <TableCodeName>PaymentMethod</TableCodeName>
   <TableAliasName>PaymentMethod_</TableAliasName>

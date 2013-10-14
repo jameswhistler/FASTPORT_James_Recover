@@ -42,13 +42,11 @@ BEGIN
         [BankAccountName],
         [BankPaymentReference],
         [Preferred],
-        [CarrierAvailabilityID],
-        [PartyAvailabilityID],
         [CreatedByID],
         [CreatedAt],
         [UpdatedByID],
         [UpdatedAt],
-        CAST(BINARY_CHECKSUM([PaymentMethodID],[PartyID],[CreditCardTypeID],[CreditCardNumber],[CreditCardName],[StartDate],[ExpiryDate],[CVV],[BankAccountNumber],[BankSortCode],[BankAccountName],[BankPaymentReference],[Preferred],[CarrierAvailabilityID],[PartyAvailabilityID],[CreatedByID],[CreatedAt],[UpdatedByID],[UpdatedAt]) AS nvarchar(4000)) AS IS_CHECKSUM_COLUMN_12345
+        CAST(BINARY_CHECKSUM([PaymentMethodID],[PartyID],[CreditCardTypeID],[CreditCardNumber],[CreditCardName],[StartDate],[ExpiryDate],[CVV],[BankAccountNumber],[BankSortCode],[BankAccountName],[BankPaymentReference],[Preferred],[CreatedByID],[CreatedAt],[UpdatedByID],[UpdatedAt]) AS nvarchar(4000)) AS IS_CHECKSUM_COLUMN_12345
     FROM [dbo].[PaymentMethod]
     WHERE [PaymentMethodID] =@pk_PaymentMethodID
     SET NOCOUNT OFF

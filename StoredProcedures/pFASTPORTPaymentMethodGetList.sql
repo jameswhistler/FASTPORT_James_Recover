@@ -104,13 +104,11 @@ BEGIN
             PaymentMethod_.[BankAccountName],
             PaymentMethod_.[BankPaymentReference],
             PaymentMethod_.[Preferred],
-            PaymentMethod_.[CarrierAvailabilityID],
-            PaymentMethod_.[PartyAvailabilityID],
             PaymentMethod_.[CreatedByID],
             PaymentMethod_.[CreatedAt],
             PaymentMethod_.[UpdatedByID],
             PaymentMethod_.[UpdatedAt],
-            CAST(BINARY_CHECKSUM(PaymentMethod_.[PaymentMethodID],PaymentMethod_.[PartyID],PaymentMethod_.[CreditCardTypeID],PaymentMethod_.[CreditCardNumber],PaymentMethod_.[CreditCardName],PaymentMethod_.[StartDate],PaymentMethod_.[ExpiryDate],PaymentMethod_.[CVV],PaymentMethod_.[BankAccountNumber],PaymentMethod_.[BankSortCode],PaymentMethod_.[BankAccountName],PaymentMethod_.[BankPaymentReference],PaymentMethod_.[Preferred],PaymentMethod_.[CarrierAvailabilityID],PaymentMethod_.[PartyAvailabilityID],PaymentMethod_.[CreatedByID],PaymentMethod_.[CreatedAt],PaymentMethod_.[UpdatedByID],PaymentMethod_.[UpdatedAt]) AS nvarchar(4000)) AS IS_CHECKSUM_COLUMN_12345 '
+            CAST(BINARY_CHECKSUM(PaymentMethod_.[PaymentMethodID],PaymentMethod_.[PartyID],PaymentMethod_.[CreditCardTypeID],PaymentMethod_.[CreditCardNumber],PaymentMethod_.[CreditCardName],PaymentMethod_.[StartDate],PaymentMethod_.[ExpiryDate],PaymentMethod_.[CVV],PaymentMethod_.[BankAccountNumber],PaymentMethod_.[BankSortCode],PaymentMethod_.[BankAccountName],PaymentMethod_.[BankPaymentReference],PaymentMethod_.[Preferred],PaymentMethod_.[CreatedByID],PaymentMethod_.[CreatedAt],PaymentMethod_.[UpdatedByID],PaymentMethod_.[UpdatedAt]) AS nvarchar(4000)) AS IS_CHECKSUM_COLUMN_12345 '
         SET @l_query_from = 'FROM ' + @l_from_str + ' ' + @l_join_str + ' ' + @l_where_str + ') '
         SET @l_query_select2 = 'SELECT * FROM PaymentMethod_ '
         SET @l_query_where = 'WHERE IS_ROWNUM_COL BETWEEN ' + convert(varchar, @l_start_gen_row_num) + ' AND ' + convert(varchar, @l_end_gen_row_num) +  ';'
@@ -137,13 +135,11 @@ BEGIN
             PaymentMethod_.[BankAccountName],
             PaymentMethod_.[BankPaymentReference],
             PaymentMethod_.[Preferred],
-            PaymentMethod_.[CarrierAvailabilityID],
-            PaymentMethod_.[PartyAvailabilityID],
             PaymentMethod_.[CreatedByID],
             PaymentMethod_.[CreatedAt],
             PaymentMethod_.[UpdatedByID],
             PaymentMethod_.[UpdatedAt],
-            CAST(BINARY_CHECKSUM(PaymentMethod_.[PaymentMethodID],PaymentMethod_.[PartyID],PaymentMethod_.[CreditCardTypeID],PaymentMethod_.[CreditCardNumber],PaymentMethod_.[CreditCardName],PaymentMethod_.[StartDate],PaymentMethod_.[ExpiryDate],PaymentMethod_.[CVV],PaymentMethod_.[BankAccountNumber],PaymentMethod_.[BankSortCode],PaymentMethod_.[BankAccountName],PaymentMethod_.[BankPaymentReference],PaymentMethod_.[Preferred],PaymentMethod_.[CarrierAvailabilityID],PaymentMethod_.[PartyAvailabilityID],PaymentMethod_.[CreatedByID],PaymentMethod_.[CreatedAt],PaymentMethod_.[UpdatedByID],PaymentMethod_.[UpdatedAt]) AS nvarchar(4000)) AS IS_CHECKSUM_COLUMN_12345'
+            CAST(BINARY_CHECKSUM(PaymentMethod_.[PaymentMethodID],PaymentMethod_.[PartyID],PaymentMethod_.[CreditCardTypeID],PaymentMethod_.[CreditCardNumber],PaymentMethod_.[CreditCardName],PaymentMethod_.[StartDate],PaymentMethod_.[ExpiryDate],PaymentMethod_.[CVV],PaymentMethod_.[BankAccountNumber],PaymentMethod_.[BankSortCode],PaymentMethod_.[BankAccountName],PaymentMethod_.[BankPaymentReference],PaymentMethod_.[Preferred],PaymentMethod_.[CreatedByID],PaymentMethod_.[CreatedAt],PaymentMethod_.[UpdatedByID],PaymentMethod_.[UpdatedAt]) AS nvarchar(4000)) AS IS_CHECKSUM_COLUMN_12345'
         SET @l_query_from = 
             ' FROM [dbo].[PaymentMethod] PaymentMethod_ ' + 
             'WHERE 1=2;'

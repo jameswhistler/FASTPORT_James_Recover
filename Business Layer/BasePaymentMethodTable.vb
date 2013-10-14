@@ -66,8 +66,6 @@ Namespace FASTPORT.Business
         BankAccountNameColumn.CodeName = "BankAccountName"
         BankPaymentReferenceColumn.CodeName = "BankPaymentReference"
         PreferredColumn.CodeName = "Preferred"
-        CarrierAvailabilityIDColumn.CodeName = "CarrierAvailabilityID"
-        PartyAvailabilityIDColumn.CodeName = "PartyAvailabilityID"
         CreatedByIDColumn.CodeName = "CreatedByID"
         CreatedAtColumn.CodeName = "CreatedAt"
         UpdatedByIDColumn.CodeName = "UpdatedByID"
@@ -330,49 +328,11 @@ Namespace FASTPORT.Business
         End Get
     End Property
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethod_.CarrierAvailabilityID column object.
-    ''' </summary>
-    Public ReadOnly Property CarrierAvailabilityIDColumn() As BaseClasses.Data.NumberColumn
-        Get
-            Return CType(Me.TableDefinition.ColumnList(13), BaseClasses.Data.NumberColumn)
-        End Get
-    End Property
-
-
-    
-    ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethod_.CarrierAvailabilityID column object.
-    ''' </summary>
-    Public Shared ReadOnly Property CarrierAvailabilityID() As BaseClasses.Data.NumberColumn
-        Get
-            Return PaymentMethodTable.Instance.CarrierAvailabilityIDColumn
-        End Get
-    End Property
-    ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethod_.PartyAvailabilityID column object.
-    ''' </summary>
-    Public ReadOnly Property PartyAvailabilityIDColumn() As BaseClasses.Data.NumberColumn
-        Get
-            Return CType(Me.TableDefinition.ColumnList(14), BaseClasses.Data.NumberColumn)
-        End Get
-    End Property
-
-
-    
-    ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethod_.PartyAvailabilityID column object.
-    ''' </summary>
-    Public Shared ReadOnly Property PartyAvailabilityID() As BaseClasses.Data.NumberColumn
-        Get
-            Return PaymentMethodTable.Instance.PartyAvailabilityIDColumn
-        End Get
-    End Property
-    ''' <summary>
     ''' This is a convenience property that provides direct access to the table's PaymentMethod_.CreatedByID column object.
     ''' </summary>
     Public ReadOnly Property CreatedByIDColumn() As BaseClasses.Data.NumberColumn
         Get
-            Return CType(Me.TableDefinition.ColumnList(15), BaseClasses.Data.NumberColumn)
+            Return CType(Me.TableDefinition.ColumnList(13), BaseClasses.Data.NumberColumn)
         End Get
     End Property
 
@@ -391,7 +351,7 @@ Namespace FASTPORT.Business
     ''' </summary>
     Public ReadOnly Property CreatedAtColumn() As BaseClasses.Data.DateColumn
         Get
-            Return CType(Me.TableDefinition.ColumnList(16), BaseClasses.Data.DateColumn)
+            Return CType(Me.TableDefinition.ColumnList(14), BaseClasses.Data.DateColumn)
         End Get
     End Property
 
@@ -410,7 +370,7 @@ Namespace FASTPORT.Business
     ''' </summary>
     Public ReadOnly Property UpdatedByIDColumn() As BaseClasses.Data.NumberColumn
         Get
-            Return CType(Me.TableDefinition.ColumnList(17), BaseClasses.Data.NumberColumn)
+            Return CType(Me.TableDefinition.ColumnList(15), BaseClasses.Data.NumberColumn)
         End Get
     End Property
 
@@ -429,7 +389,7 @@ Namespace FASTPORT.Business
     ''' </summary>
     Public ReadOnly Property UpdatedAtColumn() As BaseClasses.Data.DateColumn
         Get
-            Return CType(Me.TableDefinition.ColumnList(18), BaseClasses.Data.DateColumn)
+            Return CType(Me.TableDefinition.ColumnList(16), BaseClasses.Data.DateColumn)
         End Get
     End Property
 
@@ -938,8 +898,6 @@ Namespace FASTPORT.Business
         ByVal BankAccountNameValue As String, _
         ByVal BankPaymentReferenceValue As String, _
         ByVal PreferredValue As String, _
-        ByVal CarrierAvailabilityIDValue As String, _
-        ByVal PartyAvailabilityIDValue As String, _
         ByVal CreatedByIDValue As String, _
         ByVal CreatedAtValue As String, _
         ByVal UpdatedByIDValue As String, _
@@ -958,8 +916,6 @@ Namespace FASTPORT.Business
         rec.SetString(BankAccountNameValue, BankAccountNameColumn)
         rec.SetString(BankPaymentReferenceValue, BankPaymentReferenceColumn)
         rec.SetString(PreferredValue, PreferredColumn)
-        rec.SetString(CarrierAvailabilityIDValue, CarrierAvailabilityIDColumn)
-        rec.SetString(PartyAvailabilityIDValue, PartyAvailabilityIDColumn)
         rec.SetString(CreatedByIDValue, CreatedByIDColumn)
         rec.SetString(CreatedAtValue, CreatedAtColumn)
         rec.SetString(UpdatedByIDValue, UpdatedByIDColumn)

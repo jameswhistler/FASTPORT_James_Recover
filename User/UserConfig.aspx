@@ -13,6 +13,44 @@
             margin: 0 auto !important;
         }
     </style>
+    <telerik:RadScriptBlock ID="RadScriptBlock1" runat="server">
+        <script type="text/javascript">
+        function SendCallBack(arg, myAction) {
+
+                    try {
+                        switch (myAction) {
+                        case "onPersonClick":
+                            { <%= Page.ClientScript.GetCallbackEventReference(Me, "arg", "onPersonClick", "null") %>
+                                break;
+                            }               
+                        }
+                    } catch (e) {}
+                }
+
+        function onPersonClick(sender, arg) {
+
+                        alert("Click");
+                        var attributes = sender.get_attributes();
+                        alert(attributes);
+                        var PersonID = attributes.getAttribute("PersonID");
+                        alert(PersonID);
+
+                        SendCallBack("onPersonClick," + arg, "onPersonClick");
+
+                    }
+
+        function OnClientItemCheckedHandler(sender, eventArgs) {
+            var item = eventArgs.get_item();
+            item.set_selected(item.get_checked());
+        }
+
+
+        function onPersonClick_Back(arg) {
+
+                        alert("Im back");
+                    }
+        </script>
+    </telerik:RadScriptBlock>
     <table cellpadding="0" cellspacing="0" border="0" style="width: 100%">
         <tr>
             <td>
@@ -279,7 +317,7 @@
                                                             <asp:Literal runat="server" ID="StartDateLabel" Text="Start Date">	</asp:Literal>
                                                         </td>
                                                         <td class="dfv">
-                                                            <telerik:RadMaskedTextBox ID="StartDateRTB" Mask="##/##" runat="server" Width="40px"
+                                                            <telerik:RadMaskedTextBox ID="StartDateRTB" Mask="##/##" runat="server" Width="50px"
                                                                 TabIndex="1" class="flSecurity">
                                                             </telerik:RadMaskedTextBox>
                                                         </td>
@@ -293,7 +331,7 @@
                                                             <asp:Literal runat="server" ID="EndDateLabel" Text="End Date">	</asp:Literal>
                                                         </td>
                                                         <td class="dfv">
-                                                            <telerik:RadMaskedTextBox ID="EndDateRTB" Mask="##/##" runat="server" Width="40px"
+                                                            <telerik:RadMaskedTextBox ID="EndDateRTB" Mask="##/##" runat="server" Width="50px"
                                                                 TabIndex="1" class="flSecurity">
                                                             </telerik:RadMaskedTextBox>
                                                         </td>
@@ -307,7 +345,7 @@
                                                             <asp:Literal runat="server" ID="CVVLabel" Text="CCV">	</asp:Literal>
                                                         </td>
                                                         <td class="dfv">
-                                                            <telerik:RadTextBox ID="CVVRTB" runat="server" Width="167px" TabIndex="1" class="flSecurity">
+                                                            <telerik:RadTextBox ID="CVVRTB" runat="server" Width="50px" TabIndex="1" class="flSecurity">
                                                             </telerik:RadTextBox>
                                                         </td>
                                                         <td class="dfv">
@@ -397,65 +435,35 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Panel ID="RolesPeoplePanel" runat="server">
-                                <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                    <tr>
-                                        <td>
-                                            <asp:Panel ID="Panel2" runat="server">
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tr>
-                                                        <td style="text-align: left;" class="fls">
-                                                            <telerik:RadButton ID="AllCarriersRB" runat="server" ToggleType="Radio" ButtonType="ToggleButton"
-                                                                Text="All carriers" GroupName="CarrierButton" AutoPostBack="false">
-                                                            </telerik:RadButton>
-                                                            <br />
-                                                            <telerik:RadButton ID="SpecificCarriersRB" runat="server" ToggleType="Radio" Text="Specific carriers"
-                                                                GroupName="CarrierButton" ButtonType="ToggleButton" AutoPostBack="false">
-                                                            </telerik:RadButton>
-                                                        </td>
-                                                        <td style="text-align: left;" class="fls">
-                                                            <telerik:RadButton ID="OnlyMeRB" runat="server" ToggleType="Radio" ButtonType="ToggleButton"
-                                                                Text="Only me" GroupName="PeopleButton" AutoPostBack="false">
-                                                            </telerik:RadButton>
-                                                            <br />
-                                                            <telerik:RadButton ID="EveryoneRB" runat="server" ToggleType="Radio" ButtonType="ToggleButton"
-                                                                Text="Everyone" GroupName="PeopleButton" AutoPostBack="false">
-                                                            </telerik:RadButton>
-                                                            <br />
-                                                            <telerik:RadButton ID="SpecificRolesRB" runat="server" ToggleType="Radio" ButtonType="ToggleButton"
-                                                                Text="Specific roles" GroupName="PeopleButton" AutoPostBack="false">
-                                                            </telerik:RadButton>
-                                                            <br />
-                                                            <telerik:RadButton ID="SpecificPeopleRB" runat="server" ToggleType="Radio" ButtonType="ToggleButton"
-                                                                Text="Specific people" GroupName="PeopleButton" AutoPostBack="false">
-                                                            </telerik:RadButton>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </asp:Panel>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Panel ID="UserPanel" runat="server">
+                            <asp:Panel ID="CompanyPanel" runat="server">
                                 <div class="list-panel">
-                                    <telerik:RadListBox ID="UserRLB" runat="server" CheckBoxes="true" Width="220px" Height="300px"
-                                        DataSourceID="UserDS" DataKeyField="OtherUserID" DataTextField="OtherUserName"
-                                        OnItemDataBound="UserRLB_ItemDataBound">
-                                    </telerik:RadListBox>
-                                    <asp:SqlDataSource ID="UserDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
-                                        SelectCommand="SELECT * FROM [v_FellowUsers] WHERE [UserID] = @PartyID">
+                                    <telerik:RadGrid ID="CompanyRG" runat="server" AutoGenerateColumns="False" CellSpacing="0"
+                                        DataSourceID="CompanyDS" GridLines="None" ShowHeader="False" CssClass="RemoveBorders"
+                                        OnItemCommand="CompanyRG_ItemCommand">
+                                        <ClientSettings EnableRowHoverStyle="True" EnablePostBackOnRowClick="True">
+                                        </ClientSettings>
+                                        <MasterTableView DataKeyNames="PartyID" DataSourceID="CompanyDS" Name="PaymentMethodTable">
+                                            <NoRecordsTemplate>
+                                                <div style="padding: 25px;">
+                                                    No companies are associated with your user account.
+                                                </div>
+                                            </NoRecordsTemplate>
+                                            <Columns>
+                                                <telerik:GridBoundColumn DataField="PartyHTML" HeaderStyle-Width="190px" UniqueName="PartyHTML">
+                                                    <HeaderStyle Width="190px" />
+                                                </telerik:GridBoundColumn>
+                                            </Columns>
+                                            <PagerStyle PageSizeControlType="RadComboBox" />
+                                        </MasterTableView>
+                                        <PagerStyle PageSizeControlType="RadComboBox" />
+                                    </telerik:RadGrid>
+                                    <asp:SqlDataSource ID="CompanyDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                        SelectCommand="usp_PaymentMethod_Companies" SelectCommandType="StoredProcedure">
                                         <SelectParameters>
-                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="PartyID" PropertyName="Text"
+                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="MeID" PropertyName="Text"
                                                 Type="Int32" />
+                                            <asp:ControlParameter ControlID="HiddenTB_PaymentMethodID" Name="PaymentMethodID"
+                                                PropertyName="Text" Type="String" />
                                         </SelectParameters>
                                     </asp:SqlDataSource>
                                 </div>
@@ -464,34 +472,38 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Panel ID="RolePanel" runat="server">
+                            <asp:Panel ID="PeoplePanel" runat="server">
                                 <div class="list-panel">
-                                    <telerik:RadListBox ID="RoleRLB" runat="server" CheckBoxes="true" Width="220px" Height="300px"
-                                        DataSourceID="RoleDS" DataKeyField="RoleID" DataTextField="Role" DataValueField="ParentPartyID" OnItemDataBound="RoleRLB_ItemDataBound">
+                                    <telerik:RadListBox ID="PeopleRLB" runat="server" CheckBoxes="true" Width="220px"
+                                        Height="300px" DataSourceID="PeopleDS" DataKeyField="PersonID" DataTextField="PersonRoleHTML"
+                                        OnItemDataBound="PeopleRLB_ItemDataBound" OnClientItemChecked="onPersonClick">
+                                        <ItemTemplate>
+                                            <div>
+                                                <span style="display: inline" id="PersonHTML">
+                                                    <%# DataBinder.Eval(Container.DataItem, "PersonRoleHTML")%>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span style="display: none" id="PersonID">
+                                                    <%# DataBinder.Eval(Container.DataItem, "PersonID")%>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span style="display: none" id="RoleID">
+                                                    <%# DataBinder.Eval(Container.DataItem, "RoleID")%>
+                                                </span>
+                                            </div>
+                                        </ItemTemplate>
                                     </telerik:RadListBox>
-                                    <asp:SqlDataSource ID="RoleDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
-                                        SelectCommand="SELECT * FROM [v_FellowUserDistinctRoles] WHERE [PartyID] = @PartyID">
+                                    <asp:SqlDataSource ID="PeopleDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                        SelectCommand="usp_PaymentMethod_AvailTo" SelectCommandType="StoredProcedure">
                                         <SelectParameters>
-                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="PartyID" PropertyName="Text"
+                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="MeID" PropertyName="Text"
                                                 Type="Int32" />
-                                        </SelectParameters>
-                                    </asp:SqlDataSource>
-                                </div>
-                            </asp:Panel>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Panel ID="CarrierPanel" runat="server">
-                                <div class="list-panel">
-                                    <telerik:RadListBox ID="CarrierRLB" runat="server" CheckBoxes="true" Width="220px" Height="300px"
-                                        DataSourceID="CarrierDS" DataKeyField="CarrierID" DataTextField="CarrierFullName" OnItemDataBound="CarrierRLB_ItemDataBound">
-                                    </telerik:RadListBox>
-                                    <asp:SqlDataSource ID="CarrierDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
-                                        SelectCommand="SELECT * FROM [v_PartyCarriers] WHERE [PartyID] = @PartyID">
-                                        <SelectParameters>
-                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="PartyID" PropertyName="Text"
-                                                Type="Int32" />
+                                            <asp:ControlParameter ControlID="HiddenTB_PaymentMethodID" Name="PaymentMethodID"
+                                                PropertyName="Text" Type="String" />
+                                            <asp:ControlParameter ControlID="HiddenTB_PeopleParentID" Name="PeopleParentID" PropertyName="Text"
+                                                Type="String" />
                                         </SelectParameters>
                                     </asp:SqlDataSource>
                                 </div>
@@ -506,8 +518,8 @@
                 <div id="HiddenDiv" style="display: none;">
                     PartyID:
                     <asp:TextBox ID="HiddenTB_PartyID" runat="server"></asp:TextBox><br />
-                    ParentPartyID:
-                    <asp:TextBox ID="HiddenTB_ParentPartyID" runat="server"></asp:TextBox><br />
+                    PeopleParentID:
+                    <asp:TextBox ID="HiddenTB_PeopleParentID" runat="server"></asp:TextBox><br />
                     PaymentMethodID:
                     <asp:TextBox ID="HiddenTB_PaymentMethodID" runat="server"></asp:TextBox><br />
                 </div>

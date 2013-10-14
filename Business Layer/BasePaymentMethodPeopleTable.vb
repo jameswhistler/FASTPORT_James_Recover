@@ -1,5 +1,5 @@
 ﻿' This class is "generated" and will be overwritten.
-' Your customizations should be made in PaymentMethodCarrierRecord.vb
+' Your customizations should be made in PaymentMethodPeopleRecord.vb
 
 Imports System.Data.SqlTypes
 Imports System.Data
@@ -11,24 +11,24 @@ Imports FASTPORT.Data
 Namespace FASTPORT.Business
 
 ''' <summary>
-''' The generated superclass for the <see cref="PaymentMethodCarrierTable"></see> class.
-''' Provides access to the schema information and record data of a database table or view named PaymentMethodCarrier.
+''' The generated superclass for the <see cref="PaymentMethodPeopleTable"></see> class.
+''' Provides access to the schema information and record data of a database table or view named PaymentMethodPeople.
 ''' </summary>
 ''' <remarks>
 ''' The connection details (name, location, etc.) of the database and table (or view) accessed by this class 
 ''' are resolved at runtime based on the connection string in the application's Web.Config file.
 ''' <para>
 ''' This class is not intended to be instantiated directly.  To obtain an instance of this class, use 
-''' <see cref="PaymentMethodCarrierTable.Instance">PaymentMethodCarrierTable.Instance</see>.
+''' <see cref="PaymentMethodPeopleTable.Instance">PaymentMethodPeopleTable.Instance</see>.
 ''' </para>
 ''' </remarks>
-''' <seealso cref="PaymentMethodCarrierTable"></seealso>
+''' <seealso cref="PaymentMethodPeopleTable"></seealso>
 
-<Serializable()> Public Class BasePaymentMethodCarrierTable
+<Serializable()> Public Class BasePaymentMethodPeopleTable
     Inherits PrimaryKeyTable
     
 
-    Private ReadOnly TableDefinitionString As String = PaymentMethodCarrierDefinition.GetXMLString()
+    Private ReadOnly TableDefinitionString As String = PaymentMethodPeopleDefinition.GetXMLString()
 
 
 
@@ -44,18 +44,20 @@ Namespace FASTPORT.Business
     Protected Overridable Sub Initialize()
         Dim def As New XmlTableDefinition(TableDefinitionString)
         Me.TableDefinition = New TableDefinition()
-        Me.TableDefinition.TableClassName = System.Reflection.Assembly.CreateQualifiedName("FASTPORT.Business", "FASTPORT.Business.PaymentMethodCarrierTable")
+        Me.TableDefinition.TableClassName = System.Reflection.Assembly.CreateQualifiedName("FASTPORT.Business", "FASTPORT.Business.PaymentMethodPeopleTable")
         def.InitializeTableDefinition(Me.TableDefinition)
         Me.ConnectionName = def.GetConnectionName()
-        Me.RecordClassName = System.Reflection.Assembly.CreateQualifiedName("FASTPORT.Business", "FASTPORT.Business.PaymentMethodCarrierRecord")
+        Me.RecordClassName = System.Reflection.Assembly.CreateQualifiedName("FASTPORT.Business", "FASTPORT.Business.PaymentMethodPeopleRecord")
         Me.ApplicationName = "FASTPORT"
-        Me.DataAdapter = New PaymentMethodCarrierSqlTable()
-        Directcast(Me.DataAdapter, PaymentMethodCarrierSqlTable).ConnectionName = Me.ConnectionName
-        Directcast(Me.DataAdapter, PaymentMethodCarrierSqlTable).ApplicationName = Me.ApplicationName
+        Me.DataAdapter = New PaymentMethodPeopleSqlTable()
+        Directcast(Me.DataAdapter, PaymentMethodPeopleSqlTable).ConnectionName = Me.ConnectionName
+        Directcast(Me.DataAdapter, PaymentMethodPeopleSqlTable).ApplicationName = Me.ApplicationName
         Me.TableDefinition.AdapterMetaData = Me.DataAdapter.AdapterMetaData
-        PaymentMethodCarrierIDColumn.CodeName = "PaymentMethodCarrierID"
+        PaymentMethodPeopleIDColumn.CodeName = "PaymentMethodPeopleID"
+        PaymentMethodCompanyIDColumn.CodeName = "PaymentMethodCompanyID"
         PaymentMethodIDColumn.CodeName = "PaymentMethodID"
-        CarrierIDColumn.CodeName = "CarrierID"
+        PersonIDColumn.CodeName = "PersonID"
+        RoleIDColumn.CodeName = "RoleID"
         CreatedByIDColumn.CodeName = "CreatedByID"
         CreatedAtColumn.CodeName = "CreatedAt"
         UpdatedByIDColumn.CodeName = "UpdatedByID"
@@ -71,9 +73,9 @@ Namespace FASTPORT.Business
 #Region "Properties for columns"
 
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.PaymentMethodCarrierID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.PaymentMethodPeopleID column object.
     ''' </summary>
-    Public ReadOnly Property PaymentMethodCarrierIDColumn() As BaseClasses.Data.NumberColumn
+    Public ReadOnly Property PaymentMethodPeopleIDColumn() As BaseClasses.Data.NumberColumn
         Get
             Return CType(Me.TableDefinition.ColumnList(0), BaseClasses.Data.NumberColumn)
         End Get
@@ -82,17 +84,17 @@ Namespace FASTPORT.Business
 
     
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.PaymentMethodCarrierID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.PaymentMethodPeopleID column object.
     ''' </summary>
-    Public Shared ReadOnly Property PaymentMethodCarrierID() As BaseClasses.Data.NumberColumn
+    Public Shared ReadOnly Property PaymentMethodPeopleID() As BaseClasses.Data.NumberColumn
         Get
-            Return PaymentMethodCarrierTable.Instance.PaymentMethodCarrierIDColumn
+            Return PaymentMethodPeopleTable.Instance.PaymentMethodPeopleIDColumn
         End Get
     End Property
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.PaymentMethodID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.PaymentMethodCompanyID column object.
     ''' </summary>
-    Public ReadOnly Property PaymentMethodIDColumn() As BaseClasses.Data.NumberColumn
+    Public ReadOnly Property PaymentMethodCompanyIDColumn() As BaseClasses.Data.NumberColumn
         Get
             Return CType(Me.TableDefinition.ColumnList(1), BaseClasses.Data.NumberColumn)
         End Get
@@ -101,17 +103,17 @@ Namespace FASTPORT.Business
 
     
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.PaymentMethodID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.PaymentMethodCompanyID column object.
     ''' </summary>
-    Public Shared ReadOnly Property PaymentMethodID() As BaseClasses.Data.NumberColumn
+    Public Shared ReadOnly Property PaymentMethodCompanyID() As BaseClasses.Data.NumberColumn
         Get
-            Return PaymentMethodCarrierTable.Instance.PaymentMethodIDColumn
+            Return PaymentMethodPeopleTable.Instance.PaymentMethodCompanyIDColumn
         End Get
     End Property
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.CarrierID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.PaymentMethodID column object.
     ''' </summary>
-    Public ReadOnly Property CarrierIDColumn() As BaseClasses.Data.NumberColumn
+    Public ReadOnly Property PaymentMethodIDColumn() As BaseClasses.Data.NumberColumn
         Get
             Return CType(Me.TableDefinition.ColumnList(2), BaseClasses.Data.NumberColumn)
         End Get
@@ -120,17 +122,17 @@ Namespace FASTPORT.Business
 
     
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.CarrierID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.PaymentMethodID column object.
     ''' </summary>
-    Public Shared ReadOnly Property CarrierID() As BaseClasses.Data.NumberColumn
+    Public Shared ReadOnly Property PaymentMethodID() As BaseClasses.Data.NumberColumn
         Get
-            Return PaymentMethodCarrierTable.Instance.CarrierIDColumn
+            Return PaymentMethodPeopleTable.Instance.PaymentMethodIDColumn
         End Get
     End Property
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.CreatedByID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.PersonID column object.
     ''' </summary>
-    Public ReadOnly Property CreatedByIDColumn() As BaseClasses.Data.NumberColumn
+    Public ReadOnly Property PersonIDColumn() As BaseClasses.Data.NumberColumn
         Get
             Return CType(Me.TableDefinition.ColumnList(3), BaseClasses.Data.NumberColumn)
         End Get
@@ -139,36 +141,36 @@ Namespace FASTPORT.Business
 
     
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.CreatedByID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.PersonID column object.
     ''' </summary>
-    Public Shared ReadOnly Property CreatedByID() As BaseClasses.Data.NumberColumn
+    Public Shared ReadOnly Property PersonID() As BaseClasses.Data.NumberColumn
         Get
-            Return PaymentMethodCarrierTable.Instance.CreatedByIDColumn
+            Return PaymentMethodPeopleTable.Instance.PersonIDColumn
         End Get
     End Property
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.CreatedAt column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.RoleID column object.
     ''' </summary>
-    Public ReadOnly Property CreatedAtColumn() As BaseClasses.Data.DateColumn
+    Public ReadOnly Property RoleIDColumn() As BaseClasses.Data.NumberColumn
         Get
-            Return CType(Me.TableDefinition.ColumnList(4), BaseClasses.Data.DateColumn)
+            Return CType(Me.TableDefinition.ColumnList(4), BaseClasses.Data.NumberColumn)
         End Get
     End Property
 
 
     
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.CreatedAt column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.RoleID column object.
     ''' </summary>
-    Public Shared ReadOnly Property CreatedAt() As BaseClasses.Data.DateColumn
+    Public Shared ReadOnly Property RoleID() As BaseClasses.Data.NumberColumn
         Get
-            Return PaymentMethodCarrierTable.Instance.CreatedAtColumn
+            Return PaymentMethodPeopleTable.Instance.RoleIDColumn
         End Get
     End Property
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.UpdatedByID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.CreatedByID column object.
     ''' </summary>
-    Public ReadOnly Property UpdatedByIDColumn() As BaseClasses.Data.NumberColumn
+    Public ReadOnly Property CreatedByIDColumn() As BaseClasses.Data.NumberColumn
         Get
             Return CType(Me.TableDefinition.ColumnList(5), BaseClasses.Data.NumberColumn)
         End Get
@@ -177,17 +179,17 @@ Namespace FASTPORT.Business
 
     
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.UpdatedByID column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.CreatedByID column object.
     ''' </summary>
-    Public Shared ReadOnly Property UpdatedByID() As BaseClasses.Data.NumberColumn
+    Public Shared ReadOnly Property CreatedByID() As BaseClasses.Data.NumberColumn
         Get
-            Return PaymentMethodCarrierTable.Instance.UpdatedByIDColumn
+            Return PaymentMethodPeopleTable.Instance.CreatedByIDColumn
         End Get
     End Property
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.UpdatedAt column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.CreatedAt column object.
     ''' </summary>
-    Public ReadOnly Property UpdatedAtColumn() As BaseClasses.Data.DateColumn
+    Public ReadOnly Property CreatedAtColumn() As BaseClasses.Data.DateColumn
         Get
             Return CType(Me.TableDefinition.ColumnList(6), BaseClasses.Data.DateColumn)
         End Get
@@ -196,11 +198,49 @@ Namespace FASTPORT.Business
 
     
     ''' <summary>
-    ''' This is a convenience property that provides direct access to the table's PaymentMethodCarrier_.UpdatedAt column object.
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.CreatedAt column object.
+    ''' </summary>
+    Public Shared ReadOnly Property CreatedAt() As BaseClasses.Data.DateColumn
+        Get
+            Return PaymentMethodPeopleTable.Instance.CreatedAtColumn
+        End Get
+    End Property
+    ''' <summary>
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.UpdatedByID column object.
+    ''' </summary>
+    Public ReadOnly Property UpdatedByIDColumn() As BaseClasses.Data.NumberColumn
+        Get
+            Return CType(Me.TableDefinition.ColumnList(7), BaseClasses.Data.NumberColumn)
+        End Get
+    End Property
+
+
+    
+    ''' <summary>
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.UpdatedByID column object.
+    ''' </summary>
+    Public Shared ReadOnly Property UpdatedByID() As BaseClasses.Data.NumberColumn
+        Get
+            Return PaymentMethodPeopleTable.Instance.UpdatedByIDColumn
+        End Get
+    End Property
+    ''' <summary>
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.UpdatedAt column object.
+    ''' </summary>
+    Public ReadOnly Property UpdatedAtColumn() As BaseClasses.Data.DateColumn
+        Get
+            Return CType(Me.TableDefinition.ColumnList(8), BaseClasses.Data.DateColumn)
+        End Get
+    End Property
+
+
+    
+    ''' <summary>
+    ''' This is a convenience property that provides direct access to the table's PaymentMethodPeople_.UpdatedAt column object.
     ''' </summary>
     Public Shared ReadOnly Property UpdatedAt() As BaseClasses.Data.DateColumn
         Get
-            Return PaymentMethodCarrierTable.Instance.UpdatedAtColumn
+            Return PaymentMethodPeopleTable.Instance.UpdatedAtColumn
         End Get
     End Property
 
@@ -211,90 +251,90 @@ Namespace FASTPORT.Business
 #Region "Shared helper methods"
 
     ''' <summary>
-    ''' This is a shared function that can be used to get an array of PaymentMethodCarrierRecord records using a where clause.
+    ''' This is a shared function that can be used to get an array of PaymentMethodPeopleRecord records using a where clause.
     ''' </summary>
-    Public Shared Function GetRecords(ByVal where As String) As PaymentMethodCarrierRecord()
+    Public Shared Function GetRecords(ByVal where As String) As PaymentMethodPeopleRecord()
 
         Return GetRecords(where, Nothing, BaseTable.MIN_PAGE_NUMBER, BaseTable.MAX_BATCH_SIZE)
     End Function
     
     ''' <summary>
-    ''' This is a shared function that can be used to get an array of PaymentMethodCarrierRecord records using a where clause.
+    ''' This is a shared function that can be used to get an array of PaymentMethodPeopleRecord records using a where clause.
     ''' </summary>
-    Public Shared Function GetRecords(ByVal join As BaseFilter, ByVal where As String) As PaymentMethodCarrierRecord()
+    Public Shared Function GetRecords(ByVal join As BaseFilter, ByVal where As String) As PaymentMethodPeopleRecord()
 
         Return GetRecords(join, where, Nothing, BaseTable.MIN_PAGE_NUMBER, BaseTable.MAX_BATCH_SIZE)
     End Function
 
     ''' <summary>
-    ''' This is a shared function that can be used to get an array of PaymentMethodCarrierRecord records using a where and order by clause.
+    ''' This is a shared function that can be used to get an array of PaymentMethodPeopleRecord records using a where and order by clause.
     ''' </summary>
     Public Shared Function GetRecords( _
      ByVal where As String, _
-     ByVal orderBy As OrderBy) As PaymentMethodCarrierRecord()
+     ByVal orderBy As OrderBy) As PaymentMethodPeopleRecord()
 
         Return GetRecords(where, orderBy, BaseTable.MIN_PAGE_NUMBER, BaseTable.MAX_BATCH_SIZE)
     End Function
 
     ''' <summary>
-    ''' This is a shared function that can be used to get an array of PaymentMethodCarrierRecord records using a where and order by clause.
+    ''' This is a shared function that can be used to get an array of PaymentMethodPeopleRecord records using a where and order by clause.
     ''' </summary>
     Public Shared Function GetRecords( _
      ByVal join As BaseFilter, _
      ByVal where As String, _
-     ByVal orderBy As OrderBy) As PaymentMethodCarrierRecord()
+     ByVal orderBy As OrderBy) As PaymentMethodPeopleRecord()
 
         Return GetRecords(join, where, orderBy, BaseTable.MIN_PAGE_NUMBER, BaseTable.MAX_BATCH_SIZE)
     End Function
     
     ''' <summary>
-    ''' This is a shared function that can be used to get an array of PaymentMethodCarrierRecord records using a where and order by clause clause with pagination.
+    ''' This is a shared function that can be used to get an array of PaymentMethodPeopleRecord records using a where and order by clause clause with pagination.
     ''' </summary>
     Public Shared Function GetRecords( _
      ByVal where As String, _
      ByVal orderBy As OrderBy, _
      ByVal pageIndex As Integer, _
-     ByVal pageSize As Integer) As PaymentMethodCarrierRecord()
+     ByVal pageSize As Integer) As PaymentMethodPeopleRecord()
         
         Dim whereFilter As SqlFilter =  Nothing
         If Not where Is Nothing AndAlso where.trim() <> "" Then
             whereFilter =  New SqlFilter(where)
         End If
         Dim join As BaseClasses.Data.BaseFilter = Nothing 
-        Dim recList As ArrayList =  PaymentMethodCarrierTable.Instance.GetRecordList(join, whereFilter, Nothing, orderBy, pageIndex, pageSize)
+        Dim recList As ArrayList =  PaymentMethodPeopleTable.Instance.GetRecordList(join, whereFilter, Nothing, orderBy, pageIndex, pageSize)
  
-        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodCarrierRecord)), PaymentMethodCarrierRecord())
+        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodPeopleRecord)), PaymentMethodPeopleRecord())
     End Function
 
     ''' <summary>
-    ''' This is a shared function that can be used to get an array of PaymentMethodCarrierRecord records using a where and order by clause clause with pagination.
+    ''' This is a shared function that can be used to get an array of PaymentMethodPeopleRecord records using a where and order by clause clause with pagination.
     ''' </summary>
     Public Shared Function GetRecords( _
      ByVal join As BaseFilter, _
      ByVal where As String, _
      ByVal orderBy As OrderBy, _
      ByVal pageIndex As Integer, _
-     ByVal pageSize As Integer) As PaymentMethodCarrierRecord()
+     ByVal pageSize As Integer) As PaymentMethodPeopleRecord()
         
         Dim whereFilter As SqlFilter =  Nothing
         If Not where Is Nothing AndAlso where.trim() <> "" Then
             whereFilter =  New SqlFilter(where)
         End If
          
-        Dim recList As ArrayList =  PaymentMethodCarrierTable.Instance.GetRecordList(join, whereFilter, Nothing, orderBy, pageIndex, pageSize)
+        Dim recList As ArrayList =  PaymentMethodPeopleTable.Instance.GetRecordList(join, whereFilter, Nothing, orderBy, pageIndex, pageSize)
  
-        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodCarrierRecord)), PaymentMethodCarrierRecord())
+        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodPeopleRecord)), PaymentMethodPeopleRecord())
     End Function
 
     Public Shared Function GetRecords( _
      ByVal where As WhereClause, _
      ByVal orderBy As OrderBy, _
      ByVal pageIndex As Integer, _
-     ByVal pageSize As Integer) As PaymentMethodCarrierRecord()
+     ByVal pageSize As Integer) As PaymentMethodPeopleRecord()
         Dim join As BaseClasses.Data.BaseFilter = Nothing
-        Dim recList As ArrayList = PaymentMethodCarrierTable.Instance.GetRecordList(join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
+        Dim recList As ArrayList = PaymentMethodPeopleTable.Instance.GetRecordList(join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
 
-        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodCarrierRecord)), PaymentMethodCarrierRecord())
+        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodPeopleRecord)), PaymentMethodPeopleRecord())
     End Function
 
     Public Shared Function GetRecords( _
@@ -302,11 +342,11 @@ Namespace FASTPORT.Business
      ByVal where As WhereClause, _
      ByVal orderBy As OrderBy, _
      ByVal pageIndex As Integer, _
-     ByVal pageSize As Integer) As PaymentMethodCarrierRecord()
+     ByVal pageSize As Integer) As PaymentMethodPeopleRecord()
 
-        Dim recList As ArrayList = PaymentMethodCarrierTable.Instance.GetRecordList(join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
+        Dim recList As ArrayList = PaymentMethodPeopleTable.Instance.GetRecordList(join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
 
-        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodCarrierRecord)), PaymentMethodCarrierRecord())
+        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodPeopleRecord)), PaymentMethodPeopleRecord())
     End Function
 
     Public Shared Function GetRecords( _
@@ -314,11 +354,11 @@ Namespace FASTPORT.Business
      ByVal orderBy As OrderBy, _
      ByVal pageIndex As Integer, _
      ByVal pageSize As Integer, _
-     ByRef totalRecords As Integer) As PaymentMethodCarrierRecord()
+     ByRef totalRecords As Integer) As PaymentMethodPeopleRecord()
         Dim join As BaseClasses.Data.BaseFilter = Nothing
-        Dim recList As ArrayList = PaymentMethodCarrierTable.Instance.GetRecordList(join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize, totalRecords)
+        Dim recList As ArrayList = PaymentMethodPeopleTable.Instance.GetRecordList(join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize, totalRecords)
 
-        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodCarrierRecord)), PaymentMethodCarrierRecord())
+        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodPeopleRecord)), PaymentMethodPeopleRecord())
     End Function
 
     Public Shared Function GetRecords( _
@@ -327,11 +367,11 @@ Namespace FASTPORT.Business
      ByVal orderBy As OrderBy, _
      ByVal pageIndex As Integer, _
      ByVal pageSize As Integer, _
-     ByRef totalRecords As Integer) As PaymentMethodCarrierRecord()
+     ByRef totalRecords As Integer) As PaymentMethodPeopleRecord()
 
-        Dim recList As ArrayList = PaymentMethodCarrierTable.Instance.GetRecordList(join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize, totalRecords)
+        Dim recList As ArrayList = PaymentMethodPeopleTable.Instance.GetRecordList(join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize, totalRecords)
 
-        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodCarrierRecord)), PaymentMethodCarrierRecord())
+        Return CType(recList.ToArray(GetType(FASTPORT.Business.PaymentMethodPeopleRecord)), PaymentMethodPeopleRecord())
     End Function
     
     ''' <summary>
@@ -344,7 +384,7 @@ Namespace FASTPORT.Business
             whereFilter = New SqlFilter(where)
         End If
 
-        Return CInt(PaymentMethodCarrierTable.Instance.GetRecordListCount(Nothing, whereFilter, Nothing, Nothing))
+        Return CInt(PaymentMethodPeopleTable.Instance.GetRecordListCount(Nothing, whereFilter, Nothing, Nothing))
     End Function
 
 ''' <summary>
@@ -357,73 +397,73 @@ Namespace FASTPORT.Business
             whereFilter = New SqlFilter(where)
         End If
 
-        Return CInt(PaymentMethodCarrierTable.Instance.GetRecordListCount(join, whereFilter, Nothing, Nothing))
+        Return CInt(PaymentMethodPeopleTable.Instance.GetRecordListCount(join, whereFilter, Nothing, Nothing))
     End Function
 
     Public Shared Function GetRecordCount(ByVal where As WhereClause) As Integer
-        Return CInt(PaymentMethodCarrierTable.Instance.GetRecordListCount(Nothing, where.GetFilter(), Nothing, Nothing))
+        Return CInt(PaymentMethodPeopleTable.Instance.GetRecordListCount(Nothing, where.GetFilter(), Nothing, Nothing))
     End Function
     
       Public Shared Function GetRecordCount(ByVal join As BaseFilter, ByVal where As WhereClause) As Integer
-        Return CInt(PaymentMethodCarrierTable.Instance.GetRecordListCount(join, where.GetFilter(), Nothing, Nothing))
+        Return CInt(PaymentMethodPeopleTable.Instance.GetRecordListCount(join, where.GetFilter(), Nothing, Nothing))
     End Function
 
     ''' <summary>
-    ''' This is a shared function that can be used to get a PaymentMethodCarrierRecord record using a where clause.
+    ''' This is a shared function that can be used to get a PaymentMethodPeopleRecord record using a where clause.
     ''' </summary>
-    Public Shared Function GetRecord(ByVal where As String) As PaymentMethodCarrierRecord
+    Public Shared Function GetRecord(ByVal where As String) As PaymentMethodPeopleRecord
         Dim orderBy As OrderBy = Nothing
         Return GetRecord(where, orderBy)
     End Function
 
     ''' <summary>
-    ''' This is a shared function that can be used to get a PaymentMethodCarrierRecord record using a where clause.
+    ''' This is a shared function that can be used to get a PaymentMethodPeopleRecord record using a where clause.
     ''' </summary>
-    Public Shared Function GetRecord(ByVal join As BaseFilter, ByVal where As String) As PaymentMethodCarrierRecord
+    Public Shared Function GetRecord(ByVal join As BaseFilter, ByVal where As String) As PaymentMethodPeopleRecord
         Dim orderBy As OrderBy = Nothing
         Return GetRecord(join, where, orderBy)
     End Function
 
     ''' <summary>
-    ''' This is a shared function that can be used to get a PaymentMethodCarrierRecord record using a where and order by clause.
+    ''' This is a shared function that can be used to get a PaymentMethodPeopleRecord record using a where and order by clause.
     ''' </summary>
     Public Shared Function GetRecord( _
      ByVal where As String, _
-     ByVal orderBy As OrderBy) As PaymentMethodCarrierRecord
+     ByVal orderBy As OrderBy) As PaymentMethodPeopleRecord
 
         Dim whereFilter As SqlFilter = Nothing
         If Not where Is Nothing AndAlso where.Trim() <> "" Then
             whereFilter = New SqlFilter(where)
         End If
         Dim join As BaseClasses.Data.BaseFilter = Nothing
-        Dim recList As ArrayList = PaymentMethodCarrierTable.Instance.GetRecordList(join, whereFilter, Nothing, orderBy, BaseTable.MIN_PAGE_NUMBER, BaseTable.MIN_BATCH_SIZE)
+        Dim recList As ArrayList = PaymentMethodPeopleTable.Instance.GetRecordList(join, whereFilter, Nothing, orderBy, BaseTable.MIN_PAGE_NUMBER, BaseTable.MIN_BATCH_SIZE)
 
-        Dim rec As PaymentMethodCarrierRecord = Nothing
+        Dim rec As PaymentMethodPeopleRecord = Nothing
         If recList.Count > 0 Then
-            rec = CType(recList(0), PaymentMethodCarrierRecord)
+            rec = CType(recList(0), PaymentMethodPeopleRecord)
         End If
 
         Return rec
     End Function
 
     ''' <summary>
-    ''' This is a shared function that can be used to get a PaymentMethodCarrierRecord record using a where and order by clause.
+    ''' This is a shared function that can be used to get a PaymentMethodPeopleRecord record using a where and order by clause.
     ''' </summary>
     Public Shared Function GetRecord( _
      ByVal join As BaseFilter, _
      ByVal where As String, _
-     ByVal orderBy As OrderBy) As PaymentMethodCarrierRecord
+     ByVal orderBy As OrderBy) As PaymentMethodPeopleRecord
 
         Dim whereFilter As SqlFilter = Nothing
         If Not where Is Nothing AndAlso where.Trim() <> "" Then
             whereFilter = New SqlFilter(where)
         End If
 
-        Dim recList As ArrayList = PaymentMethodCarrierTable.Instance.GetRecordList(join, whereFilter, Nothing, orderBy, BaseTable.MIN_PAGE_NUMBER, BaseTable.MIN_BATCH_SIZE)
+        Dim recList As ArrayList = PaymentMethodPeopleTable.Instance.GetRecordList(join, whereFilter, Nothing, orderBy, BaseTable.MIN_PAGE_NUMBER, BaseTable.MIN_BATCH_SIZE)
 
-        Dim rec As PaymentMethodCarrierRecord = Nothing
+        Dim rec As PaymentMethodPeopleRecord = Nothing
         If recList.Count > 0 Then
-            rec = CType(recList(0), PaymentMethodCarrierRecord)
+            rec = CType(recList(0), PaymentMethodPeopleRecord)
         End If
 
         Return rec
@@ -440,7 +480,7 @@ Namespace FASTPORT.Business
         Dim retCol As SqlBuilderColumnSelection = New SqlBuilderColumnSelection(False, True)
         retCol.AddColumn(col)
 
-        Return PaymentMethodCarrierTable.Instance.GetColumnValues(retCol, Nothing, where.GetFilter(), Nothing, orderBy, BaseTable.MIN_PAGE_NUMBER, maxItems)
+        Return PaymentMethodPeopleTable.Instance.GetColumnValues(retCol, Nothing, where.GetFilter(), Nothing, orderBy, BaseTable.MIN_PAGE_NUMBER, maxItems)
 
     End Function
 
@@ -455,7 +495,7 @@ Namespace FASTPORT.Business
         Dim retCol As SqlBuilderColumnSelection = New SqlBuilderColumnSelection(False, True)
         retCol.AddColumn(col)
 
-        Return PaymentMethodCarrierTable.Instance.GetColumnValues(retCol, join, where.GetFilter(), Nothing, orderBy, BaseTable.MIN_PAGE_NUMBER, maxItems)
+        Return PaymentMethodPeopleTable.Instance.GetColumnValues(retCol, join, where.GetFilter(), Nothing, orderBy, BaseTable.MIN_PAGE_NUMBER, maxItems)
 
     End Function
 
@@ -465,8 +505,8 @@ Namespace FASTPORT.Business
     ''' </summary>
     Public Shared Function GetDataTable(ByVal where As String) As System.Data.DataTable
 
-        Dim recs() As PaymentMethodCarrierRecord = GetRecords(where)
-        Return PaymentMethodCarrierTable.Instance.CreateDataTable(recs, Nothing)
+        Dim recs() As PaymentMethodPeopleRecord = GetRecords(where)
+        Return PaymentMethodPeopleTable.Instance.CreateDataTable(recs, Nothing)
     End Function
     
     ''' <summary>
@@ -474,8 +514,8 @@ Namespace FASTPORT.Business
     ''' </summary>
     Public Shared Function GetDataTable(ByVal join As BaseFilter, ByVal where As String) As System.Data.DataTable
 
-        Dim recs() As PaymentMethodCarrierRecord = GetRecords(join, where)
-        Return PaymentMethodCarrierTable.Instance.CreateDataTable(recs, Nothing)
+        Dim recs() As PaymentMethodPeopleRecord = GetRecords(join, where)
+        Return PaymentMethodPeopleTable.Instance.CreateDataTable(recs, Nothing)
     End Function
     
 
@@ -484,8 +524,8 @@ Namespace FASTPORT.Business
     ''' </summary>
     Public Shared Function GetDataTable(ByVal where As String, ByVal orderBy As OrderBy) As System.Data.DataTable
 
-        Dim recs() As PaymentMethodCarrierRecord = GetRecords(where, orderBy)
-        Return PaymentMethodCarrierTable.Instance.CreateDataTable(recs, Nothing)
+        Dim recs() As PaymentMethodPeopleRecord = GetRecords(where, orderBy)
+        Return PaymentMethodPeopleTable.Instance.CreateDataTable(recs, Nothing)
     End Function
 
     ''' <summary>
@@ -493,8 +533,8 @@ Namespace FASTPORT.Business
     ''' </summary>
     Public Shared Function GetDataTable(ByVal join As BaseFilter, ByVal where As String, ByVal orderBy As OrderBy) As System.Data.DataTable
 
-        Dim recs() As PaymentMethodCarrierRecord = GetRecords(join, where, orderBy)
-        Return PaymentMethodCarrierTable.Instance.CreateDataTable(recs, Nothing)
+        Dim recs() As PaymentMethodPeopleRecord = GetRecords(join, where, orderBy)
+        Return PaymentMethodPeopleTable.Instance.CreateDataTable(recs, Nothing)
     End Function
 
 
@@ -507,8 +547,8 @@ Namespace FASTPORT.Business
      ByVal pageIndex As Integer, _
      ByVal pageSize As Integer) As System.Data.DataTable
 
-        Dim recs() As PaymentMethodCarrierRecord = GetRecords(where, orderBy, pageIndex, pageSize)
-        Return PaymentMethodCarrierTable.Instance.CreateDataTable(recs, Nothing)
+        Dim recs() As PaymentMethodPeopleRecord = GetRecords(where, orderBy, pageIndex, pageSize)
+        Return PaymentMethodPeopleTable.Instance.CreateDataTable(recs, Nothing)
     End Function
 
     ''' <summary>
@@ -521,8 +561,8 @@ Namespace FASTPORT.Business
      ByVal pageIndex As Integer, _
      ByVal pageSize As Integer) As System.Data.DataTable
 
-        Dim recs() As PaymentMethodCarrierRecord = GetRecords(join, where, orderBy, pageIndex, pageSize)
-        Return PaymentMethodCarrierTable.Instance.CreateDataTable(recs, Nothing)
+        Dim recs() As PaymentMethodPeopleRecord = GetRecords(join, where, orderBy, pageIndex, pageSize)
+        Return PaymentMethodPeopleTable.Instance.CreateDataTable(recs, Nothing)
     End Function
 
 
@@ -535,7 +575,7 @@ Namespace FASTPORT.Business
         End If
 
         Dim whereFilter As SqlFilter = New SqlFilter(where)
-        PaymentMethodCarrierTable.Instance.DeleteRecordList(whereFilter)
+        PaymentMethodPeopleTable.Instance.DeleteRecordList(whereFilter)
     End Sub
 
     ''' <summary>
@@ -547,7 +587,7 @@ Namespace FASTPORT.Business
             whereFilter = New SqlFilter(where)
         End If
 
-        Return PaymentMethodCarrierTable.Instance.ExportRecordData(whereFilter)
+        Return PaymentMethodPeopleTable.Instance.ExportRecordData(whereFilter)
     End Function
 
     Public Shared Function Export(ByVal where As WhereClause) As String
@@ -556,7 +596,7 @@ Namespace FASTPORT.Business
             whereFilter = where.GetFilter()
         End If
 
-        Return PaymentMethodCarrierTable.Instance.ExportRecordData(whereFilter)
+        Return PaymentMethodPeopleTable.Instance.ExportRecordData(whereFilter)
     End Function
 
     Public Shared Function GetSum( _
@@ -570,7 +610,7 @@ Namespace FASTPORT.Business
         Dim colSel As SqlBuilderColumnSelection = New SqlBuilderColumnSelection(False, False)
         colSel.AddColumn(col, SqlBuilderColumnOperation.OperationType.Sum)
 
-        Return PaymentMethodCarrierTable.Instance.GetColumnStatistics(colSel, Nothing, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
+        Return PaymentMethodPeopleTable.Instance.GetColumnStatistics(colSel, Nothing, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
 
     End Function
 
@@ -586,7 +626,7 @@ Namespace FASTPORT.Business
         Dim colSel As SqlBuilderColumnSelection = New SqlBuilderColumnSelection(False, False)
         colSel.AddColumn(col, SqlBuilderColumnOperation.OperationType.Sum)
 
-        Return PaymentMethodCarrierTable.Instance.GetColumnStatistics(colSel, join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
+        Return PaymentMethodPeopleTable.Instance.GetColumnStatistics(colSel, join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
 
     End Function
 
@@ -602,7 +642,7 @@ Namespace FASTPORT.Business
         Dim colSel As SqlBuilderColumnSelection = New SqlBuilderColumnSelection(False, False)
         colSel.AddColumn(col, SqlBuilderColumnOperation.OperationType.Count)
 
-        Return PaymentMethodCarrierTable.Instance.GetColumnStatistics(colSel, Nothing, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
+        Return PaymentMethodPeopleTable.Instance.GetColumnStatistics(colSel, Nothing, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
 
     End Function
     
@@ -618,7 +658,7 @@ Namespace FASTPORT.Business
         Dim colSel As SqlBuilderColumnSelection = New SqlBuilderColumnSelection(False, False)
         colSel.AddColumn(col, SqlBuilderColumnOperation.OperationType.Count)
 
-        Return PaymentMethodCarrierTable.Instance.GetColumnStatistics(colSel, join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
+        Return PaymentMethodPeopleTable.Instance.GetColumnStatistics(colSel, join, where.GetFilter(), Nothing, orderBy, pageIndex, pageSize)
 
     End Function    
 
@@ -626,14 +666,14 @@ Namespace FASTPORT.Business
     '''  This method returns the columns in the table.
     ''' </summary>
     Public Shared Function GetColumns() As BaseColumn()
-        Return PaymentMethodCarrierTable.Instance.TableDefinition.Columns
+        Return PaymentMethodPeopleTable.Instance.TableDefinition.Columns
     End Function
 
     ''' <summary>
     '''  This method returns the columnlist in the table.
     ''' </summary>  
     Public Shared Function GetColumnList() As ColumnList
-        Return PaymentMethodCarrierTable.Instance.TableDefinition.ColumnList
+        Return PaymentMethodPeopleTable.Instance.TableDefinition.ColumnList
     End Function
 
 
@@ -641,7 +681,7 @@ Namespace FASTPORT.Business
     ''' This method creates a new record and returns it to be edited.
     ''' </summary>
     Public Shared Function CreateNewRecord() As IRecord
-        Return PaymentMethodCarrierTable.Instance.CreateRecord()
+        Return PaymentMethodPeopleTable.Instance.CreateRecord()
     End Function
 
     ''' <summary>
@@ -649,7 +689,7 @@ Namespace FASTPORT.Business
     ''' </summary>
     ''' <param name="tempId">ID of the new record.</param>  
     Public Shared Function CreateNewRecord(ByVal tempId As String) As IRecord
-        Return PaymentMethodCarrierTable.Instance.CreateRecord(tempId)
+        Return PaymentMethodPeopleTable.Instance.CreateRecord(tempId)
     End Function
 
     ''' <summary>
@@ -670,32 +710,36 @@ Namespace FASTPORT.Business
     ''' </summary>
     ''' <param name="uniqueColumnName">Unique name of the column to fetch.</param>
     Public Shared Function GetColumn(ByVal uniqueColumnName As String) As BaseColumn
-        Dim column As BaseColumn = PaymentMethodCarrierTable.Instance.TableDefinition.ColumnList.GetByUniqueName(uniqueColumnName)
+        Dim column As BaseColumn = PaymentMethodPeopleTable.Instance.TableDefinition.ColumnList.GetByUniqueName(uniqueColumnName)
         Return column
     End Function     
 
     ' Convenience method for getting a record using a string-based record identifier
-    Public Shared Function GetRecord(ByVal id As String, ByVal bMutable As Boolean) As PaymentMethodCarrierRecord
-        Return CType(PaymentMethodCarrierTable.Instance.GetRecordData(id, bMutable), PaymentMethodCarrierRecord)
+    Public Shared Function GetRecord(ByVal id As String, ByVal bMutable As Boolean) As PaymentMethodPeopleRecord
+        Return CType(PaymentMethodPeopleTable.Instance.GetRecordData(id, bMutable), PaymentMethodPeopleRecord)
     End Function
 
     ' Convenience method for getting a record using a KeyValue record identifier
-    Public Shared Function GetRecord(ByVal id As KeyValue, ByVal bMutable As Boolean) As PaymentMethodCarrierRecord
-        Return CType(PaymentMethodCarrierTable.Instance.GetRecordData(id, bMutable), PaymentMethodCarrierRecord)
+    Public Shared Function GetRecord(ByVal id As KeyValue, ByVal bMutable As Boolean) As PaymentMethodPeopleRecord
+        Return CType(PaymentMethodPeopleTable.Instance.GetRecordData(id, bMutable), PaymentMethodPeopleRecord)
     End Function
 
     ' Convenience method for creating a record
     Public Overloads Function NewRecord( _
+        ByVal PaymentMethodCompanyIDValue As String, _
         ByVal PaymentMethodIDValue As String, _
-        ByVal CarrierIDValue As String, _
+        ByVal PersonIDValue As String, _
+        ByVal RoleIDValue As String, _
         ByVal CreatedByIDValue As String, _
         ByVal CreatedAtValue As String, _
         ByVal UpdatedByIDValue As String, _
         ByVal UpdatedAtValue As String _
     ) As KeyValue
         Dim rec As IPrimaryKeyRecord = CType(Me.CreateRecord(), IPrimaryKeyRecord)
-                rec.SetString(PaymentMethodIDValue, PaymentMethodIDColumn)
-        rec.SetString(CarrierIDValue, CarrierIDColumn)
+                rec.SetString(PaymentMethodCompanyIDValue, PaymentMethodCompanyIDColumn)
+        rec.SetString(PaymentMethodIDValue, PaymentMethodIDColumn)
+        rec.SetString(PersonIDValue, PersonIDColumn)
+        rec.SetString(RoleIDValue, RoleIDColumn)
         rec.SetString(CreatedByIDValue, CreatedByIDColumn)
         rec.SetString(CreatedAtValue, CreatedAtColumn)
         rec.SetString(UpdatedByIDValue, UpdatedByIDColumn)
@@ -713,7 +757,7 @@ Namespace FASTPORT.Business
     ''' </summary>
     ''' <param name="kv">Keyvalue of the record to be deleted.</param>
     Public Shared Sub DeleteRecord(ByVal kv As KeyValue)
-        PaymentMethodCarrierTable.Instance.DeleteOneRecord(kv)
+        PaymentMethodPeopleTable.Instance.DeleteOneRecord(kv)
     End Sub
 
     ''' <summary>
@@ -723,7 +767,7 @@ Namespace FASTPORT.Business
     Public Shared Function DoesRecordExist(ByVal kv As KeyValue) As Boolean
         Dim recordExist As Boolean = True
         Try
-            PaymentMethodCarrierTable.GetRecord(kv, False)
+            PaymentMethodPeopleTable.GetRecord(kv, False)
         Catch ex As Exception
             recordExist = False
         End Try
@@ -734,8 +778,8 @@ Namespace FASTPORT.Business
     '''  This method returns all the primary columns in the table.
     ''' </summary>
     Public Shared Function GetPrimaryKeyColumns() As ColumnList
-        If (Not IsNothing(PaymentMethodCarrierTable.Instance.TableDefinition.PrimaryKey)) Then
-            Return PaymentMethodCarrierTable.Instance.TableDefinition.PrimaryKey.Columns
+        If (Not IsNothing(PaymentMethodPeopleTable.Instance.TableDefinition.PrimaryKey)) Then
+            Return PaymentMethodPeopleTable.Instance.TableDefinition.PrimaryKey.Columns
         Else
             Return Nothing
         End If
@@ -748,10 +792,10 @@ Namespace FASTPORT.Business
     Public Shared Function GetKeyValue(ByVal key As Object) As KeyValue
         Dim kv As KeyValue = Nothing
 
-        If (Not (IsNothing(PaymentMethodCarrierTable.Instance.TableDefinition.PrimaryKey))) Then
+        If (Not (IsNothing(PaymentMethodPeopleTable.Instance.TableDefinition.PrimaryKey))) Then
 
             Dim isCompositePrimaryKey As Boolean = False
-            isCompositePrimaryKey = PaymentMethodCarrierTable.Instance.TableDefinition.PrimaryKey.IsCompositeKey
+            isCompositePrimaryKey = PaymentMethodPeopleTable.Instance.TableDefinition.PrimaryKey.IsCompositeKey
 
             If ((isCompositePrimaryKey) AndAlso (key.GetType.IsArray())) Then
 
@@ -761,12 +805,12 @@ Namespace FASTPORT.Business
                 Dim keyArray As Array = CType(key, Array)
                 If (Not IsNothing(keyArray)) Then
                     Dim length As Integer = keyArray.Length
-                    Dim pkColumns As ColumnList = PaymentMethodCarrierTable.Instance.TableDefinition.PrimaryKey.Columns
+                    Dim pkColumns As ColumnList = PaymentMethodPeopleTable.Instance.TableDefinition.PrimaryKey.Columns
                     Dim pkColumn As BaseColumn
                     Dim index As Integer = 0
                     For Each pkColumn In pkColumns
                         Dim keyString As String = CType(keyArray.GetValue(index), String)
-                        If (PaymentMethodCarrierTable.Instance.TableDefinition.TableType = BaseClasses.Data.TableDefinition.TableTypes.Virtual) Then
+                        If (PaymentMethodPeopleTable.Instance.TableDefinition.TableType = BaseClasses.Data.TableDefinition.TableTypes.Virtual) Then
                             kv.AddElement(pkColumn.UniqueName, keyString)
                         Else
                             kv.AddElement(pkColumn.InternalName, keyString)
@@ -777,7 +821,7 @@ Namespace FASTPORT.Business
 
             Else
                 ' If the key is not composite, then get the key value.
-                kv = PaymentMethodCarrierTable.Instance.TableDefinition.PrimaryKey.ParseValue(CType(key, String))
+                kv = PaymentMethodPeopleTable.Instance.TableDefinition.PrimaryKey.ParseValue(CType(key, String))
             End If
         End If
         Return kv
@@ -788,7 +832,7 @@ Namespace FASTPORT.Business
      ''' This method takes a record and a Column and returns an evaluated value of DFKA formula.
      ''' </summary>
 	Public Shared Function GetDFKA(ByVal rec As BaseRecord, ByVal col As BaseColumn) As String
-	    Dim fkColumn As ForeignKey = PaymentMethodCarrierTable.Instance.TableDefinition.GetExpandableNonCompositeForeignKey(col)
+	    Dim fkColumn As ForeignKey = PaymentMethodPeopleTable.Instance.TableDefinition.GetExpandableNonCompositeForeignKey(col)
 	    If fkColumn Is Nothing Then
  			Return Nothing
 		End If
@@ -820,7 +864,7 @@ Namespace FASTPORT.Business
 	    If keyValue Is Nothing Then
  			Return Nothing
 		End If
-	    Dim fkColumn As ForeignKey = PaymentMethodCarrierTable.Instance.TableDefinition.GetExpandableNonCompositeForeignKey(col)
+	    Dim fkColumn As ForeignKey = PaymentMethodPeopleTable.Instance.TableDefinition.GetExpandableNonCompositeForeignKey(col)
 	    If fkColumn Is Nothing Then
  			Return Nothing
 		End If

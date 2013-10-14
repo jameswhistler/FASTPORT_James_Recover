@@ -22,8 +22,6 @@ CREATE PROCEDURE pFASTPORTPaymentMethodUpdate
     @p_BankAccountName nvarchar(50),
     @p_BankPaymentReference nvarchar(50),
     @p_Preferred bit,
-    @p_CarrierAvailabilityID int,
-    @p_PartyAvailabilityID int,
     @p_CreatedByID int,
     @p_CreatedAt datetime,
     @p_UpdatedByID int,
@@ -61,8 +59,6 @@ BEGIN
             [BankAccountName] = @p_BankAccountName,
             [BankPaymentReference] = @p_BankPaymentReference,
             [Preferred] = @p_Preferred,
-            [CarrierAvailabilityID] = @p_CarrierAvailabilityID,
-            [PartyAvailabilityID] = @p_PartyAvailabilityID,
             [CreatedByID] = @p_CreatedByID,
             [CreatedAt] = @p_CreatedAt,
             [UpdatedByID] = @p_UpdatedByID,
@@ -84,7 +80,7 @@ BEGIN
             -- ensure transactional integrity.  The lock
             -- will be release when the transaction is 
             -- later committed or rolled back.
-            Select @l_newValue = CAST(BINARY_CHECKSUM([PaymentMethodID],[PartyID],[CreditCardTypeID],[CreditCardNumber],[CreditCardName],[StartDate],[ExpiryDate],[CVV],[BankAccountNumber],[BankSortCode],[BankAccountName],[BankPaymentReference],[Preferred],[CarrierAvailabilityID],[PartyAvailabilityID],[CreatedByID],[CreatedAt],[UpdatedByID],[UpdatedAt]) AS nvarchar(4000)) 
+            Select @l_newValue = CAST(BINARY_CHECKSUM([PaymentMethodID],[PartyID],[CreditCardTypeID],[CreditCardNumber],[CreditCardName],[StartDate],[ExpiryDate],[CVV],[BankAccountNumber],[BankSortCode],[BankAccountName],[BankPaymentReference],[Preferred],[CreatedByID],[CreatedAt],[UpdatedByID],[UpdatedAt]) AS nvarchar(4000)) 
             FROM [dbo].[PaymentMethod] with (rowlock, holdlock)
             WHERE [PaymentMethodID] = @pk_PaymentMethodID
 
@@ -114,8 +110,6 @@ BEGIN
                     [BankAccountName] = @p_BankAccountName,
                     [BankPaymentReference] = @p_BankPaymentReference,
                     [Preferred] = @p_Preferred,
-                    [CarrierAvailabilityID] = @p_CarrierAvailabilityID,
-                    [PartyAvailabilityID] = @p_PartyAvailabilityID,
                     [CreatedByID] = @p_CreatedByID,
                     [CreatedAt] = @p_CreatedAt,
                     [UpdatedByID] = @p_UpdatedByID,

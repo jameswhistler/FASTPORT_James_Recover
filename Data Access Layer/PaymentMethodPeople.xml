@@ -2,7 +2,7 @@
 <XMLDefinition Generator="Iron Speed Designer" Version="9.2" Type="GENERIC">
   <ColumnDefinition>
     <Column InternalName="0" Priority="1" ColumnNum="0">
-      <columnName>PaymentMethodCarrierID</columnName>
+      <columnName>PaymentMethodPeopleID</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
       <columnDBType>int</columnDBType>
@@ -50,6 +50,71 @@
       <applyDFKA>N</applyDFKA>
     </Column>
     <Column InternalName="1" Priority="2" ColumnNum="1">
+      <columnName>PaymentMethodCompanyID</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnType>Number</columnType>
+      <columnDBType>int</columnDBType>
+      <columnLengthSet>10.0</columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault>
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>notrim</columnFunction>
+      <columnDBFormat>
+      </columnDBFormat>
+      <columnPK>N</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
+      <columnRequired>N</columnRequired>
+      <columnNotNull>N</columnNotNull>
+      <columnCaseSensitive>N</columnCaseSensitive>
+      <columnCollation>
+      </columnCollation>
+      <columnFullText>N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
+      <foreignKey>
+        <columnFKName>FK_PaymentMethodPeople_PaymentMethod</columnFKName>
+        <columnFKTable>PaymentMethod</columnFKTable>
+        <columnFKOwner>dbo</columnFKOwner>
+        <columnFKColumn>PaymentMethodID</columnFKColumn>
+        <columnFKColumnDisplay>CreditCardName</columnFKColumnDisplay>
+        <foreignKeyType>Explicit</foreignKeyType>
+      </foreignKey>
+      <applyDFKA>Y</applyDFKA>
+      <foreignKey>
+        <columnFKName>FK_PaymentMethodPeople_Party</columnFKName>
+        <columnFKTable>Party</columnFKTable>
+        <columnFKOwner>dbo</columnFKOwner>
+        <columnFKColumn>PartyID</columnFKColumn>
+        <columnFKColumnDisplay>
+        </columnFKColumnDisplay>
+        <foreignKeyType>Explicit</foreignKeyType>
+      </foreignKey>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
+      <applyDefaultValue>N</applyDefaultValue>
+    </Column>
+    <Column InternalName="2" Priority="3" ColumnNum="2">
       <columnName>PaymentMethodID</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -98,8 +163,8 @@
       <applyDefaultValue>N</applyDefaultValue>
       <applyDFKA>N</applyDFKA>
     </Column>
-    <Column InternalName="2" Priority="3" ColumnNum="2">
-      <columnName>CarrierID</columnName>
+    <Column InternalName="3" Priority="4" ColumnNum="3">
+      <columnName>PersonID</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
       <columnDBType>int</columnDBType>
@@ -110,8 +175,7 @@
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
-      <columnFunction>
-      </columnFunction>
+      <columnFunction>notrim</columnFunction>
       <columnDBFormat>
       </columnDBFormat>
       <columnPK>N</columnPK>
@@ -129,6 +193,15 @@
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <foreignKey>
+        <columnFKName>FK_PaymentMethodParty_Party</columnFKName>
+        <columnFKTable>Party</columnFKTable>
+        <columnFKOwner>dbo</columnFKOwner>
+        <columnFKColumn>PartyID</columnFKColumn>
+        <columnFKColumnDisplay>Title</columnFKColumnDisplay>
+        <foreignKeyType>Explicit</foreignKeyType>
+      </foreignKey>
+      <applyDFKA>Y</applyDFKA>
       <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
       <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
       <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
@@ -145,9 +218,64 @@
       <updatingFormula>
       </updatingFormula>
       <applyDefaultValue>N</applyDefaultValue>
-      <applyDFKA>N</applyDFKA>
     </Column>
-    <Column InternalName="3" Priority="4" ColumnNum="3">
+    <Column InternalName="4" Priority="5" ColumnNum="4">
+      <columnName>RoleID</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnType>Number</columnType>
+      <columnDBType>int</columnDBType>
+      <columnLengthSet>10.0</columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault>
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>notrim</columnFunction>
+      <columnDBFormat>
+      </columnDBFormat>
+      <columnPK>N</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
+      <columnRequired>N</columnRequired>
+      <columnNotNull>N</columnNotNull>
+      <columnCaseSensitive>N</columnCaseSensitive>
+      <columnCollation>
+      </columnCollation>
+      <columnFullText>N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
+      <foreignKey>
+        <columnFKName>FK_PaymentMethodPeople_Role</columnFKName>
+        <columnFKTable>Role</columnFKTable>
+        <columnFKOwner>dbo</columnFKOwner>
+        <columnFKColumn>RoleID</columnFKColumn>
+        <columnFKColumnDisplay>Role</columnFKColumnDisplay>
+        <foreignKeyType>Explicit</foreignKeyType>
+      </foreignKey>
+      <applyDFKA>Y</applyDFKA>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
+      <applyDefaultValue>N</applyDefaultValue>
+    </Column>
+    <Column InternalName="5" Priority="6" ColumnNum="5">
       <columnName>CreatedByID</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -196,7 +324,7 @@
       <applyDefaultValue>N</applyDefaultValue>
       <applyDFKA>N</applyDFKA>
     </Column>
-    <Column InternalName="4" Priority="5" ColumnNum="4">
+    <Column InternalName="6" Priority="7" ColumnNum="6">
       <columnName>CreatedAt</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -245,7 +373,7 @@
       <applyDefaultValue>N</applyDefaultValue>
       <applyDFKA>N</applyDFKA>
     </Column>
-    <Column InternalName="5" Priority="6" ColumnNum="5">
+    <Column InternalName="7" Priority="8" ColumnNum="7">
       <columnName>UpdatedByID</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -294,7 +422,7 @@
       <applyDefaultValue>N</applyDefaultValue>
       <applyDFKA>N</applyDFKA>
     </Column>
-    <Column InternalName="6" Priority="7" ColumnNum="6">
+    <Column InternalName="8" Priority="9" ColumnNum="8">
       <columnName>UpdatedAt</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -344,12 +472,12 @@
       <applyDFKA>N</applyDFKA>
     </Column>
   </ColumnDefinition>
-  <TableName>PaymentMethodCarrier</TableName>
+  <TableName>PaymentMethodPeople</TableName>
   <Version>
   </Version>
   <Owner>dbo</Owner>
-  <TableCodeName>PaymentMethodCarrier</TableCodeName>
-  <TableAliasName>PaymentMethodCarrier_</TableAliasName>
+  <TableCodeName>PaymentMethodPeople</TableCodeName>
+  <TableAliasName>PaymentMethodPeople_</TableAliasName>
   <ConnectionName>DatabaseFASTPORT1</ConnectionName>
   <PagingMethod>
   </PagingMethod>
@@ -359,5 +487,5 @@
   <canViewRecords Source="Database">Y</canViewRecords>
   <ConcurrencyMethod>BinaryChecksum</ConcurrencyMethod>
   <AppShortName>FASTPORT</AppShortName>
-  <TableStoredProcPrefix>pFASTPORTPaymentMethodCarrier</TableStoredProcPrefix>
+  <TableStoredProcPrefix>pFASTPORTPaymentMethodPeople</TableStoredProcPrefix>
 </XMLDefinition>

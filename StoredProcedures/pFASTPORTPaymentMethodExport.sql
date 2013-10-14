@@ -48,10 +48,6 @@ CREATE PROCEDURE pFASTPORTPaymentMethodExport
                 N'"BankAccountName"' + @p_separator_str +
                 N'"BankPaymentReference"' + @p_separator_str +
                 N'"Preferred"' + @p_separator_str +
-                N'"CarrierAvailabilityID"' + @p_separator_str +
-                N'"""CarrierAvailabilityID"" ItemName"' + @p_separator_str +
-                N'"PartyAvailabilityID"' + @p_separator_str +
-                N'"""PartyAvailabilityID"" ItemName"' + @p_separator_str +
                 N'"CreatedByID"' + @p_separator_str +
                 N'"CreatedAt"' + @p_separator_str +
                 N'"UpdatedByID"' + @p_separator_str +
@@ -84,10 +80,6 @@ CREATE PROCEDURE pFASTPORTPaymentMethodExport
                 N'N''"'' + REPLACE(IsNULL(PaymentMethod_.[BankAccountName], ''''), N''"'', N''""'') + N''"''  + ''' + @p_separator_str + ''' +' +
                 N'N''"'' + REPLACE(IsNULL(PaymentMethod_.[BankPaymentReference], ''''), N''"'', N''""'') + N''"''  + ''' + @p_separator_str + ''' +' +
                 N'N''"'' + IsNULL(Convert(nvarchar, PaymentMethod_.[Preferred]), '''') + N''"'' + ''' + @p_separator_str + ''' +' +
-                N'IsNULL(Convert(nvarchar, PaymentMethod_.[CarrierAvailabilityID]), '''') + ''' + @p_separator_str + ''' +' +
-                N'N''"'' + REPLACE(IsNULL( t2.[ItemName], ''''), N''"'', N''""'') + N''"''  + ''' + @p_separator_str + ''' +' +
-                N'IsNULL(Convert(nvarchar, PaymentMethod_.[PartyAvailabilityID]), '''') + ''' + @p_separator_str + ''' +' +
-                N'N''"'' + REPLACE(IsNULL( t3.[ItemName], ''''), N''"'', N''""'') + N''"''  + ''' + @p_separator_str + ''' +' +
                 N'IsNULL(Convert(nvarchar, PaymentMethod_.[CreatedByID]), '''') + ''' + @p_separator_str + ''' +' +
                 N'IsNULL(Convert(nvarchar, PaymentMethod_.[CreatedAt], 21), '''') + ''' + @p_separator_str + ''' +' +
                 N'IsNULL(Convert(nvarchar, PaymentMethod_.[UpdatedByID]), '''') + ''' + @p_separator_str + ''' +' +
@@ -95,7 +87,7 @@ CREATE PROCEDURE pFASTPORTPaymentMethodExport
             END
 
         -- Set up the from string (with table alias) and the join string
-        SET @l_from_str = '[dbo].[PaymentMethod] PaymentMethod_ LEFT OUTER JOIN [dbo].[Party] t0 ON (PaymentMethod_.[PartyID] =  t0.[PartyID]) LEFT OUTER JOIN [dbo].[List] t1 ON (PaymentMethod_.[CreditCardTypeID] =  t1.[ListID]) LEFT OUTER JOIN [dbo].[Tree] t2 ON (PaymentMethod_.[CarrierAvailabilityID] =  t2.[TreeID]) LEFT OUTER JOIN [dbo].[Tree] t3 ON (PaymentMethod_.[PartyAvailabilityID] =  t3.[TreeID])';
+        SET @l_from_str = '[dbo].[PaymentMethod] PaymentMethod_ LEFT OUTER JOIN [dbo].[Party] t0 ON (PaymentMethod_.[PartyID] =  t0.[PartyID]) LEFT OUTER JOIN [dbo].[List] t1 ON (PaymentMethod_.[CreditCardTypeID] =  t1.[ListID])';
 
         SET @l_join_str = @p_join_str
         if @p_join_str is null

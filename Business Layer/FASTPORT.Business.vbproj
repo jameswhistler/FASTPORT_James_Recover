@@ -1112,18 +1112,6 @@
     <Compile Include="BasePaymentMethodRecord.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodPartyTable.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BasePaymentMethodPartyTable.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PaymentMethodPartyRecord.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BasePaymentMethodPartyRecord.vb">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="V_FellowUsersView.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -1148,18 +1136,6 @@
     <Compile Include="BaseV_FellowUserDistinctRolesRecord.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodCarrierTable.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BasePaymentMethodCarrierTable.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PaymentMethodCarrierRecord.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BasePaymentMethodCarrierRecord.vb">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="V_PartyCarriersView.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -1172,16 +1148,28 @@
     <Compile Include="BaseV_PartyCarriersRecord.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="V_PartyUserRolesView.vb" >
+    <Compile Include="V_PartyUserRolesView.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseV_PartyUserRolesView.vb" >
+    <Compile Include="BaseV_PartyUserRolesView.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="V_PartyUserRolesRecord.vb" >
+    <Compile Include="V_PartyUserRolesRecord.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseV_PartyUserRolesRecord.vb" >
+    <Compile Include="BaseV_PartyUserRolesRecord.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodPeopleTable.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodPeopleTable.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodPeopleRecord.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodPeopleRecord.vb" >
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

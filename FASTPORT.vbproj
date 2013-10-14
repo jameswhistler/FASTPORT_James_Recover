@@ -1610,11 +1610,20 @@
     <Content Include="StoredProcedures\pFASTPORTV_PartyCarriersDrillDown.sql" />
     <Content Include="StoredProcedures\pFASTPORTV_PartyCarriersGetStats.sql" />
     <Content Include="StoredProcedures\pFASTPORTV_PartyCarriersExport.sql" />
-    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesGet.sql"  />
-    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesGetList.sql"  />
-    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesDrillDown.sql"  />
-    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesGetStats.sql"  />
-    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesExport.sql"  />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTV_PartyUserRolesExport.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPeopleAdd.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPeopleUpdate.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPeopleDelete.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPeopleDeleteRecords.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPeopleGet.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPeopleGetList.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPeopleDrillDown.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPeopleGetStats.sql" />
+    <Content Include="StoredProcedures\pFASTPORTPaymentMethodPeopleExport.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">
@@ -1671,7 +1680,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="True" UseJQuerySupport="True" />
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

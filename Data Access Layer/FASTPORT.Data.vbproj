@@ -856,15 +856,6 @@
     <Compile Include="BasePaymentMethodSqlTable.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodPartyDefinition.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PaymentMethodPartySqlTable.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BasePaymentMethodPartySqlTable.vb">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="V_FellowUsersDefinition.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -883,15 +874,6 @@
     <Compile Include="BaseV_FellowUserDistinctRolesSqlView.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PaymentMethodCarrierDefinition.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PaymentMethodCarrierSqlTable.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BasePaymentMethodCarrierSqlTable.vb">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="V_PartyCarriersDefinition.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -901,13 +883,22 @@
     <Compile Include="BaseV_PartyCarriersSqlView.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="V_PartyUserRolesDefinition.vb" >
+    <Compile Include="V_PartyUserRolesDefinition.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="V_PartyUserRolesSqlView.vb" >
+    <Compile Include="V_PartyUserRolesSqlView.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseV_PartyUserRolesSqlView.vb" >
+    <Compile Include="BaseV_PartyUserRolesSqlView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodPeopleDefinition.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodPeopleSqlTable.vb" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePaymentMethodPeopleSqlTable.vb" >
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

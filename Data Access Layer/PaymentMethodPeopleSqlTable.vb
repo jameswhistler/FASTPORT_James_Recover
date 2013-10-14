@@ -11,16 +11,16 @@ Imports BaseClasses.Data.SqlProvider
 Namespace FASTPORT.Data
 
 	''' <summary>
-	''' Used by the <see cref="PaymentMethodCarrierTable"></see> class to access and/or modify the database.
+	''' Used by the <see cref="PaymentMethodPeopleTable"></see> class to access and/or modify the database.
 	''' </summary>
 	''' <remarks>
 	''' This class is not intended to be instantiated directly.  To obtain an instance of this class, 
-	''' use the methods of the <see cref="PaymentMethodCarrierTable"></see> class.
+	''' use the methods of the <see cref="PaymentMethodPeopleTable"></see> class.
 	''' </remarks>
-	''' <seealso cref="PaymentMethodCarrierTable"></seealso>
+	''' <seealso cref="PaymentMethodPeopleTable"></seealso>
 
-	Public Class PaymentMethodCarrierSqlTable
-		Inherits BasePaymentMethodCarrierSqlTable
+	Public Class PaymentMethodPeopleSqlTable
+		Inherits BasePaymentMethodPeopleSqlTable
 
 		'The functions below may be overridden in order to implement your own
 		'logic for creating, updating, deleting, and getting individual records,
