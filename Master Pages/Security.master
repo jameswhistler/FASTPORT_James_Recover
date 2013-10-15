@@ -1,26 +1,108 @@
 ﻿<%@ Master Language="vb" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<%@ Register Tagprefix="FASTPORT" TagName="MarketingMenu" Src="../Menu Panels/MarketingMenu.ascx" %>
-
-<%@ Register Tagprefix="Selectors" Namespace="FASTPORT" Assembly="FASTPORT" %>
-
-<%@ Register Tagprefix="BaseClasses" Namespace="BaseClasses.Web.UI.WebControls" Assembly="BaseClasses" %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register TagPrefix="FASTPORT" TagName="MarketingMenu" Src="../Menu Panels/MarketingMenu.ascx" %>
+<%@ Register TagPrefix="Selectors" Namespace="FASTPORT" Assembly="FASTPORT" %>
+<%@ Register TagPrefix="BaseClasses" Namespace="BaseClasses.Web.UI.WebControls" Assembly="BaseClasses" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head id="Head1" runat="server">
-    <meta http-equiv="X-UA-Compatible"content="IE=7,8,9"/> 
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,8,9" />
     <meta name="keywords" content="Echosign" />
     <title></title>
-    </head>
-    <body id="Body1" runat="server" class="pBack">
-        <form id="Form1" method="post" runat="server">
-            <BaseClasses:ScrollCoordinates id="ScrollCoordinates1" runat="server"></BaseClasses:ScrollCoordinates>
-            <BaseClasses:BasePageSettings id="PageSettings" runat="server"></BaseClasses:BasePageSettings>
-            <script language="JavaScript" type="text/javascript">clearRTL()</script>
-            <asp:ScriptManager ID="scriptManager1" runat="server" EnablePartialRendering="True" EnablePageMethods="True" EnableScriptGlobalization="True" EnableScriptLocalization="True">
-			</asp:ScriptManager><table cellpadding="0" cellspacing="0" border="0" class="pWrapper"><tr><td colspan="3"><table border="0" cellpadding="0" cellspacing="0" style="width:100%;"><tr><td class="pageTL"><img src="../Images/space.gif" class="pageTLSpace" alt="" /></td><td class="pageT"><img src="../Images/space.gif" class="pageTSpace" alt="" /></td><td class="pageTR"><img src="../Images/space.gif" class="pageTRSpace" alt="" /></td></tr></table>
-</td></tr><tr><td colspan="3" class="pcmLSecurity"><table><tr><td width="155px" align="Right"><asp:image id="LogoImage1" runat="server" imageurl="../Images/Custom/FPWhiteLogo.png"></asp:image></td><td><FASTPORT:MarketingMenu runat="server" id="_Menu1"></FASTPORT:MarketingMenu></td></tr></table>
-</td></tr><tr><td class="pageL"><img src="../Images/space.gif" class="pageLSpace" alt="" /></td><td class="pageC"><table border="0" cellpadding="0" cellspacing="0" style="width: 100%" class="pBackSecurity"><tr><td class="pcCSecurity"><center><asp:ContentPlaceHolder id="PageContent" Runat="server" /></center></td></tr></table>
-</td><td class="pageR"><img src="../Images/space.gif" class="pageRSpace" alt="" /></td></tr><tr><td colspan="3"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="pageBL"><img src="../Images/space.gif" class="pageBLSpace" alt="" /></td><td class="pageB"><img src="../Images/space.gif" class="pageBSpace" alt="" /></td><td class="pageBR"><img src="../Images/space.gif" class="pageBRSpace" alt="" /></td></tr></table>
-</td></tr></table></form>
-    </body>
+</head>
+<body id="Body1" runat="server" class="pBack">
+    <form id="Form1" method="post" runat="server">
+    <BaseClasses:ScrollCoordinates ID="ScrollCoordinates1" runat="server">
+    </BaseClasses:ScrollCoordinates>
+    <BaseClasses:BasePageSettings ID="PageSettings" runat="server"></BaseClasses:BasePageSettings>
+    <script language="JavaScript" type="text/javascript">        clearRTL()</script>
+    <asp:ScriptManager ID="scriptManager1" runat="server" EnablePartialRendering="True"
+        EnablePageMethods="True" EnableScriptGlobalization="True" EnableScriptLocalization="True">
+    </asp:ScriptManager>
+    <table cellpadding="0" cellspacing="0" border="0" class="pWrapper">
+        <tr>
+            <td colspan="3">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                    <tr>
+                        <td class="pageTL">
+                            <img src="../Images/space.gif" class="pageTLSpace" alt="" />
+                        </td>
+                        <td class="pageT">
+                            <img src="../Images/space.gif" class="pageTSpace" alt="" />
+                        </td>
+                        <td class="pageTR">
+                            <img src="../Images/space.gif" class="pageTRSpace" alt="" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="pcmLSecurity">
+                <table>
+                    <tr>
+                        <td width="155px" align="Right">
+                            <asp:Image ID="LogoImage1" runat="server" ImageUrl="../Images/Custom/FPWhiteLogo.png">
+                            </asp:Image>
+                        </td>
+                        <td width="30px">&nbsp;</td>
+                        <td class="MarketingMenuText">
+                            <a href="http://fastport.com" style="text-decoration: none">For Truckers</a> 
+                        </td>
+                        <td width="30px">&nbsp;</td>
+                        <td class="MarketingMenuText">
+                            <a href="http://fastport.com/for-carriers/" style="text-decoration: none">For Carriers</a> 
+                        </td>
+                        <td width="30px">&nbsp;</td>
+                        <td class="MarketingMenuText">
+                            <a href="http://fastport.com/contact" style="text-decoration: none">More Info</a> 
+                        </td>
+                        <td width="30px">&nbsp;</td>
+                        <td class="MarketingMenuText">
+                            Get Started
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="pageL">
+                <img src="../Images/space.gif" class="pageLSpace" alt="" />
+            </td>
+            <td class="pageC">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%" class="pBackSecurity">
+                    <tr>
+                        <td class="pcCSecurity">
+                            <center>
+                                <asp:ContentPlaceHolder ID="PageContent" runat="server" />
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class="pageR">
+                <img src="../Images/space.gif" class="pageRSpace" alt="" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td class="pageBL">
+                            <img src="../Images/space.gif" class="pageBLSpace" alt="" />
+                        </td>
+                        <td class="pageB">
+                            <img src="../Images/space.gif" class="pageBSpace" alt="" />
+                        </td>
+                        <td class="pageBR">
+                            <img src="../Images/space.gif" class="pageBRSpace" alt="" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
 </html>

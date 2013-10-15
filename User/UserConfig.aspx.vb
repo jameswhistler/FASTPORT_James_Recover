@@ -195,8 +195,6 @@ Partial Public Class UserConfig
 
             Dim dataSourceRow As DataRowView = DirectCast(e.Item.DataItem, DataRowView)
 
-            'e.Item.Attributes["myId"] = ((DataRowView)e.Item.DataItem)["CategoryID"].ToString();
-
             If Me.HiddenTB_PaymentMethodID.Text <> "" Then
 
                 ' We need to check whether this user has a PaymentMethodParty row for this PaymentMethod.

@@ -10,13 +10,11 @@ Imports System.Data.SqlClient
 Imports BaseClasses.Utils
 Imports BaseClasses
 Imports System.Threading
-Imports BluePay2
+Imports BPVB
 
 Public Class BluePay
 
 #Region "Payments"
-
-    'Namespace BP10Emu
 
     Public Class Run_CC_Payment
 
@@ -322,43 +320,5 @@ Public Class BluePay
 
 #End Region
 
-    Public Class Retrieve_Transaction_Data
-
-        Public Sub New()
-            MyBase.New()
-        End Sub
-
-        Public Shared Sub Main()
-
-            Dim accountID As String = "MERCHANT'S ACCOUNT ID HERE"
-            Dim secretKey As String = "MERCHANT'S SECRET KEY HERE"
-            Dim mode As String = "TEST"
-
-            ' Merchant's Account ID
-            ' Merchant's Secret Key
-            ' Transaction Mode: TEST (can also be LIVE)
-            Dim report As BluePayPayment_BP10Emu = New BluePayPayment_BP10Emu(
-                    accountID,
-                    secretKey,
-                    mode)
-
-            ' Report Start Date: Jan. 1, 2013
-            ' Report End Date: Jan. 15, 2013
-            ' Also search subaccounts? Yes
-            ' Output response without commas? Yes
-            ' Do not include errored transactions? Yes
-            report.getTransactionReport(
-                "2013-01-01",
-                "2013-01-15",
-                "1",
-                "1",
-                "1")
-
-            report.Process()
-
-            ' Outputs response from BluePay gateway
-            Console.Write(report.response)
-        End Sub
-    End Class
 
 End Class

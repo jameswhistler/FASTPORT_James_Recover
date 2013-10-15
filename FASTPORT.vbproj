@@ -298,6 +298,8 @@
     <Compile Include="Shared\BaseApplicationUserControl.vb">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Shared\BluePay.vb" />
+    <Compile Include="Shared\BP10Emu.vb" />
     <Compile Include="Shared\CalendarExtendarClass.vb" />
     <Compile Include="Shared\CustGenClass.vb" />
     <Compile Include="Shared\FlowBasePage.vb">

@@ -19,6 +19,7 @@ Imports System.Web
 Imports System.Text.RegularExpressions
 Imports System.Security.Cryptography.X509Certificates
 Imports System.Collections
+
 Namespace BluePay2
     ''' <summary>
     ''' This is the BluePay2 API COM object.

@@ -143,6 +143,7 @@ Partial Class SignUpFP
     Public Sub CreateTruckerRadButton_Click() Handles TruckerRadButton.Click
 
         If UIValid() Then
+
             ' Create Trucker account
 
             Try
@@ -166,8 +167,10 @@ Partial Class SignUpFP
                 DbUtils.EndTransaction()
             End Try
 
-            ' Switch to Contact information RadPanel
+            ' Switch to Contact information RadPanel and show carrier panel 
             RadAjaxManager1.ResponseScripts.Add("ActivateContactRadPanel();")
+            CarrierRPI.Visible = True
+            RadAjaxManager1.ResponseScripts.Add("ExpandCarrierRadPanel();")
         End If
 
     End Sub
@@ -176,10 +179,31 @@ Partial Class SignUpFP
 
         If UIValid() Then
 
-            ' Switch to Contact information RadPanel and show carrier panel 
+            ' Create carrier account
+
+            Try
+                DbUtils.StartTransaction()
+
+                Dim myTruckerRec As PartyRecord = New PartyRecord()
+                myTruckerRec.PartyTypeID = 5
+                myTruckerRec.Name = Me.NameRTB.Text
+                myTruckerRec.Handle = Me.HandleRTB.Text
+                myTruckerRec.Email = Me.EmailRTB.Text
+                myTruckerRec.Password = Me.PasswordRTB.Text
+                myTruckerRec.DirectDial = Me.DirectDialRTB.Text
+                myTruckerRec.Mobile = Me.MobileRTB.Text
+                myTruckerRec.Email = Me.EmailRTB.Text
+                myTruckerRec.Save()
+
+                DbUtils.CommitTransaction()
+            Catch ex As Exception
+                DbUtils.RollBackTransaction()
+            Finally
+                DbUtils.EndTransaction()
+            End Try
+
+            ' Switch to Contact information RadPanel 
             RadAjaxManager1.ResponseScripts.Add("ActivateContactRadPanel();")
-            CarrierRPI.Visible = True
-            RadAjaxManager1.ResponseScripts.Add("ExpandCarrierRadPanel();")
         End If
 
     End Sub

@@ -39,6 +39,15 @@
         {   
             height: 100%;   
         }   */
+        
+.MarketingMenuText 
+{
+    font-family: "arial";
+    font-size: 18px;
+    text-transform: none;
+    letter-spacing: 1px;
+    font-style: normal;
+}
 
 .pcmLSecurity { /* page container left middle edge (horizontal menu row) */
 	padding-top: 1px;

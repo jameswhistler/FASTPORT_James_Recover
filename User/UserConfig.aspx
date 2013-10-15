@@ -13,7 +13,7 @@
             margin: 0 auto !important;
         }
     </style>
-    <telerik:RadScriptBlock ID="RadScriptBlock1" runat="server">
+
         <script type="text/javascript">
         function SendCallBack(arg, myAction) {
 
@@ -35,22 +35,26 @@
                         var PersonID = attributes.getAttribute("PersonID");
                         alert(PersonID);
 
-                        SendCallBack("onPersonClick," + arg, "onPersonClick");
+                        SendCallBack("onPersonClick," + PersonID, "onPersonClick");
 
                     }
 
-        function OnClientItemCheckedHandler(sender, eventArgs) {
-            var item = eventArgs.get_item();
-            item.set_selected(item.get_checked());
-        }
-
+        function OnClientItemCheckingHandler(sender, eventArgs) {
+	        var item = eventArgs.get_item();
+	        var message = "Are you sure you want to ";
+	        message += item.get_checked() ? "uncheck" : "check";
+	        message += " the item " + item.get_value();
+	        if (!confirm(message))
+	            eventArgs.set_cancel(true);
+            SendCallBack("onPersonClick," + item.get_value(), "onPersonClick");
+	    } 
 
         function onPersonClick_Back(arg) {
 
                         alert("Im back");
                     }
         </script>
-    </telerik:RadScriptBlock>
+
     <table cellpadding="0" cellspacing="0" border="0" style="width: 100%">
         <tr>
             <td>
@@ -475,8 +479,8 @@
                             <asp:Panel ID="PeoplePanel" runat="server">
                                 <div class="list-panel">
                                     <telerik:RadListBox ID="PeopleRLB" runat="server" CheckBoxes="true" Width="220px"
-                                        Height="300px" DataSourceID="PeopleDS" DataKeyField="PersonID" DataTextField="PersonRoleHTML"
-                                        OnItemDataBound="PeopleRLB_ItemDataBound" OnClientItemChecked="onPersonClick">
+                                        Height="300px" DataSourceID="PeopleDS" DataKeyField="PersonID" DataValueField="PersonID, RoleID" DataTextField="PersonRoleHTML"
+                                        OnItemDataBound="PeopleRLB_ItemDataBound" OnClientItemChecking="OnClientItemCheckingHandler">
                                         <ItemTemplate>
                                             <div>
                                                 <span style="display: inline" id="PersonHTML">
