@@ -81,7 +81,15 @@ Partial Public Class UserConfig
                 '@PersonID int 
                 '@RoleID int 
 
-                mySproc = CustGenClass.f_Sproc("usp_PaymentMethod_PersonRoleAddDel", myCompanyID, myPaymentMethodID)
+                If my1st = "Person" Then
+                    mySproc = CustGenClass.f_Sproc("usp_PaymentMethod_PersonRoleAddDel", myCompanyID, myPaymentMethodID, my2nd, "0")
+                ElseIf my1st = "Role" Then
+                    mySproc = CustGenClass.f_Sproc("usp_PaymentMethod_PersonRoleAddDel", myCompanyID, myPaymentMethodID, "0", my2nd)
+                End If
+
+            ElseIf myAction = "deletePayment" Then
+
+                myReturn = CustGenClass.f_Sproc("usp_PaymentMethodDelete", my1st)
 
             End If
 
@@ -116,6 +124,7 @@ Partial Public Class UserConfig
         Protected WithEvents BankAccountNameRTB As Global.Telerik.Web.UI.RadTextBox
         Protected WithEvents BankPaymentReferenceRTB As Global.Telerik.Web.UI.RadTextBox
         Protected WithEvents PeopleRLB As Global.Telerik.Web.UI.RadListBox
+        Protected WithEvents RadAjaxManager1 As Global.Telerik.Web.UI.RadAjaxManager
 
       Public Sub SetPageFocus()
       'load scripts to all controls on page so that they will retain focus on PostBack
@@ -128,10 +137,27 @@ Partial Public Class UserConfig
           Me.SetFocusOnLoad()  
         End Sub
 
+        Protected Sub PaymentMethodRadGrid_ItemDataBound(ByVal sender As Object, ByVal e As Telerik.Web.UI.GridItemEventArgs) Handles PaymentMethodRadGrid.ItemDataBound
+
+            If TypeOf e.Item Is Telerik.Web.UI.GridDataItem Then
+
+                Dim dataItem As Telerik.Web.UI.GridDataItem = CType(e.Item, Telerik.Web.UI.GridDataItem)
+                Dim myPaymentMethodID As String = dataItem.GetDataKeyValue("PaymentMethodID").ToString
+
+                If String.IsNullOrEmpty(myPaymentMethodID) Then
+                    Dim PaymentMethodDeleteIB As ImageButton = DirectCast(dataItem("PaymentMethodDeleteCol").FindControl("PaymentMethodDeleteIB"), ImageButton)
+                    PaymentMethodDeleteIB.Visible = False
+                End If
+
+            End If
+
+        End Sub
+
         Protected Sub PaymentMethodRadGrid_ItemCommand(ByVal source As Object, ByVal e As Telerik.Web.UI.GridCommandEventArgs) Handles PaymentMethodRadGrid.ItemCommand
 
+            Dim myPaymentMethodID As String = (DirectCast(e.Item, Telerik.Web.UI.GridDataItem)).GetDataKeyValue("PaymentMethodID").ToString()
+
             If (e.CommandName = "RowClick") Then
-                Dim myPaymentMethodID As String = (DirectCast(e.Item, Telerik.Web.UI.GridDataItem)).GetDataKeyValue("PaymentMethodID").ToString()
                 Dim myPaymentMethodType As String = (DirectCast(e.Item, Telerik.Web.UI.GridDataItem)).GetDataKeyValue("PaymentMethodType").ToString()
 
                 'Set the hidden text field for this PaymentMethod
@@ -143,12 +169,10 @@ Partial Public Class UserConfig
                 Else
                     BankAccount_DataBind(myPaymentMethodRec)
                 End If
-
+            ElseIf e.CommandName = "Delete" Then
+                Dim myScript As String = "confirmCall('deletePayment'," & myPaymentMethodID & ",'Payment Method');"
+                RadAjaxManager1.ResponseScripts.Add(myScript)
             End If
-        End Sub
-
-        Protected Sub PaymentMethodRadGrid_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles PaymentMethodRadGrid.SelectedIndexChanged
-            Dim myPaymentMethodID As String = DirectCast(PaymentMethodRadGrid.SelectedItems(0), Telerik.Web.UI.GridDataItem).GetDataKeyValue("CustomerID").ToString()
         End Sub
 
         Public Sub CreditCard_DataBind(ByVal myPaymentMethodRec As PaymentMethodRecord)
@@ -195,42 +219,10 @@ Partial Public Class UserConfig
 
             Dim dataSourceRow As DataRowView = DirectCast(e.Item.DataItem, DataRowView)
 
-            If Me.HiddenTB_PaymentMethodID.Text <> "" Then
+            Dim myChecked As String = dataSourceRow("ItemChecked").ToString
 
-                ' We need to check whether this user has a PaymentMethodParty row for this PaymentMethod.
-                ' If so, we check the box
-
-                Dim myPersonID As String = dataSourceRow("PersonID").ToString
-                If myPersonID <> "" Then
-                    ' Access to payment method based on person
-                    Dim myPaymentMethodPeopleWhereStr As String = PaymentMethodPeopleTable.PaymentMethodID.UniqueName & " = " & Me.HiddenTB_PaymentMethodID.Text & " AND " & PaymentMethodPeopleTable.PersonID.UniqueName & " = " & myPersonID
-                    Dim myPaymentMethodPeopleRec As PaymentMethodPeopleRecord = PaymentMethodPeopleTable.GetRecord(myPaymentMethodPeopleWhereStr)
-
-                    If Not IsNothing(myPaymentMethodPeopleRec) Then
-                        e.Item.Checked = True
-                    Else
-                        e.Item.Checked = False
-                    End If
-
-                    e.Item.Attributes("Type") = "Person"
-                    e.Item.Attributes("PersonID") = myPersonID
-                Else
-                    ' Access to payment method based on role
-                    Dim myRoleID As String = dataSourceRow("RoleID").ToString
-                    If myRoleID <> "" Then
-                        Dim myPaymentMethodPeopleWhereStr As String = PaymentMethodPeopleTable.PaymentMethodID.UniqueName & " = " & Me.HiddenTB_PaymentMethodID.Text & " AND " & PaymentMethodPeopleTable.RoleID.UniqueName & " = " & myRoleID
-                        Dim myPaymentMethodPeopleRec As PaymentMethodPeopleRecord = PaymentMethodPeopleTable.GetRecord(myPaymentMethodPeopleWhereStr)
-
-                        If Not IsNothing(myPaymentMethodPeopleRec) Then
-                            e.Item.Checked = True
-                        Else
-                            e.Item.Checked = False
-                        End If
-
-                        e.Item.Attributes("Type") = "Role"
-                        e.Item.Attributes("RoleID") = myRoleID
-                    End If
-                End If
+            If myChecked = "1" Then
+                e.Item.Checked = True
             Else
                 e.Item.Checked = False
             End If
@@ -267,6 +259,24 @@ Partial Public Class UserConfig
             CreditCardPanel.Visible = False
             BankAccountPanel.Visible = False
             CompanyPanel.Visible = False
+
+        End Sub
+
+        Protected Sub RadAjaxManager1_AjaxRequest(ByVal sender As Object, ByVal e As Telerik.Web.UI.AjaxRequestEventArgs) Handles RadAjaxManager1.AjaxRequest
+
+            Dim myArg As String = e.Argument
+            Dim myAction As String = CustGenClass.f_Split_ByComma(myArg, 1)
+            Dim my1st As String = CustGenClass.f_Split_ByComma(myArg, 2)
+            Dim my2nd As String = CustGenClass.f_Split_ByComma(myArg, 3)
+            Dim my3rd As String = CustGenClass.f_Split_ByComma(myArg, 4)
+            Dim myPartyID As String = Me.HiddenTB_PartyID.Text
+            Dim mySproc As String = Nothing
+            Dim myWarning As String = "Nothing"
+            Dim myWarningTitle As String = "Nothing"
+
+            If myAction = "rebindPaymentMethod" Then
+                PaymentMethodRadGrid.Rebind()
+            End If
 
         End Sub
 

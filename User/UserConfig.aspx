@@ -13,51 +13,198 @@
             margin: 0 auto !important;
         }
     </style>
-
+    <telerik:RadScriptBlock ID="RadScriptBlock1" runat="server">
         <script type="text/javascript">
+
         function SendCallBack(arg, myAction) {
 
                     try {
                         switch (myAction) {
                         case "onPersonClick":
-                            { <%= Page.ClientScript.GetCallbackEventReference(Me, "arg", "onPersonClick", "null") %>
+                            { <%= Page.ClientScript.GetCallbackEventReference(Me, "arg", "null", "null") %>
                                 break;
                             }               
                         }
                     } catch (e) {}
                 }
 
-        function onPersonClick(sender, arg) {
+        function onPaymentMethodDeleteClick(index) {
 
-                        alert("Click");
-                        var attributes = sender.get_attributes();
-                        alert(attributes);
-                        var PersonID = attributes.getAttribute("PersonID");
-                        alert(PersonID);
+            var grid = $find("<%=PaymentMethodRadGrid.ClientID %>");
+            alert("grid " + grid);
+            var MasterTable = grid.get_masterTableView();
+            alert("master table " + MasterTable);
+            var row = MasterTable.get_dataItems()[index];
+            alert("row " + row);
+            var paymentmethodid = row.getDataKeyValue("PaymentMethodID");
+            alert("paymentmethodid " + paymentmethodid);
+            confirmCall("deletePayment", paymentmethodid, "Payment method")
 
-                        SendCallBack("onPersonClick," + PersonID, "onPersonClick");
+        }
 
-                    }
+        function onPaymentMethodRowClick(row, args)  
+           {  
+             var e = args.get_domEvent();     
+             var targetElement = e.srcElement || e.target;                 
+             if(targetElement.tagName.toLowerCase() != "input" && (!targetElement.type || targetElement.type.toLowerCase() != "imagebutton"))// && currentClickEvent)   
+                 {   
+                      alert("Clicked on Row");   
+                     __doPostBack('<%=PaymentMethodRadGrid.UniqueID %>', args);   
+                       
+                 }   
+             else   
+                 {   
+                      alert("Clicked on imagebutton");                         
+                 }   
+                
+            }  
 
         function OnClientItemCheckingHandler(sender, eventArgs) {
 	        var item = eventArgs.get_item();
-	        var message = "Are you sure you want to ";
-	        message += item.get_checked() ? "uncheck" : "check";
-	        message += " the item " + item.get_value();
-	        if (!confirm(message))
-	            eventArgs.set_cancel(true);
             SendCallBack("onPersonClick," + item.get_value(), "onPersonClick");
 	    } 
 
-        function onPersonClick_Back(arg) {
+        //**********************
+        //Rad alert functions
+        //**********************
 
-                        alert("Im back");
-                    }
+        //Info: global variables.  confirmType tells what you are doing like 'deleteExp'  confirmID holds the record that you are going to manipulate.
+        var confirmType;
+        var confirmID;
+
+        //Step 1:  Call this funtion from JS.
+
+        function confirmCall(callType, callID, callName) {
+            confirmType = callType;
+            confirmID = callID;
+            var confirmMess;
+            var confirmTitle;
+
+            alert("Call type " + callType);
+
+
+            //Step 2:  Configure your messsage types here.
+            if (callType == "deletePayment") {
+
+                confirmMess = "Are you certain that you wish to <span style='color: #ff0000;'>permanently</span> delete this payment method?";
+                confirmTitle = "Delete " & callName & " ?"
+                launchRadConfirm(confirmMess, confirmTitle);
+
+            }
+
+        }
+
+        //Info:  Function to launch the RadConfirm.
+
+        function launchRadConfirm(confirmMess, confirmTitle) {
+
+            var oWnd = GetRadWindow();
+            if (oWnd != null) {
+                setTimeout(function () {
+                    GetRadWindow().BrowserWindow.radconfirm(confirmMess, confirmCallBackFn, 400, 115, null, confirmTitle, "/Images/Custom/DeleteLowRes.png");
+                }, 0);
+            }
+            //Info: Used to launch from a parent page.
+            else {
+                radconfirm(confirmMess, confirmCallBackFn, 400, 115, null, confirmTitle, "/Images/Custom/DeleteLowRes.png");
+            }
+
+        }
+
+        //Info:  Function that the RadConfirm calls back to process the users response.
+
+        function confirmCallBackFn(arg) {
+
+            alert("Back from radconfirm");
+
+            //Step 3:  Config different callbacks if required.  If you have only 2 parameters, these will do.
+            if (arg == true) {
+
+                if (confirmType == "deletePayment") {
+
+                    var sendArg = confirmType + "," + confirmID; <%= Page.ClientScript.GetCallbackEventReference(Me, "sendArg", "FinishAlert", "null") %>
+
+                } 
+            }
+        }
+
+        //Info:  Needed to get the parent window when calling alerts from a child RadWindow.
+
+        function GetRadWindow() {
+            var oWindow = null;
+            if (window.radWindow) oWindow = window.radWindow;
+            else if (window.frameElement && window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
+            return oWindow;
+        }
+
+        function launchRadAlert(alertMess, alertTitle) {
+
+            var oWnd = GetRadWindow();
+            if (oWnd != null) {
+                setTimeout(function () {
+                    GetRadWindow().BrowserWindow.radalert(alertMess, 400, 115, alertTitle, null, "/Images/Custom/OkayLowRes.png");
+                }, 0);
+            }
+            //Info: Used to launch from a parent page.
+            else {
+                radalert(alertMess, 400, 115, alertTitle, null, "/Images/Custom/OkayLowRes.png");
+            }
+
+        }
+
+
+        function FinishAlert(arg) {
+
+            //Step 5:  Launch alert if there is a problem with the procedure called by the launchRadConfirm function.
+            if (arg != "Nothing") {
+
+                var messTitle
+                var mess
+
+                if (confirmType == "deletePayment") {
+
+                    messTitle = "Delete Failed"
+                    mess = "<span style='color: #ff0000;'>WARNING:</span> The system failed to delete this item. Usually, this is because this payment method is referenced in other places in FASTPORT, and thus, it cannot be deleted.  The technical details for this error are as follows: " + arg
+
+                } 
+
+                launchRadAlert(mess, messTitle)
+
+            } else {
+                if (confirmType == "deletePayment") {
+
+                    $find("<%= RadAjaxManager1.ClientID %>").ajaxRequest("rebindPaymentMethod");
+
+                } 
+            }
+
+        }
+
         </script>
-
+    </telerik:RadScriptBlock>
+    <telerik:RadAjaxManager ID="RadAjaxManager1" EnablePageHeadUpdate="false" runat="server">
+        <AjaxSettings>
+            <telerik:AjaxSetting AjaxControlID="RadAjaxManager1">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="RadAjaxManager1" />
+                    <telerik:AjaxUpdatedControl ControlID="PaymentMethodRadGrid" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+            <telerik:AjaxSetting AjaxControlID="PaymentMethodRadGrid">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="PaymentMethodRadGrid" />
+                    <telerik:AjaxUpdatedControl ControlID="CreditCardPanel" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+        </AjaxSettings>
+    </telerik:RadAjaxManager>
+    <telerik:RadWindowManager ID="RadWindowManager1" runat="server" AutoSize="False"
+        Modal="True" ShowContentDuringLoad="False" VisibleStatusbar="False" Skin="Black"
+        Style="z-index: 10000;">
+    </telerik:RadWindowManager>
     <table cellpadding="0" cellspacing="0" border="0" style="width: 100%">
         <tr>
-            <td>
+            <td id="UserCell" rowspan="2">
                 <FASTPORT:PartyRecordControl runat="server" ID="PartyRecordControl">
                     <table class="dv" cellpadding="0" cellspacing="0" border="0">
                         <tr>
@@ -217,60 +364,64 @@
                     </table>
                 </FASTPORT:PartyRecordControl>
             </td>
-        </tr>
-        <tr>
             <td>
-                <telerik:RadGrid ID="PaymentMethodRadGrid" runat="server" AutoGenerateColumns="False"
-                    CellSpacing="0" DataSourceID="PaymentMethodDS" GridLines="None" ShowHeader="True"
-                    CssClass="RemoveBorders" OnItemCommand="PaymentMethodRadGrid_ItemCommand" OnSelectedIndexChanged="PaymentMethodRadGrid_SelectedIndexChanged">
-                    <ClientSettings EnableRowHoverStyle="True" EnablePostBackOnRowClick="True">
-                    </ClientSettings>
-                    <MasterTableView DataKeyNames="PaymentMethodID, PaymentMethodType" DataSourceID="PaymentMethodDS"
-                        Name="PaymentMethodTable">
-                        <NoRecordsTemplate>
-                            <div style="padding: 25px;">
-                                No credit cards or bank accounts entered yet. Please click the "Add Payment Method"
-                                button above.
-                            </div>
-                        </NoRecordsTemplate>
-                        <Columns>
-                            <telerik:GridBoundColumn DataField="PaymentMethodHTML" HeaderStyle-Width="190px"
-                                HeaderText="Card / Account" UniqueName="PaymentMethodHTML">
-                                <HeaderStyle Width="190px" />
-                            </telerik:GridBoundColumn>
-                            <telerik:GridBoundColumn DataField="PreferredHTML" HeaderStyle-Width="190px" HeaderText="Preferred"
-                                UniqueName="PreferredHTML">
-                                <HeaderStyle Width="20px" />
-                            </telerik:GridBoundColumn>
-                            <telerik:GridTemplateColumn UniqueName="PaymentMethodDeleteCol">
-                                <ItemTemplate>
-                                    <asp:ImageButton ID="PaymentMethodDeleteIB" runat="server" ImageUrl="/Images/Custom/XOut_Small.png" />
-                                </ItemTemplate>
-                            </telerik:GridTemplateColumn>
-                        </Columns>
-                        <PagerStyle PageSizeControlType="RadComboBox" />
-                    </MasterTableView>
-                    <PagerStyle PageSizeControlType="RadComboBox" />
-                </telerik:RadGrid>
-                <asp:SqlDataSource ID="PaymentMethodDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
-                    SelectCommand="SELECT * FROM [v_PaymentMethod] WHERE [PartyID] = @PaymentMethodPartyID">
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="PaymentMethodPartyID" PropertyName="Text"
-                            Type="Int32" />
-                    </SelectParameters>
-                </asp:SqlDataSource>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <table class="dv" cellpadding="0" cellspacing="0" border="0">
+                <table>
+                    <tr>
+                        <td id="PaymentMethodGridCell">
+                            <telerik:RadGrid ID="PaymentMethodRadGrid" runat="server" AutoGenerateColumns="False" CellSpacing="0"
+                                DataSourceID="PaymentMethodDS" GridLines="None" ShowHeader="True" CssClass="RemoveBorders"
+                                OnItemCommand="PaymentMethodRadGrid_ItemCommand">
+                                <ClientSettings EnablePostBackOnRowClick="true" EnableRowHoverStyle="True">
+                                </ClientSettings> 
+                                <MasterTableView ClientDataKeyNames="PaymentMethodID" DataKeyNames="PaymentMethodID, PaymentMethodType"
+                                    DataSourceID="PaymentMethodDS" Name="PaymentMethodTable">
+                                    <NoRecordsTemplate>
+                                        <div style="padding: 25px;">
+                                            No credit cards or bank accounts entered yet. Please click the "Add Payment Method"
+                                            button above.
+                                        </div>
+                                    </NoRecordsTemplate>
+                                    <Columns>
+                                        <telerik:GridBoundColumn DataField="PaymentMethodHTML" HeaderStyle-Width="190px"
+                                            HeaderText="Card / Account" UniqueName="PaymentMethodHTML">
+                                            <HeaderStyle Width="190px" />
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn DataField="PreferredHTML" HeaderStyle-Width="190px" HeaderText="Preferred"
+                                            UniqueName="PreferredHTML">
+                                            <HeaderStyle Width="20px" />
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridTemplateColumn UniqueName="PaymentMethodDeleteCol">
+                                            <ItemTemplate>
+                                                <telerik:RadButton ID="PaymentMethodDeleteIB" CommandName="Delete" runat="server"
+                                                    Width="20px" Height="20px" Style="vertical-align: top;" ToolTip="Remove">
+                                                    <Image ImageUrl="/Images/Custom/XOut_Small.png" IsBackgroundImage="true" />
+                                                </telerik:RadButton>
+                                            </ItemTemplate>
+                                        </telerik:GridTemplateColumn>
+                                    </Columns>
+                                    <PagerStyle PageSizeControlType="RadComboBox" />
+                                </MasterTableView>
+                                <PagerStyle PageSizeControlType="RadComboBox" />
+                            </telerik:RadGrid>
+                            <asp:SqlDataSource ID="PaymentMethodDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                SelectCommand="SELECT * FROM [v_PaymentMethod] WHERE [PartyID] = @PaymentMethodPartyID">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="PaymentMethodPartyID" PropertyName="Text"
+                                        Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                        <table class="dv" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                         <td>
                             <asp:Panel ID="CreditCardPanel" runat="server">
                                 <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
                                     <tr>
                                         <td>
-                                            <asp:Panel runat="server">
+                                            <asp:Panel ID="Panel1" runat="server">
                                                 <table cellpadding="0" cellspacing="0" border="0">
                                                     <tr>
                                                         <td class="fls">
@@ -479,8 +630,8 @@
                             <asp:Panel ID="PeoplePanel" runat="server">
                                 <div class="list-panel">
                                     <telerik:RadListBox ID="PeopleRLB" runat="server" CheckBoxes="true" Width="220px"
-                                        Height="300px" DataSourceID="PeopleDS" DataKeyField="PersonID" DataValueField="PersonID, RoleID" DataTextField="PersonRoleHTML"
-                                        OnItemDataBound="PeopleRLB_ItemDataBound" OnClientItemChecking="OnClientItemCheckingHandler">
+                                        Height="300px" DataSourceID="PeopleDS" DataKeyField="PersonID" DataValueField="PK"
+                                        DataTextField="PersonRoleHTML" OnItemDataBound="PeopleRLB_ItemDataBound" OnClientItemChecking="OnClientItemCheckingHandler">
                                         <ItemTemplate>
                                             <div>
                                                 <span style="display: inline" id="PersonHTML">
@@ -512,6 +663,9 @@
                                     </asp:SqlDataSource>
                                 </div>
                             </asp:Panel>
+                        </td>
+                    </tr>
+                </table>
                         </td>
                     </tr>
                 </table>

@@ -70,7 +70,6 @@ Namespace FASTPORT.UI
             LoadData_Base()
 
 
-
         End Sub
 
         Private Function EvaluateFormula(ByVal formula As String, ByVal dataSourceForEvaluate As BaseClasses.Data.BaseRecord, ByVal format As String, ByVal variables As System.Collections.Generic.IDictionary(Of String, Object), ByVal includeDS As Boolean) As String
