@@ -125,6 +125,8 @@ Partial Public Class UserConfig
         Protected WithEvents BankPaymentReferenceRTB As Global.Telerik.Web.UI.RadTextBox
         Protected WithEvents PeopleRLB As Global.Telerik.Web.UI.RadListBox
         Protected WithEvents RadAjaxManager1 As Global.Telerik.Web.UI.RadAjaxManager
+        Protected WithEvents AddCreditCardRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents AddBankAccountRB As Global.Telerik.Web.UI.RadButton
 
       Public Sub SetPageFocus()
       'load scripts to all controls on page so that they will retain focus on PostBack
@@ -203,6 +205,14 @@ Partial Public Class UserConfig
 
         End Sub
 
+        Public Sub AddCreditCardRB_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AddCreditCardRB.Click
+
+        End Sub
+
+        Public Sub AddBankAccountRB_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AddBankAccountRB.Click
+
+        End Sub
+
         Public Sub CompanyRG_ItemCommand(ByVal sender As Object, ByVal e As Telerik.Web.UI.GridCommandEventArgs) Handles CompanyRG.ItemCommand
             If (e.CommandName = "RowClick") Then
                 Dim myPartyID As String = (DirectCast(e.Item, Telerik.Web.UI.GridDataItem)).GetDataKeyValue("PartyID").ToString()
@@ -259,6 +269,7 @@ Partial Public Class UserConfig
             CreditCardPanel.Visible = False
             BankAccountPanel.Visible = False
             CompanyPanel.Visible = False
+            PeopleRLB.Visible = False
 
         End Sub
 

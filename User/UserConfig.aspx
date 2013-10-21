@@ -111,6 +111,24 @@
 
         }
 
+        function CallRadWindow(myID, myAction) {
+
+            cancelTips = false;
+
+            switch (myAction) {
+            case "addCreditCard":
+                {
+                    SendCallBack("addCreditCard," + myID, "OpenRadWindow")
+                    break;
+                }
+            case "addBankAccount":
+                {
+                    SendCallBack("addBankAccount," + myID, "OpenRadWindow")
+                    break;
+                }
+            }
+        }
+
         //Info:  Function that the RadConfirm calls back to process the users response.
 
         function confirmCallBackFn(arg) {
@@ -194,6 +212,14 @@
                 <UpdatedControls>
                     <telerik:AjaxUpdatedControl ControlID="PaymentMethodRadGrid" />
                     <telerik:AjaxUpdatedControl ControlID="CreditCardPanel" />
+                    <telerik:AjaxUpdatedControl ControlID="BankAccountPanel" />
+                    <telerik:AjaxUpdatedControl ControlID="CompanyPanel" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+            <telerik:AjaxSetting AjaxControlID="CompanyRG">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="CompanyRG" />
+                    <telerik:AjaxUpdatedControl ControlID="PeoplePanel" />
                 </UpdatedControls>
             </telerik:AjaxSetting>
         </AjaxSettings>
@@ -202,9 +228,21 @@
         Modal="True" ShowContentDuringLoad="False" VisibleStatusbar="False" Skin="Black"
         Style="z-index: 10000;">
     </telerik:RadWindowManager>
+    <style type="text/css">
+        .RadWindow_BlackMetroTouch .rwTable .rwTitlebarControls em
+        {
+            font-size: 18px;
+            padding: 8px 0 0 3px;
+        }
+        
+        .RadWindow, .RadWindow_BlackMetroTouch, .rwNormalWindow, .rwTransparentWindow, .rwNoTitleBar
+        {
+            height: auto;
+        }
+    </style>
     <table cellpadding="0" cellspacing="0" border="0" style="width: 100%">
         <tr>
-            <td id="UserCell" rowspan="2">
+            <td id="UserCell" rowspan="2" valign="top">
                 <FASTPORT:PartyRecordControl runat="server" ID="PartyRecordControl">
                     <table class="dv" cellpadding="0" cellspacing="0" border="0">
                         <tr>
@@ -367,12 +405,26 @@
             <td>
                 <table>
                     <tr>
-                        <td id="PaymentMethodGridCell">
-                            <telerik:RadGrid ID="PaymentMethodRadGrid" runat="server" AutoGenerateColumns="False" CellSpacing="0"
-                                DataSourceID="PaymentMethodDS" GridLines="None" ShowHeader="True" CssClass="RemoveBorders"
-                                OnItemCommand="PaymentMethodRadGrid_ItemCommand">
+                        <td class="dfv">
+                            <br />
+                            <telerik:RadButton ID="AddCreditCardRB" runat="server" Text="Add New Credit Card" AutoPostBack="true"
+                                ToolTip="Click to add a new credit card.">
+                            </telerik:RadButton>
+                        </td>
+                        <td class="dfv">
+                            <br />
+                            <telerik:RadButton ID="AddBankAccountRB" runat="server" Text="Add New Bank Account" AutoPostBack="true"
+                                ToolTip="Click to add a new bank account.">
+                            </telerik:RadButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="PaymentMethodGridCell" colspan="2">
+                            <telerik:RadGrid ID="PaymentMethodRadGrid" runat="server" AutoGenerateColumns="False"
+                                CellSpacing="0" DataSourceID="PaymentMethodDS" GridLines="None" ShowHeader="True"
+                                CssClass="RemoveBorders" OnItemCommand="PaymentMethodRadGrid_ItemCommand">
                                 <ClientSettings EnablePostBackOnRowClick="true" EnableRowHoverStyle="True">
-                                </ClientSettings> 
+                                </ClientSettings>
                                 <MasterTableView ClientDataKeyNames="PaymentMethodID" DataKeyNames="PaymentMethodID, PaymentMethodType"
                                     DataSourceID="PaymentMethodDS" Name="PaymentMethodTable">
                                     <NoRecordsTemplate>
@@ -414,258 +466,258 @@
                     </tr>
                     <tr>
                         <td>
-                                        <table class="dv" cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                        <td>
-                            <asp:Panel ID="CreditCardPanel" runat="server">
-                                <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                    <tr>
-                                        <td>
-                                            <asp:Panel ID="Panel1" runat="server">
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="CreditCardTypeLabel" Text="Credit Card Type">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <asp:SqlDataSource ID="CreditCardTypeDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
-                                                                SelectCommand="SELECT * FROM [List] WHERE ListType = 'Credit Card'"></asp:SqlDataSource>
-                                                            <telerik:RadDropDownList ID="CreditCardTypeRDDL" runat="server" DataTextField="ListName"
-                                                                DataValueField="ListID" DataSourceID="CreditCardTypeDS">
-                                                            </telerik:RadDropDownList>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="CreditCardNumberLabel" Text="Credit Card #">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <telerik:RadTextBox ID="CreditCardNumberRTB" runat="server" Width="167px" TabIndex="1"
-                                                                class="flSecurity">
-                                                            </telerik:RadTextBox>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="CreditCardNameLabel" Text="Name On Card">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <telerik:RadTextBox ID="CreditCardNameRTB" runat="server" Width="167px" TabIndex="1"
-                                                                class="flSecurity">
-                                                            </telerik:RadTextBox>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="StartDateLabel" Text="Start Date">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <telerik:RadMaskedTextBox ID="StartDateRTB" Mask="##/##" runat="server" Width="50px"
-                                                                TabIndex="1" class="flSecurity">
-                                                            </telerik:RadMaskedTextBox>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="EndDateLabel" Text="End Date">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <telerik:RadMaskedTextBox ID="EndDateRTB" Mask="##/##" runat="server" Width="50px"
-                                                                TabIndex="1" class="flSecurity">
-                                                            </telerik:RadMaskedTextBox>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="CVVLabel" Text="CCV">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <telerik:RadTextBox ID="CVVRTB" runat="server" Width="50px" TabIndex="1" class="flSecurity">
-                                                            </telerik:RadTextBox>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </asp:Panel>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Panel ID="BankAccountPanel" runat="server">
-                                <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                    <tr>
-                                        <td>
-                                            <asp:Panel ID="Panel3" runat="server">
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="BankAccountNumberLabel" Text="Bank Account Number">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <telerik:RadTextBox ID="BankAccountNumberRTB" runat="server" Width="167px" TabIndex="1"
-                                                                class="flSecurity">
-                                                            </telerik:RadTextBox>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="BankSortCodeLabel" Text="Sort Code">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <telerik:RadTextBox ID="BankSortCodeRTB" runat="server" Width="167px" TabIndex="1"
-                                                                class="flSecurity">
-                                                            </telerik:RadTextBox>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="BankAccountNameLabel" Text="Account Name">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <telerik:RadTextBox ID="BankAccountNameRTB" runat="server" Width="167px" TabIndex="1"
-                                                                class="flSecurity">
-                                                            </telerik:RadTextBox>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fls">
-                                                            <asp:Literal runat="server" ID="BankPaymentReferenceLabel" Text="Payment Reference">	</asp:Literal>
-                                                        </td>
-                                                        <td class="dfv">
-                                                            <telerik:RadTextBox ID="BankPaymentReferenceRTB" runat="server" Width="167px" TabIndex="1"
-                                                                class="flSecurity">
-                                                            </telerik:RadTextBox>
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                        <td class="dfv">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </asp:Panel>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Panel ID="CompanyPanel" runat="server">
-                                <div class="list-panel">
-                                    <telerik:RadGrid ID="CompanyRG" runat="server" AutoGenerateColumns="False" CellSpacing="0"
-                                        DataSourceID="CompanyDS" GridLines="None" ShowHeader="False" CssClass="RemoveBorders"
-                                        OnItemCommand="CompanyRG_ItemCommand">
-                                        <ClientSettings EnableRowHoverStyle="True" EnablePostBackOnRowClick="True">
-                                        </ClientSettings>
-                                        <MasterTableView DataKeyNames="PartyID" DataSourceID="CompanyDS" Name="PaymentMethodTable">
-                                            <NoRecordsTemplate>
-                                                <div style="padding: 25px;">
-                                                    No companies are associated with your user account.
-                                                </div>
-                                            </NoRecordsTemplate>
-                                            <Columns>
-                                                <telerik:GridBoundColumn DataField="PartyHTML" HeaderStyle-Width="190px" UniqueName="PartyHTML">
-                                                    <HeaderStyle Width="190px" />
-                                                </telerik:GridBoundColumn>
-                                            </Columns>
-                                            <PagerStyle PageSizeControlType="RadComboBox" />
-                                        </MasterTableView>
-                                        <PagerStyle PageSizeControlType="RadComboBox" />
-                                    </telerik:RadGrid>
-                                    <asp:SqlDataSource ID="CompanyDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
-                                        SelectCommand="usp_PaymentMethod_Companies" SelectCommandType="StoredProcedure">
-                                        <SelectParameters>
-                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="MeID" PropertyName="Text"
-                                                Type="Int32" />
-                                            <asp:ControlParameter ControlID="HiddenTB_PaymentMethodID" Name="PaymentMethodID"
-                                                PropertyName="Text" Type="String" />
-                                        </SelectParameters>
-                                    </asp:SqlDataSource>
-                                </div>
-                            </asp:Panel>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Panel ID="PeoplePanel" runat="server">
-                                <div class="list-panel">
-                                    <telerik:RadListBox ID="PeopleRLB" runat="server" CheckBoxes="true" Width="220px"
-                                        Height="300px" DataSourceID="PeopleDS" DataKeyField="PersonID" DataValueField="PK"
-                                        DataTextField="PersonRoleHTML" OnItemDataBound="PeopleRLB_ItemDataBound" OnClientItemChecking="OnClientItemCheckingHandler">
-                                        <ItemTemplate>
-                                            <div>
-                                                <span style="display: inline" id="PersonHTML">
-                                                    <%# DataBinder.Eval(Container.DataItem, "PersonRoleHTML")%>
-                                                </span>
+                            <table class="dv" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td>
+                                        <asp:Panel ID="CreditCardPanel" runat="server">
+                                            <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <asp:Panel ID="Panel1" runat="server">
+                                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="CreditCardTypeLabel" Text="Credit Card Type">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <asp:SqlDataSource ID="CreditCardTypeDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                                                            SelectCommand="SELECT * FROM [List] WHERE ListType = 'Credit Card'"></asp:SqlDataSource>
+                                                                        <telerik:RadDropDownList ID="CreditCardTypeRDDL" runat="server" DataTextField="ListName"
+                                                                            DataValueField="ListID" DataSourceID="CreditCardTypeDS">
+                                                                        </telerik:RadDropDownList>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="CreditCardNumberLabel" Text="Credit Card #">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadTextBox ID="CreditCardNumberRTB" runat="server" Width="167px" TabIndex="1"
+                                                                            class="flSecurity">
+                                                                        </telerik:RadTextBox>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="CreditCardNameLabel" Text="Name On Card">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadTextBox ID="CreditCardNameRTB" runat="server" Width="167px" TabIndex="1"
+                                                                            class="flSecurity">
+                                                                        </telerik:RadTextBox>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="StartDateLabel" Text="Start Date">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadMaskedTextBox ID="StartDateRTB" Mask="##/##" runat="server" Width="50px"
+                                                                            TabIndex="1" class="flSecurity">
+                                                                        </telerik:RadMaskedTextBox>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="EndDateLabel" Text="End Date">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadMaskedTextBox ID="EndDateRTB" Mask="##/##" runat="server" Width="50px"
+                                                                            TabIndex="1" class="flSecurity">
+                                                                        </telerik:RadMaskedTextBox>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="CVVLabel" Text="CCV">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadTextBox ID="CVVRTB" runat="server" Width="50px" TabIndex="1" class="flSecurity">
+                                                                        </telerik:RadTextBox>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </asp:Panel>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Panel ID="BankAccountPanel" runat="server">
+                                            <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <asp:Panel ID="Panel3" runat="server">
+                                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="BankAccountNumberLabel" Text="Bank Account Number">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadTextBox ID="BankAccountNumberRTB" runat="server" Width="167px" TabIndex="1"
+                                                                            class="flSecurity">
+                                                                        </telerik:RadTextBox>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="BankSortCodeLabel" Text="Sort Code">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadTextBox ID="BankSortCodeRTB" runat="server" Width="167px" TabIndex="1"
+                                                                            class="flSecurity">
+                                                                        </telerik:RadTextBox>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="BankAccountNameLabel" Text="Account Name">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadTextBox ID="BankAccountNameRTB" runat="server" Width="167px" TabIndex="1"
+                                                                            class="flSecurity">
+                                                                        </telerik:RadTextBox>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                        <asp:Literal runat="server" ID="BankPaymentReferenceLabel" Text="Payment Reference">	</asp:Literal>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadTextBox ID="BankPaymentReferenceRTB" runat="server" Width="167px" TabIndex="1"
+                                                                            class="flSecurity">
+                                                                        </telerik:RadTextBox>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </asp:Panel>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Panel ID="CompanyPanel" runat="server">
+                                            <div class="list-panel">
+                                                <telerik:RadGrid ID="CompanyRG" runat="server" AutoGenerateColumns="False" CellSpacing="0"
+                                                    DataSourceID="CompanyDS" GridLines="None" ShowHeader="False" CssClass="RemoveBorders"
+                                                    OnItemCommand="CompanyRG_ItemCommand">
+                                                    <ClientSettings EnableRowHoverStyle="True" EnablePostBackOnRowClick="True">
+                                                    </ClientSettings>
+                                                    <MasterTableView DataKeyNames="PartyID" DataSourceID="CompanyDS" Name="PaymentMethodTable">
+                                                        <NoRecordsTemplate>
+                                                            <div style="padding: 25px;">
+                                                                No companies are associated with your user account.
+                                                            </div>
+                                                        </NoRecordsTemplate>
+                                                        <Columns>
+                                                            <telerik:GridBoundColumn DataField="PartyHTML" HeaderStyle-Width="190px" UniqueName="PartyHTML">
+                                                                <HeaderStyle Width="190px" />
+                                                            </telerik:GridBoundColumn>
+                                                        </Columns>
+                                                        <PagerStyle PageSizeControlType="RadComboBox" />
+                                                    </MasterTableView>
+                                                    <PagerStyle PageSizeControlType="RadComboBox" />
+                                                </telerik:RadGrid>
+                                                <asp:SqlDataSource ID="CompanyDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                                    SelectCommand="usp_PaymentMethod_Companies" SelectCommandType="StoredProcedure">
+                                                    <SelectParameters>
+                                                        <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="MeID" PropertyName="Text"
+                                                            Type="Int32" />
+                                                        <asp:ControlParameter ControlID="HiddenTB_PaymentMethodID" Name="PaymentMethodID"
+                                                            PropertyName="Text" Type="String" />
+                                                    </SelectParameters>
+                                                </asp:SqlDataSource>
                                             </div>
-                                            <div>
-                                                <span style="display: none" id="PersonID">
-                                                    <%# DataBinder.Eval(Container.DataItem, "PersonID")%>
-                                                </span>
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Panel ID="PeoplePanel" runat="server">
+                                            <div class="list-panel">
+                                                <telerik:RadListBox ID="PeopleRLB" runat="server" CheckBoxes="true" Width="220px"
+                                                    Height="300px" DataSourceID="PeopleDS" DataKeyField="PersonID" DataValueField="PK"
+                                                    DataTextField="PersonRoleHTML" OnItemDataBound="PeopleRLB_ItemDataBound" OnClientItemChecking="OnClientItemCheckingHandler">
+                                                    <ItemTemplate>
+                                                        <div>
+                                                            <span style="display: inline" id="PersonHTML">
+                                                                <%# DataBinder.Eval(Container.DataItem, "PersonRoleHTML")%>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span style="display: none" id="PersonID">
+                                                                <%# DataBinder.Eval(Container.DataItem, "PersonID")%>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span style="display: none" id="RoleID">
+                                                                <%# DataBinder.Eval(Container.DataItem, "RoleID")%>
+                                                            </span>
+                                                        </div>
+                                                    </ItemTemplate>
+                                                </telerik:RadListBox>
+                                                <asp:SqlDataSource ID="PeopleDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                                    SelectCommand="usp_PaymentMethod_AvailTo" SelectCommandType="StoredProcedure">
+                                                    <SelectParameters>
+                                                        <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="MeID" PropertyName="Text"
+                                                            Type="Int32" />
+                                                        <asp:ControlParameter ControlID="HiddenTB_PaymentMethodID" Name="PaymentMethodID"
+                                                            PropertyName="Text" Type="String" />
+                                                        <asp:ControlParameter ControlID="HiddenTB_PeopleParentID" Name="PeopleParentID" PropertyName="Text"
+                                                            Type="String" />
+                                                    </SelectParameters>
+                                                </asp:SqlDataSource>
                                             </div>
-                                            <div>
-                                                <span style="display: none" id="RoleID">
-                                                    <%# DataBinder.Eval(Container.DataItem, "RoleID")%>
-                                                </span>
-                                            </div>
-                                        </ItemTemplate>
-                                    </telerik:RadListBox>
-                                    <asp:SqlDataSource ID="PeopleDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
-                                        SelectCommand="usp_PaymentMethod_AvailTo" SelectCommandType="StoredProcedure">
-                                        <SelectParameters>
-                                            <asp:ControlParameter ControlID="HiddenTB_PartyID" Name="MeID" PropertyName="Text"
-                                                Type="Int32" />
-                                            <asp:ControlParameter ControlID="HiddenTB_PaymentMethodID" Name="PaymentMethodID"
-                                                PropertyName="Text" Type="String" />
-                                            <asp:ControlParameter ControlID="HiddenTB_PeopleParentID" Name="PeopleParentID" PropertyName="Text"
-                                                Type="String" />
-                                        </SelectParameters>
-                                    </asp:SqlDataSource>
-                                </div>
-                            </asp:Panel>
-                        </td>
-                    </tr>
-                </table>
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                 </table>

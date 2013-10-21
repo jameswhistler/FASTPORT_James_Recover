@@ -38,6 +38,16 @@
                 MobileRTB.set_visible(true);
             }
 
+            function OnKeyPress(sender, args) {
+
+                if (args.get_keyCode() == 13) {
+
+                    $find("<%=OKRadButton.ClientID %>").click();
+
+                }
+
+            }
+
 
         </script>
     </telerik:RadCodeBlock>
@@ -46,7 +56,7 @@
             <td class="panelL">
             </td>
             <td class="dvSecurity" style="vertical-align: top;">
-                <asp:Panel ID="SignInCollapsibleRegion" runat="server">
+                <asp:Panel ID="SignInCollapsibleRegion" runat="server" DefaultButton="OKRadButton">
                     <table cellpadding="0" cellspacing="0" border="0" style="width: 100%">
                         <tr>
                             <td class="securityForm">
