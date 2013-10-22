@@ -140,9 +140,9 @@ Namespace FASTPORT.Business
     ''' <summary>
     ''' This is a convenience property that provides direct access to the table's PaymentMethod_.CreditCardNumber column object.
     ''' </summary>
-    Public ReadOnly Property CreditCardNumberColumn() As BaseClasses.Data.CreditCardNumberColumn
+    Public ReadOnly Property CreditCardNumberColumn() As BaseClasses.Data.StringColumn
         Get
-            Return CType(Me.TableDefinition.ColumnList(3), BaseClasses.Data.CreditCardNumberColumn)
+            Return CType(Me.TableDefinition.ColumnList(3), BaseClasses.Data.StringColumn)
         End Get
     End Property
 
@@ -151,7 +151,7 @@ Namespace FASTPORT.Business
     ''' <summary>
     ''' This is a convenience property that provides direct access to the table's PaymentMethod_.CreditCardNumber column object.
     ''' </summary>
-    Public Shared ReadOnly Property CreditCardNumber() As BaseClasses.Data.CreditCardNumberColumn
+    Public Shared ReadOnly Property CreditCardNumber() As BaseClasses.Data.StringColumn
         Get
             Return PaymentMethodTable.Instance.CreditCardNumberColumn
         End Get

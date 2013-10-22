@@ -9,7 +9,7 @@
 Public Class PaymentMethodDefinition
 
 #Region "Definition (XML) for PaymentMethodDefinition table"
-	'Next 684 lines contain Table Definition (XML) for table "PaymentMethodDefinition"
+	'Next 687 lines contain Table Definition (XML) for table "PaymentMethodDefinition"
 	Private Shared _DefinitionString As String = ""
 #End Region
 	
@@ -157,26 +157,26 @@ Public Class PaymentMethodDefinition
          tbf.Append(    "</Column>")
          tbf.Append(    "<Column InternalName=""3"" Priority=""4"" ColumnNum=""3"">")
          tbf.Append(      "<columnName>CreditCardNumber</columnName>")
-         tbf.Append(      "<columnUIName>Credit Card Number</columnUIName>")
-         tbf.Append(      "<columnType>Credit Card Number</columnType>")
+         tbf.Append(      "<columnUIName Source=""User"">Credit Card Number</columnUIName>")
+         tbf.Append(      "<columnType>String</columnType>")
          tbf.Append(      "<columnDBType>varchar</columnDBType>")
          tbf.Append(      "<columnLengthSet>25</columnLengthSet>")
          tbf.Append(      "<columnDefault></columnDefault>")
-         tbf.Append(      "<columnDBDefault></columnDBDefault>")
+         tbf.Append(      "<columnDBDefault Source=""User""></columnDBDefault>")
          tbf.Append(      "<columnIndex>N</columnIndex>")
          tbf.Append(      "<columnUnique>N</columnUnique>")
-         tbf.Append(      "<columnFunction></columnFunction>")
+         tbf.Append(      "<columnFunction>notrim,</columnFunction>")
          tbf.Append(      "<columnDBFormat></columnDBFormat>")
          tbf.Append(      "<columnPK>N</columnPK>")
          tbf.Append(      "<columnPermanent>N</columnPermanent>")
-         tbf.Append(      "<columnComputed>N</columnComputed>")
-         tbf.Append(      "<columnIdentity>N</columnIdentity>")
-         tbf.Append(      "<columnReadOnly>N</columnReadOnly>")
+         tbf.Append(      "<columnComputed Source=""User"">N</columnComputed>")
+         tbf.Append(      "<columnIdentity Source=""User"">N</columnIdentity>")
+         tbf.Append(      "<columnReadOnly Source=""User"">N</columnReadOnly>")
          tbf.Append(      "<columnRequired>N</columnRequired>")
          tbf.Append(      "<columnNotNull>N</columnNotNull>")
-         tbf.Append(      "<columnCaseSensitive Source=""Database"">N</columnCaseSensitive>")
+         tbf.Append(      "<columnCaseSensitive Source=""User"">N</columnCaseSensitive>")
          tbf.Append(      "<columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>")
-         tbf.Append(      "<columnFullText>N</columnFullText>")
+         tbf.Append(      "<columnFullText Source=""User"">N</columnFullText>")
          tbf.Append(      "<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>")
          tbf.Append(      "<columnTableAliasName></columnTableAliasName>")
          tbf.Append(      "<applyLabelText>Y</applyLabelText>")
@@ -192,6 +192,9 @@ Public Class PaymentMethodDefinition
          tbf.Append(      "<updatingRecordFormula></updatingRecordFormula>")
          tbf.Append(      "<insertingFormula></insertingFormula>")
          tbf.Append(      "<updatingFormula></updatingFormula>")
+         tbf.Append(      "<columnCodeName></columnCodeName>")
+         tbf.Append(      "<InternalName>3</InternalName>")
+         tbf.Append(      "<columnTableClassName></columnTableClassName>")
          tbf.Append(    "</Column>")
          tbf.Append(    "<Column InternalName=""4"" Priority=""5"" ColumnNum=""4"">")
          tbf.Append(      "<columnName>CreditCardName</columnName>")

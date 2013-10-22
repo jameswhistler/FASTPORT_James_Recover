@@ -166,30 +166,29 @@
     </Column>
     <Column InternalName="3" Priority="4" ColumnNum="3">
       <columnName>CreditCardNumber</columnName>
-      <columnUIName>%ISD_DEFAULT%</columnUIName>
-      <columnType>Credit Card Number</columnType>
+      <columnUIName Source="User">%ISD_DEFAULT%</columnUIName>
+      <columnType>String</columnType>
       <columnDBType>varchar</columnDBType>
       <columnLengthSet>25</columnLengthSet>
       <columnDefault>
       </columnDefault>
-      <columnDBDefault>
+      <columnDBDefault Source="User">
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
-      <columnFunction>
-      </columnFunction>
+      <columnFunction>notrim,</columnFunction>
       <columnDBFormat>
       </columnDBFormat>
       <columnPK>N</columnPK>
       <columnPermanent>N</columnPermanent>
-      <columnComputed>N</columnComputed>
-      <columnIdentity>N</columnIdentity>
-      <columnReadOnly>N</columnReadOnly>
+      <columnComputed Source="User">N</columnComputed>
+      <columnIdentity Source="User">N</columnIdentity>
+      <columnReadOnly Source="User">N</columnReadOnly>
       <columnRequired>N</columnRequired>
       <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive Source="Database">N</columnCaseSensitive>
+      <columnCaseSensitive Source="User">N</columnCaseSensitive>
       <columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>
-      <columnFullText>N</columnFullText>
+      <columnFullText Source="User">N</columnFullText>
       <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
       <columnTableAliasName>
       </columnTableAliasName>
@@ -211,6 +210,11 @@
       </insertingFormula>
       <updatingFormula>
       </updatingFormula>
+      <columnCodeName>
+      </columnCodeName>
+      <InternalName>3</InternalName>
+      <columnTableClassName>
+      </columnTableClassName>
     </Column>
     <Column InternalName="4" Priority="5" ColumnNum="4">
       <columnName>CreditCardName</columnName>

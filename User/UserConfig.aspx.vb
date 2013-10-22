@@ -127,6 +127,43 @@ Partial Public Class UserConfig
         Protected WithEvents RadAjaxManager1 As Global.Telerik.Web.UI.RadAjaxManager
         Protected WithEvents AddCreditCardRB As Global.Telerik.Web.UI.RadButton
         Protected WithEvents AddBankAccountRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents SaveNewCreditCardRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents CancelNewCreditCardRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents AddCreditCardTypeRDDL As Global.Telerik.Web.UI.RadDropDownList
+        Protected WithEvents AddCreditCardNumberRTB As Global.Telerik.Web.UI.RadTextBox
+        Protected WithEvents AddNameOnCardRTB As Global.Telerik.Web.UI.RadTextBox
+        Protected WithEvents AddStartDateRTB As Global.Telerik.Web.UI.RadMaskedTextBox
+        Protected WithEvents AddEndDateRTB As Global.Telerik.Web.UI.RadMaskedTextBox
+        Protected WithEvents AddCVVRTB As Global.Telerik.Web.UI.RadTextBox
+        Protected WithEvents PreferredCreditCardRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents AddPreferredCreditCardRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents PreferredBankAccountRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents AddBankAccountNumberRTB As Global.Telerik.Web.UI.RadTextBox
+        Protected WithEvents AddBankAccountSortCodeRTB As Global.Telerik.Web.UI.RadTextBox
+        Protected WithEvents AddBankAccountNameRTB As Global.Telerik.Web.UI.RadTextBox
+        Protected WithEvents AddBankAccountPaymentReferenceRTB As Global.Telerik.Web.UI.RadTextBox
+        Protected WithEvents AddPreferredBankAccountRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents SaveNewBankAccountRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents CancelNewBankAccountRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents SaveCreditCardRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents CancelCreditCardRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents SaveBankAccountRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents CancelBankAccountRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents UserConfigRTT As Global.Telerik.Web.UI.RadToolTip
+        Protected WithEvents SaveUserRB As Global.Telerik.Web.UI.RadButton
+        Protected WithEvents CancelUserRB As Global.Telerik.Web.UI.RadButton
+
+        Public Class DateValidator
+
+            Public Property DateOutput As Date
+            Public Property DateValid As Boolean
+
+            Public Sub New(ByVal DateOutput As Date, ByVal DateValid As Boolean)
+                Me.DateOutput = DateOutput
+                Me.DateValid = DateValid
+            End Sub
+
+        End Class
 
       Public Sub SetPageFocus()
       'load scripts to all controls on page so that they will retain focus on PostBack
@@ -182,6 +219,7 @@ Partial Public Class UserConfig
             CreditCardPanel.Visible = True
             BankAccountPanel.Visible = False
             CompanyPanel.Visible = True
+            PeopleRLB.Visible = False
 
             Me.CreditCardTypeRDDL.SelectedIndex = Me.CreditCardTypeRDDL.FindItemByValue(myPaymentMethodRec.CreditCardTypeID.ToString).Index
             Me.CreditCardNumberRTB.Text = myPaymentMethodRec.CreditCardNumber
@@ -189,6 +227,7 @@ Partial Public Class UserConfig
             Me.StartDateRTB.Text = myPaymentMethodRec.StartDate.ToString("mm/yy")
             Me.EndDateRTB.Text = myPaymentMethodRec.ExpiryDate.ToString("mm/yy")
             Me.CVVRTB.Text = myPaymentMethodRec.CVV
+            Me.PreferredCreditCardRB.Checked = myPaymentMethodRec.Preferred
 
         End Sub
 
@@ -197,19 +236,207 @@ Partial Public Class UserConfig
             CreditCardPanel.Visible = False
             BankAccountPanel.Visible = True
             CompanyPanel.Visible = True
+            PeopleRLB.Visible = False
 
             Me.BankAccountNumberRTB.Text = myPaymentMethodRec.BankAccountNumber
             Me.BankSortCodeRTB.Text = myPaymentMethodRec.BankSortCode
             Me.BankAccountNameRTB.Text = myPaymentMethodRec.BankAccountName
             Me.BankPaymentReferenceRTB.Text = myPaymentMethodRec.BankPaymentReference
+            Me.PreferredBankAccountRB.Checked = myPaymentMethodRec.Preferred
 
         End Sub
 
         Public Sub AddCreditCardRB_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AddCreditCardRB.Click
 
+            Dim myScript As String = "showAddCreditCardRadWindow();"
+            RadAjaxManager1.ResponseScripts.Add(myScript)
+
         End Sub
 
+        Public Sub SaveNewCreditCardRB_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveNewCreditCardRB.Click
+
+            If Not DateValid(AddStartDateRTB.Text).DateValid Then
+                UserConfigRTT.Text = "The start date is invalid."
+                UserConfigRTT.TargetControlID = Me.AddStartDateRTB.ID
+                UserConfigRTT.Show()
+                Exit Sub
+            End If
+
+            If Not DateValid(AddEndDateRTB.Text).DateValid Then
+                UserConfigRTT.Text = "The end date is invalid."
+                UserConfigRTT.TargetControlID = Me.AddEndDateRTB.ID
+                UserConfigRTT.Show()
+                Exit Sub
+            End If
+
+            Try
+                DbUtils.StartTransaction()
+
+                Dim myNewPaymentMethodRec As PaymentMethodRecord = New PaymentMethodRecord()
+                myNewPaymentMethodRec.PartyID = CType(Me.HiddenTB_PartyID.Text, Integer)
+                myNewPaymentMethodRec.CreditCardTypeID = CType(AddCreditCardTypeRDDL.SelectedItem.Value, Integer)
+                myNewPaymentMethodRec.CreditCardNumber = AddCreditCardNumberRTB.Text
+                myNewPaymentMethodRec.StartDate = DateValid(AddStartDateRTB.Text).DateOutput
+                myNewPaymentMethodRec.ExpiryDate = DateValid(AddEndDateRTB.Text).DateOutput
+                myNewPaymentMethodRec.CVV = AddCVVRTB.Text
+                myNewPaymentMethodRec.Preferred = AddPreferredCreditCardRB.Checked
+                myNewPaymentMethodRec.Save()
+                DbUtils.CommitTransaction()
+
+            Catch ex As Exception
+                DbUtils.RollBackTransaction()
+
+            Finally
+                DbUtils.EndTransaction()
+
+            End Try
+
+            PaymentMethodRadGrid.Rebind()
+
+        End Sub
+
+        Public Sub SaveCreditCardRB_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveCreditCardRB.Click
+
+            If Not DateValid(StartDateRTB.Text).DateValid Then
+                UserConfigRTT.Text = "The start date is invalid."
+                UserConfigRTT.TargetControlID = Me.StartDateRTB.ID
+                UserConfigRTT.Show()
+                Exit Sub
+            End If
+
+            If Not DateValid(EndDateRTB.Text).DateValid Then
+                UserConfigRTT.Text = "The end date is invalid."
+                UserConfigRTT.TargetControlID = Me.EndDateRTB.ID
+                UserConfigRTT.Show()
+                Exit Sub
+            End If
+
+            Try
+                DbUtils.StartTransaction()
+
+                Dim myPaymentMethodRec As PaymentMethodRecord = PaymentMethodTable.GetRecord(Me.HiddenTB_PaymentMethodID.Text, True)
+                myPaymentMethodRec.PartyID = CType(Me.HiddenTB_PartyID.Text, Integer)
+                myPaymentMethodRec.CreditCardTypeID = CType(AddCreditCardTypeRDDL.SelectedItem.Value, Integer)
+                myPaymentMethodRec.CreditCardNumber = CreditCardNumberRTB.Text
+                myPaymentMethodRec.StartDate = DateValid(StartDateRTB.Text).DateOutput
+                myPaymentMethodRec.ExpiryDate = DateValid(EndDateRTB.Text).DateOutput
+                myPaymentMethodRec.CVV = CVVRTB.Text
+                myPaymentMethodRec.Preferred = PreferredCreditCardRB.Checked
+                myPaymentMethodRec.Save()
+
+                DbUtils.CommitTransaction()
+
+            Catch ex As Exception
+                DbUtils.RollBackTransaction()
+
+            Finally
+                DbUtils.EndTransaction()
+
+            End Try
+
+            PaymentMethodRadGrid.Rebind()
+
+        End Sub
+
+        Public Sub SaveUserRB_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveUserRB.Click
+            Try
+                DbUtils.StartTransaction()
+
+                Dim myPartyRec As PartyRecord = PartyTable.GetRecord(Me.HiddenTB_PartyID.Text, True)
+
+                If PasswordRTB.Text <> "" Then
+                    myPartyRec.Password = PasswordRTB.Text
+                End If
+
+                myPartyRec.Name = NameRTB.Text
+                myPartyRec.Email = EmailRTB.Text
+                myPartyRec.Mobile = MobileRTB.Text
+                myPartyRec.DirectDial = DirectDialRTB.Text
+                myPartyRec.Fax = FaxRTB.Text
+                myPartyRec.Save()
+
+                DbUtils.CommitTransaction()
+
+            Catch ex As Exception
+                DbUtils.RollBackTransaction()
+
+            Finally
+                DbUtils.EndTransaction()
+
+            End Try
+
+        End Sub
+        Public Function DateValid(ByVal myDate As String) As DateValidator
+            Dim myCheckDate As Date
+            Dim myDateIsValid As Boolean = True
+
+            Try
+                myCheckDate = CType("01/" & Left(myDate, 2) & "/" & Right(myDate, 2), Date)
+            Catch ex As Exception
+                myDateIsValid = False
+            End Try
+
+            Return New DateValidator(myCheckDate, myDateIsValid)
+        End Function
+
         Public Sub AddBankAccountRB_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AddBankAccountRB.Click
+
+            Dim myScript As String = "showAddBankAccountRadWindow();"
+            RadAjaxManager1.ResponseScripts.Add(myScript)
+
+        End Sub
+
+        Public Sub SaveNewBankAccountRB_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveNewBankAccountRB.Click
+
+            Try
+                DbUtils.StartTransaction()
+
+                Dim myNewPaymentMethodRec As PaymentMethodRecord = New PaymentMethodRecord()
+                myNewPaymentMethodRec.PartyID = CType(Me.HiddenTB_PartyID.Text, Integer)
+                myNewPaymentMethodRec.BankAccountName = AddBankAccountNameRTB.Text
+                myNewPaymentMethodRec.BankAccountNumber = AddBankAccountNumberRTB.Text
+                myNewPaymentMethodRec.BankPaymentReference = AddBankAccountPaymentReferenceRTB.Text
+                myNewPaymentMethodRec.BankSortCode = AddBankAccountSortCodeRTB.Text
+                myNewPaymentMethodRec.Preferred = AddPreferredBankAccountRB.Checked
+                myNewPaymentMethodRec.Save()
+                DbUtils.CommitTransaction()
+
+            Catch ex As Exception
+                DbUtils.RollBackTransaction()
+
+            Finally
+                DbUtils.EndTransaction()
+
+            End Try
+
+            PaymentMethodRadGrid.Rebind()
+
+        End Sub
+
+        Public Sub SaveBankAccountRB_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveBankAccountRB.Click
+
+            Try
+                DbUtils.StartTransaction()
+
+                Dim myPaymentMethodRec As PaymentMethodRecord = PaymentMethodTable.GetRecord(Me.HiddenTB_PaymentMethodID.Text, True)
+                myPaymentMethodRec.PartyID = CType(Me.HiddenTB_PartyID.Text, Integer)
+                myPaymentMethodRec.BankAccountName = BankAccountNameRTB.Text
+                myPaymentMethodRec.BankAccountNumber = BankAccountNumberRTB.Text
+                myPaymentMethodRec.BankPaymentReference = BankPaymentReferenceRTB.Text
+                myPaymentMethodRec.BankSortCode = BankSortCodeRTB.Text
+                myPaymentMethodRec.Preferred = PreferredBankAccountRB.Checked
+                myPaymentMethodRec.Save()
+                DbUtils.CommitTransaction()
+
+            Catch ex As Exception
+                DbUtils.RollBackTransaction()
+
+            Finally
+                DbUtils.EndTransaction()
+
+            End Try
+
+            PaymentMethodRadGrid.Rebind()
 
         End Sub
 
@@ -221,6 +448,7 @@ Partial Public Class UserConfig
                 HiddenTB_PeopleParentID.Text = myPartyID
 
                 PeopleRLB.DataBind()
+                PeopleRLB.Visible = True
 
             End If
         End Sub

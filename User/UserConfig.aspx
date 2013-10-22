@@ -31,13 +31,9 @@
         function onPaymentMethodDeleteClick(index) {
 
             var grid = $find("<%=PaymentMethodRadGrid.ClientID %>");
-            alert("grid " + grid);
             var MasterTable = grid.get_masterTableView();
-            alert("master table " + MasterTable);
             var row = MasterTable.get_dataItems()[index];
-            alert("row " + row);
             var paymentmethodid = row.getDataKeyValue("PaymentMethodID");
-            alert("paymentmethodid " + paymentmethodid);
             confirmCall("deletePayment", paymentmethodid, "Payment method")
 
         }
@@ -47,8 +43,7 @@
              var e = args.get_domEvent();     
              var targetElement = e.srcElement || e.target;                 
              if(targetElement.tagName.toLowerCase() != "input" && (!targetElement.type || targetElement.type.toLowerCase() != "imagebutton"))// && currentClickEvent)   
-                 {   
-                      alert("Clicked on Row");   
+                 {    
                      __doPostBack('<%=PaymentMethodRadGrid.UniqueID %>', args);   
                        
                  }   
@@ -79,9 +74,6 @@
             confirmID = callID;
             var confirmMess;
             var confirmTitle;
-
-            alert("Call type " + callType);
-
 
             //Step 2:  Configure your messsage types here.
             if (callType == "deletePayment") {
@@ -133,8 +125,6 @@
 
         function confirmCallBackFn(arg) {
 
-            alert("Back from radconfirm");
-
             //Step 3:  Config different callbacks if required.  If you have only 2 parameters, these will do.
             if (arg == true) {
 
@@ -154,6 +144,18 @@
             else if (window.frameElement && window.frameElement.radWindow) oWindow = window.frameElement.radWindow;
             return oWindow;
         }
+
+        function showAddCreditCardRadWindow()
+               {
+                    var wnd = $find("<%=AddCreditCardRW.ClientID %>");
+                    wnd.show();
+               }
+
+        function showAddBankAccountRadWindow()
+            {
+                var wnd = $find("<%=AddBankAccountRW.ClientID %>");
+                wnd.show();
+            }
 
         function launchRadAlert(alertMess, alertTitle) {
 
@@ -198,14 +200,22 @@
 
         }
 
+        function onRTThide(sender, args) {
+                sender.set_targetControlID("");
+            }
+
         </script>
     </telerik:RadScriptBlock>
+    <telerik:RadToolTip runat="server" ID="UserConfigRTT" HideEvent="ManualClose" RelativeTo="Element"
+        Position="MiddleRight" Width="375px" Skin="BlackMetroTouch" OnClientHide="onRTThide">
+    </telerik:RadToolTip>
     <telerik:RadAjaxManager ID="RadAjaxManager1" EnablePageHeadUpdate="false" runat="server">
         <AjaxSettings>
             <telerik:AjaxSetting AjaxControlID="RadAjaxManager1">
                 <UpdatedControls>
                     <telerik:AjaxUpdatedControl ControlID="RadAjaxManager1" />
                     <telerik:AjaxUpdatedControl ControlID="PaymentMethodRadGrid" />
+                    <telerik:AjaxUpdatedControl ControlID="HiddenPanel" />
                 </UpdatedControls>
             </telerik:AjaxSetting>
             <telerik:AjaxSetting AjaxControlID="PaymentMethodRadGrid">
@@ -214,12 +224,18 @@
                     <telerik:AjaxUpdatedControl ControlID="CreditCardPanel" />
                     <telerik:AjaxUpdatedControl ControlID="BankAccountPanel" />
                     <telerik:AjaxUpdatedControl ControlID="CompanyPanel" />
+                    <telerik:AjaxUpdatedControl ControlID="PeoplePanel" />
+                    <telerik:AjaxUpdatedControl ControlID="PeopleRLB" />
+                    <telerik:AjaxUpdatedControl ControlID="HiddenPanel" />
+                    <telerik:AjaxUpdatedControl ControlID="UserConfigRTT" />
                 </UpdatedControls>
             </telerik:AjaxSetting>
             <telerik:AjaxSetting AjaxControlID="CompanyRG">
                 <UpdatedControls>
                     <telerik:AjaxUpdatedControl ControlID="CompanyRG" />
                     <telerik:AjaxUpdatedControl ControlID="PeoplePanel" />
+                    <telerik:AjaxUpdatedControl ControlID="PeopleRLB" />
+                    <telerik:AjaxUpdatedControl ControlID="HiddenPanel" />
                 </UpdatedControls>
             </telerik:AjaxSetting>
         </AjaxSettings>
@@ -228,6 +244,257 @@
         Modal="True" ShowContentDuringLoad="False" VisibleStatusbar="False" Skin="Black"
         Style="z-index: 10000;">
     </telerik:RadWindowManager>
+    <telerik:RadWindow ID="AddCreditCardRW" runat="server" Width="460px" Height="360px"
+        Modal="true" Skin="Black" VisibleStatusbar="false" VisibleTitlebar="false" ShowContentDuringLoad="false"
+        Style="z-index: 10000;">
+        <ContentTemplate>
+            <table class="dv" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td>
+                        <asp:Panel ID="AddCreditCardPanel" runat="server">
+                            <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <asp:Panel ID="Panel4" runat="server">
+                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddCreditCardTypeLiteral" Text="Credit Card Type">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <asp:SqlDataSource ID="AddCreditCardTypeDS" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseFASTPORT1 %>"
+                                                            SelectCommand="SELECT * FROM [List] WHERE ListType = 'Credit Card'"></asp:SqlDataSource>
+                                                        <telerik:RadDropDownList ID="AddCreditCardTypeRDDL" runat="server" DataTextField="ListName"
+                                                            DataValueField="ListID" DataSourceID="AddCreditCardTypeDS">
+                                                        </telerik:RadDropDownList>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddCreditCardNumberLiteral" Text="Credit Card #">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadTextBox ID="AddCreditCardNumberRTB" runat="server" Width="167px" TabIndex="1"
+                                                            class="flSecurity">
+                                                        </telerik:RadTextBox>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddNameOnCardLiteral" Text="Name On Card">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadTextBox ID="AddNameOnCardRTB" runat="server" Width="167px" TabIndex="1"
+                                                            class="flSecurity">
+                                                        </telerik:RadTextBox>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddStartDateLiteral" Text="Start Date">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadMaskedTextBox ID="AddStartDateRTB" Mask="##/##" runat="server" Width="50px"
+                                                            TabIndex="1" class="flSecurity">
+                                                        </telerik:RadMaskedTextBox>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddEndDateLiteral" Text="End Date">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadMaskedTextBox ID="AddEndDateRTB" Mask="##/##" runat="server" Width="50px"
+                                                            TabIndex="1" class="flSecurity">
+                                                        </telerik:RadMaskedTextBox>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddCVVLiteral" Text="CCV">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadTextBox ID="AddCVVRTB" runat="server" Width="50px" TabIndex="1" class="flSecurity">
+                                                        </telerik:RadTextBox>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadButton ID="AddPreferredRB" runat="server" ToggleType="CheckBox" ButtonType="StandardButton"
+                                                            AutoPostBack="false">
+                                                            <ToggleStates>
+                                                                <telerik:RadButtonToggleState Text="Preferred" PrimaryIconCssClass="rbToggleCheckboxChecked">
+                                                                </telerik:RadButtonToggleState>
+                                                                <telerik:RadButtonToggleState Text="Not preferred" PrimaryIconCssClass="rbToggleCheckbox">
+                                                                </telerik:RadButtonToggleState>
+                                                            </ToggleStates>
+                                                        </telerik:RadButton>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadButton ID="SaveNewCreditCardRB" runat="server" Text="Save" AutoPostBack="true"
+                                                            ToolTip="Click to save this credit card.">
+                                                        </telerik:RadButton>
+                                                        <telerik:RadButton ID="CancelNewCreditCardRB" runat="server" Text="Cancel" AutoPostBack="true"
+                                                            ToolTip="Click to cancel.">
+                                                        </telerik:RadButton>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                    </td>
+                </tr>
+            </table>
+        </ContentTemplate>
+    </telerik:RadWindow>
+    <telerik:RadWindow ID="AddBankAccountRW" runat="server" Width="560px" Height="360px"
+        Modal="true" Skin="Black" VisibleStatusbar="false" VisibleTitlebar="false" ShowContentDuringLoad="false"
+        Style="z-index: 10000;">
+        <ContentTemplate>
+            <table class="dv" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td>
+                        <asp:Panel ID="Panel2" runat="server">
+                            <table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <asp:Panel ID="Panel6" runat="server">
+                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddBankAccountNumberLiteral" Text="Bank Account Number">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadTextBox ID="AddBankAccountNumberRTB" runat="server" Width="167px" TabIndex="1"
+                                                            class="flSecurity">
+                                                        </telerik:RadTextBox>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddBankAccountSortCodeLiteral" Text="Sort Code">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadTextBox ID="AddBankAccountSortCodeRTB" runat="server" Width="167px" TabIndex="1"
+                                                            class="flSecurity">
+                                                        </telerik:RadTextBox>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddBankAccountNameLiteral" Text="Account Name">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadTextBox ID="AddBankAccountNameRTB" runat="server" Width="167px" TabIndex="1"
+                                                            class="flSecurity">
+                                                        </telerik:RadTextBox>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                        <asp:Literal runat="server" ID="AddBankAccountPaymentReferenceLiteral" Text="Payment Reference">	</asp:Literal>
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadTextBox ID="AddBankAccountPaymentReferenceRTB" runat="server" Width="167px"
+                                                            TabIndex="1" class="flSecurity">
+                                                        </telerik:RadTextBox>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fls">
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadButton ID="AddPreferredBankAccountRB" runat="server" ToggleType="CheckBox"
+                                                            ButtonType="StandardButton" AutoPostBack="false">
+                                                            <ToggleStates>
+                                                                <telerik:RadButtonToggleState Text="Preferred" PrimaryIconCssClass="rbToggleCheckboxChecked">
+                                                                </telerik:RadButtonToggleState>
+                                                                <telerik:RadButtonToggleState Text="Not preferred" PrimaryIconCssClass="rbToggleCheckbox">
+                                                                </telerik:RadButtonToggleState>
+                                                            </ToggleStates>
+                                                        </telerik:RadButton>
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="dfv">
+                                                    </td>
+                                                    <td class="dfv">
+                                                        <telerik:RadButton ID="SaveNewBankAccountRB" runat="server" Text="Save" AutoPostBack="true"
+                                                            ToolTip="Click to save this bank account.">
+                                                        </telerik:RadButton>
+                                                        <telerik:RadButton ID="CancelNewBankAccountRB" runat="server" Text="Cancel" AutoPostBack="true"
+                                                            ToolTip="Click to cancel.">
+                                                        </telerik:RadButton>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                    </td>
+                </tr>
+            </table>
+        </ContentTemplate>
+    </telerik:RadWindow>
     <style type="text/css">
         .RadWindow_BlackMetroTouch .rwTable .rwTitlebarControls em
         {
@@ -381,14 +648,15 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="fls">
-                                                                &nbsp;
-                                                            </td>
                                                             <td class="dfv">
                                                             </td>
                                                             <td class="dfv">
-                                                            </td>
-                                                            <td class="dfv">
+                                                                <telerik:RadButton ID="SaveUserRB" runat="server" Text="Save" AutoPostBack="true"
+                                                                    ToolTip="Click to save changes.">
+                                                                </telerik:RadButton>
+                                                                <telerik:RadButton ID="CancelUserRB" runat="server" Text="Cancel" AutoPostBack="true"
+                                                                    ToolTip="Click to cancel.">
+                                                                </telerik:RadButton>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -406,15 +674,11 @@
                 <table>
                     <tr>
                         <td class="dfv">
-                            <br />
-                            <telerik:RadButton ID="AddCreditCardRB" runat="server" Text="Add New Credit Card" AutoPostBack="true"
-                                ToolTip="Click to add a new credit card.">
+                            <telerik:RadButton ID="AddCreditCardRB" runat="server" Text="Add New Credit Card"
+                                AutoPostBack="true" ToolTip="Click to add a new credit card.">
                             </telerik:RadButton>
-                        </td>
-                        <td class="dfv">
-                            <br />
-                            <telerik:RadButton ID="AddBankAccountRB" runat="server" Text="Add New Bank Account" AutoPostBack="true"
-                                ToolTip="Click to add a new bank account.">
+                            <telerik:RadButton ID="AddBankAccountRB" runat="server" Text="Add New Bank Account"
+                                AutoPostBack="true" ToolTip="Click to add a new bank account.">
                             </telerik:RadButton>
                         </td>
                     </tr>
@@ -560,6 +824,37 @@
                                                                     <td class="dfv">
                                                                     </td>
                                                                 </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadButton ID="PreferredCreditCardRB" runat="server" ToggleType="CheckBox"
+                                                                            ButtonType="StandardButton" AutoPostBack="false">
+                                                                            <ToggleStates>
+                                                                                <telerik:RadButtonToggleState Text="Preferred" PrimaryIconCssClass="rbToggleCheckboxChecked">
+                                                                                </telerik:RadButtonToggleState>
+                                                                                <telerik:RadButtonToggleState Text="Not preferred" PrimaryIconCssClass="rbToggleCheckbox">
+                                                                                </telerik:RadButtonToggleState>
+                                                                            </ToggleStates>
+                                                                        </telerik:RadButton>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadButton ID="SaveCreditCardRB" runat="server" Text="Save" AutoPostBack="true"
+                                                                            ToolTip="Click to save this credit card.">
+                                                                        </telerik:RadButton>
+                                                                        <telerik:RadButton ID="CancelCreditCardRB" runat="server" Text="Cancel" AutoPostBack="true"
+                                                                            ToolTip="Click to cancel.">
+                                                                        </telerik:RadButton>
+                                                                    </td>
+                                                                </tr>
                                                             </table>
                                                         </asp:Panel>
                                                     </td>
@@ -632,6 +927,37 @@
                                                                     <td class="dfv">
                                                                     </td>
                                                                 </tr>
+                                                                <tr>
+                                                                    <td class="fls">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadButton ID="PreferredBankAccountRB" runat="server" ToggleType="CheckBox"
+                                                                            ButtonType="StandardButton" AutoPostBack="false">
+                                                                            <ToggleStates>
+                                                                                <telerik:RadButtonToggleState Text="Preferred" PrimaryIconCssClass="rbToggleCheckboxChecked">
+                                                                                </telerik:RadButtonToggleState>
+                                                                                <telerik:RadButtonToggleState Text="Not preferred" PrimaryIconCssClass="rbToggleCheckbox">
+                                                                                </telerik:RadButtonToggleState>
+                                                                            </ToggleStates>
+                                                                        </telerik:RadButton>
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="dfv">
+                                                                    </td>
+                                                                    <td class="dfv">
+                                                                        <telerik:RadButton ID="SaveBankAccountRB" runat="server" Text="Save" AutoPostBack="true"
+                                                                            ToolTip="Click to save this bank account.">
+                                                                        </telerik:RadButton>
+                                                                        <telerik:RadButton ID="CancelBankAccountRB" runat="server" Text="Cancel" AutoPostBack="true"
+                                                                            ToolTip="Click to cancel.">
+                                                                        </telerik:RadButton>
+                                                                    </td>
+                                                                </tr>
                                                             </table>
                                                         </asp:Panel>
                                                     </td>
@@ -652,7 +978,7 @@
                                                     <MasterTableView DataKeyNames="PartyID" DataSourceID="CompanyDS" Name="PaymentMethodTable">
                                                         <NoRecordsTemplate>
                                                             <div style="padding: 25px;">
-                                                                No companies are associated with your user account.
+                                                                No companies are associated with this payment method.
                                                             </div>
                                                         </NoRecordsTemplate>
                                                         <Columns>
@@ -681,7 +1007,7 @@
                                     <td>
                                         <asp:Panel ID="PeoplePanel" runat="server">
                                             <div class="list-panel">
-                                                <telerik:RadListBox ID="PeopleRLB" runat="server" CheckBoxes="true" Width="220px"
+                                                <telerik:RadListBox ID="PeopleRLB" runat="server" CheckBoxes="true" Width="100%"
                                                     Height="300px" DataSourceID="PeopleDS" DataKeyField="PersonID" DataValueField="PK"
                                                     DataTextField="PersonRoleHTML" OnItemDataBound="PeopleRLB_ItemDataBound" OnClientItemChecking="OnClientItemCheckingHandler">
                                                     <ItemTemplate>
@@ -725,14 +1051,16 @@
         </tr>
         <tr>
             <td>
-                <div id="HiddenDiv" style="display: none;">
-                    PartyID:
-                    <asp:TextBox ID="HiddenTB_PartyID" runat="server"></asp:TextBox><br />
-                    PeopleParentID:
-                    <asp:TextBox ID="HiddenTB_PeopleParentID" runat="server"></asp:TextBox><br />
-                    PaymentMethodID:
-                    <asp:TextBox ID="HiddenTB_PaymentMethodID" runat="server"></asp:TextBox><br />
-                </div>
+                <asp:Panel ID="HiddenPanel" runat="server">
+                    <div id="HiddenDiv" style="display: none;">
+                        PartyID:
+                        <asp:TextBox ID="HiddenTB_PartyID" runat="server"></asp:TextBox><br />
+                        PeopleParentID:
+                        <asp:TextBox ID="HiddenTB_PeopleParentID" runat="server"></asp:TextBox><br />
+                        PaymentMethodID:
+                        <asp:TextBox ID="HiddenTB_PaymentMethodID" runat="server"></asp:TextBox><br />
+                    </div>
+                </asp:Panel>
             </td>
         </tr>
     </table>
